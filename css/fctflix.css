@@ -1,47 +1,47 @@
 html {
-    height: 100%;
-    box-sizing: border-box;
-    background-color: #f1f1f1;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
 }
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 body {
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
-    font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
-    color: #333333;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+  color: #333333;
 }
 header {
-    position: fixed;
-    right: 0;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #222;
-    color: #fff;
-    display:flex;
-    z-index:1000;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+  display:flex;
+  z-index:1000;
 }
 footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #000;
-    z-index:1000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #000;
+  z-index:1000;
 }
 footer .copyright {
-    display: inline-block;    
-    width: 100%;
-    max-width: 230px;
-    color: #777;
-    font-size: 0.8em;
+  display: inline-block;    
+  width: 100%;
+  max-width: 230px;
+  color: #777;
+  font-size: 0.8em;
 }
 .material-icons {
   font-family: 'Material Icons';
@@ -55,6 +55,7 @@ footer .copyright {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  text-align:center;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -68,10 +69,10 @@ footer .copyright {
   font-feature-settings: 'liga';
 }
 .header-logo {
-   width:10%;
-   height:10%;
-   margin-left: 2% !important;
-   margin-right: 3% !important;
+  width:10%;
+  height:10%;
+  margin-left: 2% !important;
+  margin-right: 3% !important;
 }
 .searchbar {
   width:90%;
