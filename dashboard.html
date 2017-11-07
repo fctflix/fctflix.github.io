@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/dashboard.css">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/dashboard.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
@@ -16,19 +17,28 @@
 			<img class="header-logo automargins" src="./images/logo_large.png"/>
 			<div class="search automargins">
 				<input class="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
-				<button style="width:8%;"><i class="material-icons">search</i></button>
+				<button style="width:8%;">
+					<i class="material-icons">search</i>
+				</button>
 			</div>
-			<div class="links automargins">
+			<div class="perc30 automargins noselect">
 				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
-				<a class="perc50 toplinks automargins" href="./community.html">Community</a>
+				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
 			</div>
-			<a href="#" class="perc5 material-icons automargins xx-large">notifications</a>
-			<a href="#" class="perc5 automargins"><img class="avatar-small" src="./images/default_avatar.jpg"/></a>
+			<div class="perc5 automargins noselect" onclick="showNotifs()">
+				<span class="material-icons xx-large pointnclick">notifications</span>
+				<!-- look we have notifications -->
+				<span class="notif-alert" id="new_notifs">3</span>
+			</div>
+				<div class="automargins avatar-out pointnclick" id="user_defs" onclick="showDefs()">
+					<img class="avatar-small" src="./images/default_avatar.jpg"/>
+				</div>
 		</header>
 		<main>
+			<div class="notif-popup" id="notif_popup">hi there<p>you have no notifications<p>you're such a loser</div>
+			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
 			dashboard
 		</main>
-		<!-- do something about this -->
 		<footer>
 			<div class="copyright">
 				© 2017

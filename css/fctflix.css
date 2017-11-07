@@ -89,9 +89,13 @@ footer .copyright {
 .avatar-small {
   max-height:44px;
   max-width:44px;
-  clip-path:circle(20px at center);
+  clip-path:circle(18px at center);
 }
-.links {
+.avatar-out {
+  width:3%;
+  margin-right:2%;
+}
+.perc30 {
   width:30%;
 }
 .perc10 {
@@ -105,4 +109,67 @@ footer .copyright {
 }
 .perc5 {
   width:5%;
+}
+.notif-alert {
+  position: absolute;
+  top: 39%;
+  left: 89.7%;
+  font-size: small;
+  color: black;
+  font-weight: bold;
+  text-align:center;
+  width:1%;
+  pointer-events: none;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+.notif-popup {
+  visibility:hidden;
+  top: 4.5rem;
+  position: fixed;
+  left: 70%;
+  background-color: #bbbbbbcc;
+  color: #111;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 2000;
+  width: 25%;
+  padding: 10px;
+}
+.notif-popup::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 78%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #bbbbbbcc transparent;
+}
+.showpopup {
+  visibility:visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+.pointnclick {
+  cursor: pointer;
+}
+.user-popup {
+  left: 83%;
+  width:15%;
 }
