@@ -7,3 +7,18 @@ a {
 	text-decoration:none;
 	font-weight:bold;
 }
+header {
+    justify-content: center;
+    flex-direction: row;
+}
+main {
+	width:95%;
+	margin:auto;
+  position:relative;
+  top:90px;
+  text-align:justify;
+}
+footer {
+    position: relative;
+    top:100px;
+}

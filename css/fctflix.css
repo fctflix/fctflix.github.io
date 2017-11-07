@@ -17,7 +17,7 @@ body {
     color: #333333;
 }
 header {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     left: 0;
@@ -25,14 +25,16 @@ header {
     background-color: #222;
     color: #fff;
     display:flex;
+    z-index:1000;
 }
 footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
     background-color: #000;
+    z-index:1000;
 }
 footer .copyright {
     display: inline-block;    
@@ -65,28 +67,41 @@ footer .copyright {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-.flexcenter {
-  display: flex;
-  justify-content: center;
-}
-.flexcolumn {
-  flex-direction: column;
-}
 .header-logo {
-   max-width:160px;
-   margin-left:20px;
-   margin-right:40px;
+   width:10%;
+   height:10%;
+   margin-left: 2% !important;
+   margin-right: 3% !important;
 }
 .searchbar {
-  min-width:500px;
-  padding:0 10px;
+  width:90%;
+  padding:10px;
   font-size:medium;
 }
-.spacing30 {
-  margin:0 30px;
+.search {
+  width:45%;
+}
+.automargins {
+  margin:auto;
+  display:inline-flex;
 }
 .avatar-small {
   max-height:44px;
-  max-width: 44px;
-  clip-path: circle(20px at center);
+  max-width:44px;
+  clip-path:circle(20px at center);
+}
+.links {
+  width:30%;
+}
+.perc10 {
+  width:10%;
+}
+.perc50 {
+  width:50%;
+}
+.xx-large {
+  font-size: xx-large !important;
+}
+.perc5 {
+  width:5%;
 }
