@@ -1,0 +1,22 @@
+a.toplinks {
+	font-variant:small-caps;
+	font-size:larger;
+}
+a {
+	color:antiquewhite;
+	text-decoration:none;
+	font-weight:bold;
+}
+header {
+    justify-content: center;
+    flex-direction: row;
+}
+main {
+	width:95%;
+	margin:auto;
+	position:relative;
+	top:90px;
+	text-align:justify;
+	padding-bottom:5rem;
+  	overflow-x:hidden;
+}

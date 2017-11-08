@@ -1,20 +1,52 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>FCTFlix</title>
-	<link rel="icon" type="image/png" href="images/favicon.png">
-	<link rel="stylesheet" href="css/fctflix.css">
-	<link rel="stylesheet" href="css/login.css">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body style="background-color:yellow">
-	<center>
-		<h1>FCTFlix</h1>
-		<img src="https://web.archive.org/web/20090803072446/http://www.geocities.com/Heartland/Village/9080/underconstruction.gif" /><img src="https://web.archive.org/web/20090725150014/http://www.geocities.com/aljannahislamicclothing/underconstructionchange.gif" /><img style="transform: scaleX(-1);" src="https://web.archive.org/web/20090803072446/http://www.geocities.com/Heartland/Village/9080/underconstruction.gif" />
-	</center>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FCTFlix</title>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="stylesheet" href="css/fctflix.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<img class="header-logo automargins" src="./images/logo_large.png"/>
+			<div class="search automargins">
+				<input class="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
+				<button style="width:8%;">
+					<i class="material-icons">search</i>
+				</button>
+			</div>
+			<div class="perc30 automargins noselect">
+				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
+			</div>
+			<div class="perc5 automargins noselect" onclick="showNotifs()">
+				<span class="material-icons xx-large pointnclick">notifications</span>
+				<!-- look we have notifications -->
+				<span class="notif-alert" id="new_notifs">3</span>
+			</div>
+				<div class="automargins avatar-out pointnclick" id="user_defs" onclick="showDefs()">
+					<img class="avatar-small" src="./images/default_avatar.jpg"/>
+				</div>
+		</header>
+		<main>
+			<!-- DO NOT REMOVE THIS PLEASE -->
+			<div class="notif-popup" id="notif_popup">hi there<p>you have no notifications<p>you're such a loser</div>
+			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
+			<!-- DO NOT REMOVE THIS PLEASE -->
+			browse
+		</main>
+		<footer>
+			<div class="copyright">
+				© 2017
+				<br>
+				Made with ❤ in Almada
+			</div>
+		</footer>
+	</body>
 </html>
