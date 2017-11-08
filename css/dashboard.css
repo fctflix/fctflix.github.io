@@ -1,11 +1,69 @@
 .content-thumbnail {
 	width: 300px;
     height: 160px;
-    background: black;
     display:inline-block;
+    margin: 0 5px 0 5px;
 }
-.continue-wrapper {
+.content-wrapper {
 	overflow-y:hidden;
-	overflow-x:scroll;
-	width:max-content;
+	white-space: nowrap;
+	text-align: center;
+	height: fit-content;
+}
+.img-thumbnail {
+	max-width: 100%;
+    max-height: 100%;
+}
+.play {
+	background: url(../images/play.png) center no-repeat;
+	background-size: auto 75%;
+    opacity: 0.3;
+    position: relative;
+	width: 100%;
+    height: 100%;
+    bottom: 103%;
+}
+.play:hover {
+	opacity:0.6;
+	animation:fadeInPlay 0.5s;
+}
+@-webkit-keyframes fadeInPlay {
+    from {opacity: 0.3;}
+    to {opacity: 0.6;}
+}
+
+@keyframes fadeInPlay {
+    from {opacity: 0.3;}
+    to {opacity: 0.6;}
+}
+.play-thumb {
+	max-width: 80%;
+    max-height: 80%;
+    vertical-align: super;
+}
+.bg-black {
+    background: black;
+}
+.list-title {
+	width: 100%;
+    font-weight:bolder;
+}
+.recom-title {
+	width: 100%;
+    text-align: left;
+}
+.avatar-verysmall {
+  max-height:18px;
+  max-width:18px;
+  clip-path:circle(8px at center);
+}
+.title-strip {
+	position: relative;
+    width: 100%;
+    text-align: left;
+    bottom: 29%;
+    background: rgba(50,50,50,0.7);
+    height: 26%;
+    color: white;
+    padding: 5px 0 0 5px;
 }

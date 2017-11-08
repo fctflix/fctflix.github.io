@@ -143,7 +143,7 @@ footer .copyright {
   top: 4.5rem;
   position: fixed;
   left: 70%;
-  background-color: rgba(187,187,187,0.5);
+  background-color: rgba(187,187,187,0.75);
   color: #111;
   text-align: center;
   border-radius: 6px;
@@ -159,7 +159,7 @@ footer .copyright {
   left: 78%;
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent rgba(187,187,187,0.5) transparent;
+  border-color: transparent transparent rgba(187,187,187,0.75) transparent;
 }
 .showpopup {
   visibility:visible;
