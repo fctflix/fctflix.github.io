@@ -5,7 +5,7 @@ header {
     padding: 1rem;
     text-align: right;
     top: 0;
-    background: #fff;
+    background: #222;
     box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
 }
 header .logo{
@@ -22,11 +22,11 @@ header nav ul li {
     font-size: 14px;
 }
 header a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 header a:hover {
-    color: rgb(0, 115, 216);
+    color: rgb(128, 196, 255);
     text-decoration: none;
 }
 .parallax { 
@@ -64,6 +64,7 @@ main {
     max-width: 760px;
     width: 94%;
     padding: 1rem;
+    color: #fff;
 }
 .people {
     text-align: center;
@@ -83,13 +84,13 @@ main {
 }
 article {
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(29, 29, 29, 0.7);
     box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
     margin-bottom: 10px;
 }
 article .posted {
     font-size: 0.8em;
-    color: rgba(0,0,0,0.6);
+    color: rgba(255,255,255,0.6);
 }
 .figures {
     display: flex;
@@ -104,4 +105,7 @@ figure img {
 figure figcaption {
     margin-top: 0.5em;
     font-size: 0.8em;
+}
+a {
+    color: rgb(128, 196, 255);
 }

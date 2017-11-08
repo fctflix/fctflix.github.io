@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FCTFlix</title>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="stylesheet" href="css/fctflix.css">
+		<link rel="stylesheet" href="css/show.css">
+		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<img class="header-logo automargins" src="./images/logo_large.png"/>
+			<div class="search automargins">
+				<input class="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
+				<button style="width:8%;">
+					<i class="material-icons">search</i>
+				</button>
+			</div>
+			<div class="perc30 automargins noselect">
+				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
+			</div>
+			<div class="perc5 automargins noselect" onclick="showNotifs()">
+				<span class="material-icons xx-large pointnclick">notifications</span>
+				<span class="notif-alert" id="new_notifs">3</span>
+			</div>
+				<div class="automargins avatar-out pointnclick" id="user_defs" onclick="showDefs()">
+					<img class="avatar-small" src="./images/default_avatar.jpg"/>
+				</div>
+		</header>
+		<main>
+			<div class="notif-popup" id="notif_popup">hi there<p>you have no notifications<p>you're such a loser</div>
+			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
+			<div class="center card showInfo" style="min-height: 200px;">
+				<div style="height: 200px; width: 136px; float: left;">
+					<img style="height: 100%;border: 4px solid white;box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);" src="https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg.webp">
+				</div>
+				<div style="width: auto;padding-left:0.8rem;height:200px;overflow: hidden;">
+					<div style="margin-bottom: 0.8rem;">
+						<h1>Rick and Morty</h1>
+						<span class="rating">
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star_half</i>
+						</span>
+					</div>
+					<div style="margin-bottom: 0.8rem;">
+						<b>Airs:</b> <span>Mondays at 23PM</span>
+						<b>Network:</b> <span>Comedy Central</span>
+						<b>Language:</b> <span>English</span>
+						<b>Genres:</b> <span>Animation, Comedy, SciFi</span>
+					</div>
+					<div style="display: flex;justify-content: space-around;margin-bottom: 0.8rem;">
+						<a href="#" class="button">Add to List</a>
+						<a href="#" class="button">Go to Community page</a>
+					</div>
+					<div><b>Synopsis:</b> A sociopathic scientist drags his unintelligent grandson on insanely dangerous adventures across the universe.</div>
+				</div>
+			</div>
+			<div class="card episodes">
+				<h2>Episodes</h2>
+				SEASON_SELECTOR
+				EPISODE_SELECTOR
+			</div>
+			<div class="card actors">
+				<h2>Actor</h2>
+				ACTORS
+			</div>
+			<div class="card reviews">
+				<h2>Reviews</h2>
+				btn_addReview
+				select_reviewSort
+				REVIEWS
+			</div>
+		</main>
+		<footer>
+			<div class="copyright">
+				© 2017
+				<br>
+				Made with ❤ in Almada
+			</div>
+		</footer>
+	</body>
+</html>
