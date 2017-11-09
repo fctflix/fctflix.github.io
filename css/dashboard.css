@@ -1,15 +1,5 @@
-.img-thumbnail {
-  background-color: black;
-  width: 280px;
-  height: 160px;
-}
 .play {
     bottom: 103%;
-}
-.list-title {
-	width: 100%;
-    font-weight:bolder;
-    padding-top: 8px;
 }
 .recom-title {
 	width: 100%;
