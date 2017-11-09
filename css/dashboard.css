@@ -3,8 +3,8 @@
   width: 280px;
   height: 160px;
 }
-.play {
-    bottom: 103%;
+.playContainer {
+    margin-top: -164px;
 }
 .list-title {
 	width: 100%;
