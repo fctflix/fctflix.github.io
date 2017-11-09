@@ -1,6 +1,14 @@
 .play {
     bottom: 103%;
 }
+.img-thumbnail {
+  background-color: black;
+  width: 280px;
+  height: 160px;
+}
+.playContainer {
+    margin-top: -164px;
+}
 .recom-title {
 	width: 100%;
     text-align: left;
