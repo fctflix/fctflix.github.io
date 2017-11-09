@@ -1,0 +1,38 @@
+.card.small-right {
+	width:20rem;
+	margin-right:0;
+}
+.center {
+	text-align: center;
+}
+.uhh {
+	font-weight: bold;
+	padding-right:15px;
+}
+.vert-spacer {
+	display: inline-block;
+    margin: 0 5px;
+}
+.username {
+  color: #fff;
+  text-shadow: 0 0 20px black;
+  font-size: 18px;
+  width: 175px;
+  padding: 5px;
+  height: 28px;
+  text-align: center;
+}
+.user-thumbnail {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  clip-path: circle(50px at center);
+}
+.content.smaller {
+	height: 100px;
+    width: 175px;
+}
+.material-icons.align {
+	position: relative;
+    top: 0.25rem;
+}
