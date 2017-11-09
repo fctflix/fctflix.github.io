@@ -14,6 +14,31 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
+		<div id="overlay">
+			<div id="addReview" class="modal">
+				<div class="review">
+					<div class="info">
+						<span class="rating">
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+						</span>
+						<img src="./images/default_avatar.jpg" class="avatar">
+						<span>
+							<div>You</div>
+							<div>now</div>
+						</span>
+					</div>
+					<p>REPLACE WITH INPUT</p>
+					<div class="score">
+						<button onclick="alert('this does not work yet :(')">Post</button>
+					</div>
+					CANCEL
+				</div>
+			</div>
+		</div>
 		<header>
 			<img class="header-logo automargins" src="./images/logo_large.png"/>
 			<div class="search automargins">
@@ -37,7 +62,7 @@
 		<main>
 			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./show.html">watch them</a> or something...</p></div>
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
-			<div class="center card" id="showInfo">
+			<div class="card" id="showInfo">
 				<div class="poster">
 					<img src="https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg">
 				</div>
@@ -68,20 +93,9 @@
 			<div class="card" id="episodes">
 				<h2>Episodes</h2>
 				<div style="margin-bottom: 0.6em;">
-					<b>Season:</b> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">1</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">2</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">3</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">4</a>
+					<b>Season:</b> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">1</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">2</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">3</a> <a href="javascript:void(0)" class="selected" onclick="alert('this does not work yet :(')">4</a>
 				</div>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/679/857/screenshots/thumb/00ea485423.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x08</b><span>Morty's Mind Blowers</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
 					<div class="content" onclick="alert('this does not work yet :(')">
 						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/711/968/screenshots/thumb/224cb11ddc.jpg">
 						<div class="gradient"></div>
@@ -94,17 +108,10 @@
 						</div>
 					</div>
 					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://cdn1.sciencefiction.com/wp-content/uploads/2016/01/Person-of-Interest-Season-4-cast.jpg">
+						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/711/967/screenshots/thumb/d651bb8065.jpg">
 						<div class="gradient"></div>
 						<div class="title">
-							<span>Person of Interest</span>
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/026/792/screenshots/thumb/b04d215783.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<span>Person of Interest</span><b>1x05</b>
+							<b>3x09</b><span>The ABC's of Beth</span>
 						</div>
 						<div class="playContainer">
 							<div class="gradient"></div>
@@ -112,10 +119,32 @@
 						</div>
 					</div>
 					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/shows/000/093/720/fanarts/thumb/a526847f48.jpg">
+						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/679/857/screenshots/thumb/00ea485423.jpg">
 						<div class="gradient"></div>
 						<div class="title">
-							<b>3x06</b><span>eps3.5_kill-pr0cess.inc</span>
+							<b>3x08</b><span>Morty's Mind Blowers</span>
+						</div>
+						<div class="playContainer">
+							<div class="gradient"></div>
+							<div class="play"></div>
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/679/856/screenshots/thumb/53fe97cca9.jpg">
+						<div class="gradient"></div>
+						<div class="title">
+							<b>3x07</b><span>The Ricklantis Mixup</span>
+						</div>
+						<div class="playContainer">
+							<div class="gradient"></div>
+							<div class="play"></div>
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/674/642/screenshots/thumb/d011a7e9af.jpg">
+						<div class="gradient"></div>
+						<div class="title">
+							<b>3x06</b><span>Rest and Ricklaxation</span>
 						</div>
 						<div class="playContainer">
 							<div class="gradient"></div>
@@ -125,7 +154,7 @@
 				</div>
 			</div>
 			<div class="card" id="actors">
-				<h2>Actor</h2>
+				<h2>Actors</h2>
 				<div class="contentList">
 					<div class="actor" onclick="alert('this does not work yet :(')">
 						<img src="https://walter.trakt.tv/images/people/000/471/529/headshots/thumb/fe304eb105.jpg">
@@ -137,22 +166,22 @@
 					<div class="actor" onclick="alert('this does not work yet :(')">
 						<img src="https://walter.trakt.tv/images/people/000/421/126/headshots/thumb/dfe58f45de.jpg">
 						<div class="info">
-							<p class="name" title="Justin Roiland">Chris Parnell</p>
-							<p class="character" title="Rick Sanchez / Morty Smith">Jerry Smith</p>
+							<p class="name" title="Chris Parnell">Chris Parnell</p>
+							<p class="character" title="Jerry Smith">Jerry Smith</p>
 						</div>
 					</div>
 					<div class="actor" onclick="alert('this does not work yet :(')">
 						<img src="https://walter.trakt.tv/images/people/000/428/041/headshots/thumb/65a865ff57.jpg">
 						<div class="info">
-							<p class="name" title="Justin Roiland">Sarah Chalke</p>
-							<p class="character" title="Rick Sanchez / Morty Smith">Beth Smith</p>
+							<p class="name" title="Sarah Chalke">Sarah Chalke</p>
+							<p class="character" title="Beth Smith">Beth Smith</p>
 						</div>
 					</div>
 					<div class="actor" onclick="alert('this does not work yet :(')">
 						<img src="https://walter.trakt.tv/images/people/000/434/202/headshots/thumb/45d54aec34.jpg">
 						<div class="info">
-							<p class="name" title="Justin Roiland">Spencer Grammer</p>
-							<p class="character" title="Rick Sanchez / Morty Smith">Summer Smith</p>
+							<p class="name" title="Spencer Grammer">Spencer Grammer</p>
+							<p class="character" title="Summer Smith">Summer Smith</p>
 						</div>
 					</div>
 				</div>
@@ -169,12 +198,70 @@
 					</select>
 				</span>
 				<br><br>	
-				<button class="wide" onclick="alert('this does not work yet :(')">Add Review</button>
+				<button class="wide" onclick="$('#overlay').show();">Add Review</button>
 				<br><br>
-				<div>
-					<img src="https://i.imgur.com/TdYZdrY.jpg">
+				<div class="review">
+					<div class="info">
+						<span class="rating">
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star_border</i>
+						</span>
+						<img src="https://i.imgur.com/TdYZdrY.jpg" class="avatar">
+						<span>
+							<div>JamesDoe</div>
+							<div>2017-09-21 07:40</div>
+						</span>
+					</div>
+					<p>A smart show that's constantly hilarious and packed with great characters. A must watch!</p>
+					<div class="score">
+						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">92% found this helpful</span>
+					</div>
 				</div>
-				<div>//TODO Review Cards; Reduce shitposting (ahahahahah, jk)</div>
+				<div class="review">
+					<div class="info">
+						<span class="rating">
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+							<i class="material-icons">star</i>
+						</span>
+						<img src="https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg" class="avatar">
+						<span>
+							<div>SchrondingerFedora</div>
+							<div>2017-03-02 17:42</div>
+						</span>
+					</div>
+					<p>To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn’t appreciate, for instance, the humour in Rick’s existential catchphrase “Wubba Lubba Dub Dub,” which itself is a cryptic reference to Turgenev’s Russian epic Fathers and Sons. I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon’s genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂
+
+	And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid 😎</p>
+					<div class="score">
+						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">69% found this helpful</span>
+					</div>
+				</div>
+				<div class="review">
+					<div class="info">
+						<span class="rating">
+							<i class="material-icons">star</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+							<i class="material-icons">star_border</i>
+						</span>
+						<img src="http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg" class="avatar">
+						<span>
+							<div>PeteTheFrog</div>
+							<div>2017-04-20 02:57</div>
+						</span>
+					</div>
+					<p>Bland show for neckbeards!</p>
+					<div class="score">
+						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">1% found this helpful</span>
+					</div>
+				</div>
 			</div>
 		</main>
 		<footer>

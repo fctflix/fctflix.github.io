@@ -1,3 +1,4 @@
+/* SHOW INFO */
 #showInfo {
 	min-height: 200px;
 }
@@ -33,7 +34,7 @@
 #showInfo .infoContainer div:last-child {
 	margin-bottom: 0;
 }
-
+/* ACTORS */
 .actor {
 	width: 140px;
 	display: inline-block;
@@ -68,4 +69,54 @@
 	text-overflow: ellipsis;
 	font-size: small;
 	opacity: 0.7
+}
+/* REVIEWS */
+.review {
+	border: 1px solid rgba(0,0,0,0.1);
+	background: #161616;
+	box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+	margin-bottom: 10px;
+}
+.review .info {
+	padding: 10px;
+}
+.review .avatar {
+	height: 48px;
+	width: 48px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+	vertical-align: middle;
+	object-fit: cover;
+}
+.review .info span:last-child {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+.review .info span:last-child div:last-child {
+	opacity: 0.7;
+}
+.review p {
+	margin: 0;
+	padding: 10px;
+}
+.review .score {
+	border-top: 1px solid rgba(0,0,0,0.2);padding: 10px;
+}
+.review .score span:first-child {
+	vertical-align: middle;
+}
+.review .score .material-icons {
+	cursor: pointer;
+	vertical-align: middle;
+}
+.review .score .average {
+	float: right;
+	vertical-align: middle;
+}
+/* MISC */
+.selected {
+	text-decoration: underline;
+	text-underline-position: under;
 }
