@@ -260,6 +260,7 @@ button.large, select.large {
   width: 280px;
   height: 160px;
   position: absolute;
+  object-fit: cover;
 }
 .content .gradient {
   height: 75px;
