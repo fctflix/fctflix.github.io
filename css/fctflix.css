@@ -188,6 +188,10 @@ header {
     background-color: rgba(29, 29, 29, 0.7);
     box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
 }
+.card.large {
+  width:100%;
+  max-width:none;
+}
 .card h1 {
   display: inline-block;
   margin: 0;
@@ -245,6 +249,7 @@ button.large, select.large {
 .contentList {
   overflow-y: hidden;
   white-space: nowrap;
+  height: -moz-fit-content;
   height: fit-content;
 }
 .content {
