@@ -349,3 +349,11 @@ button.large, select.large {
   display: inline-block;
   width: 1em;
 }
+.img-thumbnail {
+  background-color: black;
+  width: 280px;
+  height: 160px;
+}
+.current {
+  text-decoration: underline;
+}
