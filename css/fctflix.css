@@ -1,3 +1,4 @@
+/* GENERAL */
 html {
   height: 100%;
   box-sizing: border-box;
@@ -14,35 +15,9 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
-  color: #333333;
+  color: #dadada;
 }
-header {
-  position: fixed;
-  right: 0;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #222;
-  color: #fff;
-  display:flex;
-  z-index:1000;
-}
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #000;
-  z-index:1000;
-}
-footer .copyright {
-  display: inline-block;    
-  width: 100%;
-  max-width: 230px;
-  color: #777;
-  font-size: 0.8em;
-}
+/* MATERIAL ICONS */
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -67,6 +42,36 @@ footer .copyright {
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+/* FOOTER */
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #000;
+  z-index:1000;
+}
+footer .copyright {
+  display: inline-block;    
+  width: 100%;
+  max-width: 230px;
+  color: #777;
+  font-size: 0.8em;
+}
+/* HEADER/NAVBAR */
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+  display:flex;
+  z-index:1000;
+  box-shadow: 0 0 4px 3px rgba(0,0,0,0.25);
 }
 .header-logo {
   width:10%;
@@ -172,4 +177,72 @@ footer .copyright {
 .user-popup {
   left: 83%;
   width:15%;
+}
+/* CARDS */
+.card { 
+  margin: auto;
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgba(29, 29, 29, 0.7);
+    box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+}
+.card h1 {
+  display: inline-block;
+  margin: 0;
+}
+.card h2 {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+/* INPUTS */
+button, select {
+  display: inline-block;
+  height: 2.8em;
+  font-size: medium;
+  padding: 0.6em;
+  border: 0;
+  background-color: #d81821;
+  color: #dadada;
+    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
+}
+button{ 
+  text-align: center;
+}
+button:hover, button:focus, button:active, select:hover, select:focus {
+  cursor: pointer;
+  border: 0;
+  background-color: #e82c35;
+  color: #fff;
+    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.2);
+}
+button.wide, select.wide {
+  width: 100%;
+}
+button.large, select.large {
+  width: 16em;
+}
+/* SCROLLBARS */
+/* this won't work on firefox sadly */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    background-color: #545454;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    background-color: #b3b3b3;
+}
+/* MISC */
+.spacer {
+  display: inline-block;
+  width: 1em;
 }
