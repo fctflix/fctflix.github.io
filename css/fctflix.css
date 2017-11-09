@@ -249,6 +249,7 @@ button.large, select.large {
 .contentList {
   overflow-y: hidden;
   white-space: nowrap;
+  height: -moz-fit-content;
   height: fit-content;
 }
 .content {

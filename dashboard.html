@@ -37,9 +37,9 @@
 		<main>
 			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./show.html">watch them</a> or something...</p></div>
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
-			<div class="card large">
+			<div class="card large" id="cont_watch">
 				<h3>Continue Watching?</h3>
-				<div class="content-wrapper" id="cont_watch">
+				<div class="contentList">
 					<div class="content" onclick="alert('this does not work yet :(')">
 						<img class="img-thumbnail" src="https://metrouk2.files.wordpress.com/2017/08/the-simpsons-main.jpg"/>
 						<div class="gradient"></div>
@@ -97,9 +97,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="card large">
+			<div class="card large" id="your_lists">
 				<h3>Your Lists</h3>
-				<div class="content-wrapper" id="your_lists">
+				<div class="contentList">
 					<div class="content" onclick="alert('this does not work yet :(')">
 						<img class="img-thumbnail" src="https://metrouk2.files.wordpress.com/2017/08/the-simpsons-main.jpg"/>
 						<div class="list-title">simpsons</div>
@@ -122,9 +122,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="card large">
+			<div class="card large" id="recent">
 				<h3>Recently Watched</h3>
-				<div class="content-wrapper" id="recent" style="height:auto;">
+				<div class="contentList" style="height:auto;">
 					<div class="content" onclick="alert('this does not work yet :(')">
 						<img class="img-thumbnail" src="https://assets.pcmag.com/media/images/508679-mr-robot.jpg?thumb=y&width=810&height=456"/>
 						<div class="gradient"></div>
@@ -162,48 +162,68 @@
 					</div>
 				</div>
 			</div>
-			<div class="card large">
+			<div class="card large" id="recommend">
 				<h3>Recommendations</h3>
-				<div class="content-wrapper" id="recommend">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="img-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
-						<div class="gradient"></div>
-						<div class="title">
-							<span>How I Met Your Mother</span>
+				<div class="contentList">
+					<div class="content">
+						<div onclick="alert('this does not work yet :(')">
+							<img class="img-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
+							<div class="gradient"></div>
+							<div class="title">
+								<span>How I Met Your Mother</span>
+							</div>
 						</div>
-						<div class="recom-title"><img class="avatar-verysmall" src="./images/default_avatar.jpg"/>&nbsp;Recommended by: <b><u>me :)</u></b></div>
+						<div class="recom-title">
+							<img class="avatar-verysmall" src="./images/default_avatar.jpg"/><span>Recommended by:<span class="recom-name">me :)</span></span>
+						</div>
 					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="img-thumbnail" src="https://art-s.nflximg.net/095e2/1fd8fb8f5ad5c6a191fb646928ad6058e26095e2.jpg"/>
-						<div class="gradient"></div>
-						<div class="title">
-							<span>Perks Of Being A Wallflower</span>
+					<div class="content">
+						<div onclick="alert('this does not work yet :(')">
+							<img class="img-thumbnail" src="https://art-s.nflximg.net/095e2/1fd8fb8f5ad5c6a191fb646928ad6058e26095e2.jpg"/>
+							<div class="gradient"></div>
+							<div class="title">
+								<span>Perks Of Being A Wallflower</span>
+							</div>
 						</div>
-						<div class="recom-title"><img class="avatar-verysmall" src="./images/default_avatar.jpg"/>&nbsp;Recommended by: <b><u>me :)</u></b></div>
+						<div class="recom-title">
+							<img class="avatar-verysmall" src="./images/default_avatar.jpg"/><span>Recommended by:<span class="recom-name">me :)</span></span>
+						</div>
 					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="img-thumbnail" src="http://lebonsalon.com/wp-content/uploads/2017/07/futurama.jpg"/>
-						<div class="gradient"></div>
-						<div class="title">
-							<span>Futurama</span>
+					<div class="content">
+						<div onclick="alert('this does not work yet :(')">
+							<img class="img-thumbnail" src="http://lebonsalon.com/wp-content/uploads/2017/07/futurama.jpg"/>
+							<div class="gradient"></div>
+							<div class="title">
+								<span>Futurama</span>
+							</div>
 						</div>
-						<div class="recom-title"><img class="avatar-verysmall" src="./images/default_avatar.jpg"/>&nbsp;Recommended by: <b><u>me :)</u></b></div>
+						<div class="recom-title">
+							<img class="avatar-verysmall" src="./images/default_avatar.jpg"/><span>Recommended by:<span class="recom-name">me :)</span></span>
+						</div>
 					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="img-thumbnail" src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg"/>
-						<div class="gradient"></div>
-						<div class="title">
-							<span>Game Of Thrones</span>
+					<div class="content">
+						<div onclick="alert('this does not work yet :(')">
+							<img class="img-thumbnail" src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg"/>
+							<div class="gradient"></div>
+							<div class="title">
+								<span>Game Of Thrones</span>
+							</div>
 						</div>
-						<div class="recom-title"><img class="avatar-verysmall" src="./images/default_avatar.jpg"/>&nbsp;Recommended by: <b><u>me :)</u></b></div>
+						<div class="recom-title">
+							<img class="avatar-verysmall" src="./images/default_avatar.jpg"/><span>Recommended by:<span class="recom-name">me :)</span></span>
+						</div>
 					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="img-thumbnail" src="https://www.sensacionalista.com.br/wp-content/uploads/2016/10/GreysCoverPhoto.jpg"/>
-						<div class="gradient"></div>
-						<div class="title">
-							<span>Grey's Anatomy</span>
+					<div class="content">
+						<div onclick="alert('this does not work yet :(')">
+							<img class="img-thumbnail" src="https://www.sensacionalista.com.br/wp-content/uploads/2016/10/GreysCoverPhoto.jpg"/>
+							<div class="gradient"></div>
+							<div class="title">
+								<span>Grey's Anatomy</span>
+							</div>
 						</div>
-						<div class="recom-title"><img class="avatar-verysmall" src="./images/favicon.png"/>&nbsp;<b><u>FCTFlix Recommends</u></b></div>
+						<div class="recom-title">
+							<img class="avatar-verysmall" src="./images/favicon.png"/><span><b><u>FCTFlix Recommends</u></b></span></span>
+						</div>
 					</div>
 				</div>
 			</div>
