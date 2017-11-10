@@ -68,3 +68,49 @@ span.post-title {
 .card h2 {
 	margin-bottom:0px;
 }
+
+
+/* SHOW INFO */
+#showInfo {
+	min-height: 200px;
+}
+.poster {
+	height: 200px;
+	width: 136px;
+	float: left;
+}
+.poster img {
+	height: 100%;
+	border: 4px solid white;
+	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
+}
+#showInfo .infoContainer {
+	width: auto;
+	padding-left: 0.8rem;
+	min-height: 200px;
+	overflow: hidden;
+}
+#showInfo .infoContainer div {
+	margin-bottom: 0.8rem;
+}
+.rating {
+	float: right
+}
+.rating .material-icons {
+	color: gold;
+}
+.infoContainer h4 {
+	margin:0;
+}
+button.subscribed {
+	background-color: rgb(83,149,0)
+}
+button.subscribed:hover {
+	background-color: rgb(196,27,27);
+}
+button.subscribed:hover:before {
+	content:"Unsubscribe"
+}
+button.subscribed:hover span {
+	display:none;
+}

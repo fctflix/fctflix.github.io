@@ -7,5 +7,5 @@ $(document).ready(function() {
 	alert('content title is: '+contents[contentId].title+'. See console for TODO list');
 	console.log('//TODO Use fake db to populate data (whether show or movie); Figure out how we are going to update this data; Add to list; Add Review; Like/Dislike Review');
 
-	$('#gotoCommunity').click(function() { window.location = './community.html?content='+contentId});
+	$('#gotoCommunity').click(function() { window.location = './show/community.html?id='+contentId});
 });
