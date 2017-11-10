@@ -10,6 +10,7 @@ header {
 }
 header .logo{
     height: 50px;
+    width:auto;
     float: left;
 }
 header nav{
