@@ -5,25 +5,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FCTFlix</title>
 		<link rel="icon" type="image/png" href="images/favicon.png">
-		<link rel="stylesheet" href="css/fctflix.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/show.css">
 		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/db.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/show.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
 		<div id="overlay">
 			<div id="addReview" class="modal">
+				<script type="text/javascript">
+					var newReview = {};
+					newReview.user = 0;
+					newReview.text = 'Empty review is empty';
+					newReview.rating = 0;
+				</script>
 				<div class="review">
 					<div class="info">
 						<span class="rating">
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
+							<i class="material-icons" onclick="newReview.rating = 1;">star_border</i>
+							<i class="material-icons" onclick="newReview.rating = 2;">star_border</i>
+							<i class="material-icons" onclick="newReview.rating = 3;">star_border</i>
+							<i class="material-icons" onclick="newReview.rating = 4;">star_border</i>
+							<i class="material-icons" onclick="newReview.rating = 5;">star_border</i>
 						</span>
 						<img src="./images/default_avatar.jpg" class="avatar">
 						<span>
@@ -31,16 +37,17 @@
 							<div>now</div>
 						</span>
 					</div>
-					<p>REPLACE WITH INPUT</p>
-					<div class="score">
-						<button onclick="alert('this does not work yet :(')">Post</button>
+					<p><textarea id="reviewText"></textarea></p>
+					<div class="modalButtons">
+						<button class="small" onclick="alert('this does not work yet :(')">Post</button>
+						<span class="spacer"></span>
+						<button class="small" onclick="$('#reviewText').val('');$('#overlay').hide();">Cancel</button>
 					</div>
-					CANCEL
 				</div>
 			</div>
 		</div>
 		<header>
-			<img class="header-logo automargins" src="./images/logo_large.png"/>
+			<a href="./dashboard.html" class="header-logo automargins"><img src="./images/logo_large.png" alt="logo" class="logo"></a>
 			<div class="search automargins">
 				<input class="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
 				<button style="width:8%;">

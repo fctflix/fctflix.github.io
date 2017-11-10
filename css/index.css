@@ -6,6 +6,7 @@ header {
     text-align: right;
     top: 0;
     background: #222;
+    display: block;
 }
 header .logo{
     height: 50px;
@@ -64,6 +65,7 @@ main {
     width: 94%;
     padding: 1rem;
     color: #fff;
+    top: 0;
 }
 .people {
     text-align: center;
