@@ -5,16 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FCTFlix</title>
 		<link rel="icon" type="image/png" href="images/favicon.png">
-		<link rel="stylesheet" href="css/fctflix.css">
 		<link rel="stylesheet" href="css/main.css">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
+		<link rel="stylesheet" href="css/community.css">
+		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/db.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
 		<header>
-			<img class="header-logo automargins" src="./images/logo_large.png"/>
+			<a href="./dashboard.html" class="header-logo automargins"><img src="./images/logo_large.png" alt="logo" class="logo"></a>
 			<div class="search automargins">
 				<input class="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
 				<button style="width:8%;">
@@ -23,7 +23,7 @@
 			</div>
 			<div class="perc30 automargins noselect">
 				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
-				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
+				<a class="perc10 toplinks automargins current" href="./community.html" style="margin-right: 50%;">Community</a>
 			</div>
 			<div class="perc5 automargins noselect" onclick="showNotifs()">
 				<span class="material-icons xx-large pointnclick">notifications</span>
@@ -36,7 +36,7 @@
 		</header>
 		<main>
 			<!-- DO NOT REMOVE THIS PLEASE -->
-			<div class="notif-popup" id="notif_popup">hi there<p>you have no notifications<p>you're such a loser</div>
+			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./content.html?id=0">watch them</a> or something...</p></div>
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
 			<!-- DO NOT REMOVE THIS PLEASE -->
 			community

@@ -6,11 +6,11 @@
 		<title>FCTFlix</title>
 		<link rel="icon" type="image/png" href="images/favicon.png">
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/show.css">
+		<link rel="stylesheet" href="css/content.css">
 		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="js/db.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/show.js"></script>
+		<script type="text/javascript" src="js/content.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
@@ -67,7 +67,7 @@
 				</div>
 		</header>
 		<main>
-			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./show.html">watch them</a> or something...</p></div>
+			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./content.html?id=0">watch them</a> or something...</p></div>
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
 			<div class="card" id="showInfo">
 				<div class="poster">
@@ -92,7 +92,7 @@
 					</div>
 					<div>
 						<button class="large" onclick="alert('this does not work yet :(')">Add to List</button>
-						<button class="large" onclick="window.location = './community.html?page=SHOW_ID'">Go to Community page</button>
+						<button class="large" id="gotoCommunity">Go to Community page</button>
 					</div>
 					<div><b>Synopsis:</b> A sociopathic scientist drags his unintelligent grandson on insanely dangerous adventures across the universe.</div>
 				</div>

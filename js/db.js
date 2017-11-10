@@ -1,37 +1,44 @@
 /* Who needs servers and databases when you can just fake it with a little bit of JS witchcraft!
 
-> shows[0].seasons[2].episodes[1].title
+> contents[0].seasons[2].episodes[1].title
 < "Rickmancing the Stone"
 
-> shows[0].actors[2].character
+> contents[0].actors[2].character
 < "Beth Smith"
 
-> shows[0].reviews[2].text
-< "Bland show for neckbeards!"
+> contents[1].reviews[0].text
+< "A review that doesn't say anything an interest viewer needs."
 
-> document.getElementById("overlay").style.background = "url('"+users[shows[0].reviews[1].user].avatar+"')"
+> document.getElementById("overlay").style.background = "url('"+users[contents[0].reviews[1].user].avatar+"')"
 < "url('https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg')"
+
+> contents[0].posts[0].comments[0].text
+< "I'M PICKLE RICK!"
 
 */
 
 
 
-var users = [];
-users.push({"name": "Doggo",
+var users = [
+			{"name": "Doggo",
 			"avatar": "./images/default_avatar.jpg"
-			});
-users.push({"name": "JamesDoe",
+			},
+			{"name": "JamesDoe",
 			"avatar": "https://i.imgur.com/TdYZdrY.jpg"
-			});
-users.push({"name": "SchrondingerFedora",
+			},
+			{"name": "SchrondingerFedora",
 			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg"
-			});
-users.push({"name": "PeteTheFrog",
+			},
+			{"name": "PeteTheFrog",
 			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg"
-			});
+			},
+			{"name": "Sethmore",
+			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png"
+			}];
 
-var shows = [];
-shows.push({"title": "Rick and Morty",
+var contents = [
+			{"title": "Rick and Morty",
+			"isShow": true,
 			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
 			"airs": "Mondays at 23PM",
 			"network": "Comedy Central",
@@ -66,19 +73,23 @@ shows.push({"title": "Rick and Morty",
 			"actors": [
 						{"name": "Justin Roiland",
 						"character": "Rick Sanchez / Morty Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/471/529/headshots/thumb/fe304eb105.jpg"
+						"photo": "https://walter.trakt.tv/images/people/000/471/529/headshots/thumb/fe304eb105.jpg",
+						"imdb": "https://www.imdb.com/name/nm1551598/"
 						},
 						{"name": "Chris Parnell",
 						"character": "Jerry Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/421/126/headshots/thumb/dfe58f45de.jpg"
+						"photo": "https://walter.trakt.tv/images/people/000/421/126/headshots/thumb/dfe58f45de.jpg",
+						"imdb": "https://www.imdb.com/name/nm0663177/"
 						},
 						{"name": "Sarah Chalke",
 						"character": "Beth Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/428/041/headshots/thumb/65a865ff57.jpg"
+						"photo": "https://walter.trakt.tv/images/people/000/428/041/headshots/thumb/65a865ff57.jpg",
+						"imdb": "https://www.imdb.com/name/nm0149950/"
 						},
 						{"name": "Spencer Grammer",
 						"character": "Summer Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/434/202/headshots/thumb/45d54aec34.jpg"
+						"photo": "https://walter.trakt.tv/images/people/000/434/202/headshots/thumb/45d54aec34.jpg",
+						"imdb": "https://www.imdb.com/name/nm0334561/"
 						}],
 			"reviews": [
 						{"user": 1,
@@ -101,5 +112,73 @@ shows.push({"title": "Rick and Morty",
 						"text": "Bland show for neckbeards!",
 						"likes": 1,
 						"dislikes": 99
+						}],
+			"posts": [
+						{"user": 3,
+						"title": "WUBBA LUBBA DUB DUB",
+						"date": "2017-08-20 02:57",
+						"text": "And that's the way the news goes!",
+						"likes": 1,
+						"dislikes": 99,
+						"comments": [
+									{"user": 3,
+									"date": "2017-08-20 02:58",
+									"text": "I'M PICKLE RICK!",
+									"likes": 1,
+									"dislikes": 99
+									},
+									{"user": 3,
+									"date": "2017-08-20 02:59",
+									"text": "TIME TO GET SCHWIFTY!",
+									"likes": 1,
+									"dislikes": 99
+									},
+									{"user": 3,
+									"date": "2017-08-20 03:00",
+									"text": "wow u guys are really butthurt XD",
+									"likes": 1,
+									"dislikes": 99
+									}]
 						}]
-			});
+			},
+			{"title": "Fifty Shades Darker",
+			"isShow": false,
+			"poster": "https://walter.trakt.tv/images/movies/000/222/332/posters/thumb/5efccbca57.jpg",
+			"released": "2017-02-10",
+			"language": "English",
+			"genres": ["Drama"],
+			"synopsis": "When a wounded Christian Grey tries to entice a cautious Ana Steele back into his life, she demands a new arrangement before she will give him another chance. As the two begin to build trust and find stability, shadowy figures from Christian’s past start to circle the couple, determined to destroy their hopes for a future together.",
+			"actors": [
+						{"name": "Dakota Johnson",
+						"character": "Anastasia Steele",
+						"photo": "https://walter.trakt.tv/images/people/000/438/351/headshots/thumb/271ef4ea5d.jpg",
+						"imdb": "https://www.imdb.com/name/nm0424848/"
+						},
+						{"name": "Jamie Dornan",
+						"character": "Christian Grey",
+						"photo": "https://walter.trakt.tv/images/people/000/416/100/headshots/thumb/d7ec4c7a4a.jpg"
+						}],
+			"reviews": [
+						{"user": 4,
+						"rating": 3,
+						"date": "2017-10-02 17:52",
+						"text": "A review that doesn't say anything an interest viewer needs.",
+						"likes": 1,
+						"dislikes": 0
+						}],
+			"posts": [
+						{"user": 3,
+						"title": "Still a better love story than Twilight",
+						"date": "2017-08-25 03:57",
+						"text": "see title",
+						"likes": 1,
+						"dislikes": 79,
+						"comments": [
+									{"user": 3,
+									"date": "2017-08-25 06:18",
+									"text": "why the downvotes?",
+									"likes": 1,
+									"dislikes": 18
+									}]
+						}]
+			}];

@@ -1,1 +1,0 @@
-alert('//TODO Use fake db to populate data; Add to list; Go to Community; Add Review; Like/Dislike Review');
