@@ -17,9 +17,16 @@
 
 */
 
+var users, contents;
 
+function reset(){
+	localStorage.clear();
+	localStorage["firstRunOccurred"] = false;
+	window.location.reload();
+}
 
-var users = [
+function defaultUsers(){
+	return [
 			{"name": "Doggo",
 			"avatar": "./images/default_avatar.jpg"
 			},
@@ -35,8 +42,10 @@ var users = [
 			{"name": "Sethmore",
 			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png"
 			}];
+}
 
-var contents = [
+function defaultContents(){
+	return [
 			{"title": "Rick and Morty",
 			"isShow": true,
 			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
@@ -182,3 +191,35 @@ var contents = [
 									}]
 						}]
 			}];
+}
+
+function saveUsers(){
+	localStorage["users"] = JSON.stringify(users);
+}
+
+function loadUsers(){
+	users = JSON.parse(localStorage["users"]);
+}
+function saveContents(){
+	localStorage["contents"] = JSON.stringify(contents);
+}
+
+function loadContents(){
+	contents = JSON.parse(localStorage["contents"]);
+}
+
+if (localStorage["firstRunOccurred"] !== undefined && localStorage["firstRunOccurred"] == "true"){
+	console.log('Loading from localStorage...');
+	loadUsers();
+	loadContents();
+} else {
+	console.log('First time visit.');
+	users = defaultUsers();
+	contents = defaultContents();
+	
+	console.log('Saving to localStorage...');
+	saveUsers();
+	saveContents();
+
+	localStorage["firstRunOccurred"] = true;
+}
