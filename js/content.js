@@ -92,8 +92,12 @@ function populateInfo(){
 
 	//Lists
 	var listsList = document.getElementById("listsList");
+	var count = 0;
 	for (var i = 0; i < users[0].lists.length; i++){
 		var listContainsContent = $.inArray(contentId, users[0].lists[i].contents) > -1;
+		if (listContainsContent){
+			count++;
+		}
 
 		var listEntry = document.createElement("div");
 		listEntry.className = "dropdownEntry";
@@ -126,7 +130,9 @@ function populateInfo(){
 			listEntry.appendChild(icon);
 		listsList.appendChild(listEntry);
 	}
-	
+	document.getElementById("addToListCount").value = count;
+	updateAddToListButton(count);
+
 	//Synopsis
 	document.getElementById('synopsis').innerHTML = contents[contentId].synopsis;
 
@@ -455,6 +461,7 @@ function addReview(){
 
 function toggleAddToList(dropdownEntry){
 	var list = users[0].lists[Number.parseInt(dropdownEntry[1].value)];
+	count = Number.parseInt(document.getElementById("addToListCount").value);
 	if (dropdownEntry[0].value == "1") {
 		//Remove from list
 		list.contents.splice( $.inArray(contentId, list.contents), 1 );
@@ -462,6 +469,8 @@ function toggleAddToList(dropdownEntry){
 		showSnackbar("\""+contents[contentId].title+"\" was removed from \""+list.title+"\"");
 		dropdownEntry[0].value = "0";
 		dropdownEntry[3].innerHTML = "playlist_add";
+
+		count--;
 	} else {
 		//Add to list
 		list.contents.push(contentId);
@@ -469,7 +478,23 @@ function toggleAddToList(dropdownEntry){
 		showSnackbar("\""+contents[contentId].title+"\" was added to \""+list.title+"\"");
 		dropdownEntry[0].value = "1";
 		dropdownEntry[3].innerHTML = "playlist_add_check";
+
+		count++;
 	}
+	document.getElementById("addToListCount").value = count;
+
 	console.log('Saving to localStorage...');
 	saveUsers();
+
+	updateAddToListButton(count);
+}
+
+function updateAddToListButton(count){
+	if (count > 1) {
+		document.getElementById("addToListBtn").innerHTML = "Listed on "+count+" lists";
+	} else if (count == 1) {
+		document.getElementById("addToListBtn").innerHTML = "Listed on "+count+" list";
+	} else {
+		document.getElementById("addToListBtn").innerHTML = "Add to a list";
+	}
 }
