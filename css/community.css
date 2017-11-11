@@ -114,3 +114,13 @@ button.subscribed:hover:before {
 button.subscribed:hover span {
 	display:none;
 }
+button.show-comments {
+    width: 100%;
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
+	height: 2rem;
+    padding-bottom: 1em;
+}
+.card.large {
+    margin-bottom: 0.5rem;
+}
