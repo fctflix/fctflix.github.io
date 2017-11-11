@@ -27,22 +27,85 @@ function reset(){
 }
 
 /* Defaults */
+
+
+[
+			{"owner": 0,
+			"title": "Watchlist",
+			"contents": [1]
+			},
+			{"owner": 1,
+			"title": "Watchlist",
+			"contents": [0, 1]
+			}];
+
+
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
-			"avatar": "/images/default_avatar.jpg"
+			"avatar": "/images/default_avatar.jpg",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [1]
+						},
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [1]
+						},
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [1]
+						},
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [1]
+						},
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [1]
+						}]
 			},
 			{"name": "JamesDoe",
-			"avatar": "https://i.imgur.com/TdYZdrY.jpg"
+			"avatar": "https://i.imgur.com/TdYZdrY.jpg",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						}]
 			},
 			{"name": "SchrondingerFedora",
-			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg"
+			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						}]
 			},
 			{"name": "PeteTheFrog",
-			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg"
+			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						}]
 			},
 			{"name": "Sethmore",
-			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png"
+			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						}]
 			}];
 }
 function defaultContents(){

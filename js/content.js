@@ -417,6 +417,7 @@ function addReview(){
 	document.getElementById("postReview").disabled = true;
 	document.getElementById("cancelReview").disabled = true;
 
+	console.log('Saving to localStorage...');
 	contents[contentId].reviews.push(newReview);
 	saveContents();
 
