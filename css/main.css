@@ -368,6 +368,9 @@ button:disabled, button:disabled:hover {
   height: 28px;
   position: absolute;
   bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content .title span {
   margin: 0 5px 0 5px;

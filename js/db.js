@@ -19,12 +19,14 @@
 
 var users, contents;
 
+/* Overclock database :D */
 function reset(){
 	localStorage.clear();
 	localStorage["firstRunOccurred"] = false;
 	window.location.reload();
 }
 
+/* Defaults */
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
@@ -43,7 +45,6 @@ function defaultUsers(){
 			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png"
 			}];
 }
-
 function defaultContents(){
 	return [
 			{"title": "Rick and Morty",
@@ -195,21 +196,23 @@ function defaultContents(){
 			}];
 }
 
+/* Users */
 function saveUsers(){
 	localStorage["users"] = JSON.stringify(users);
 }
-
 function loadUsers(){
 	users = JSON.parse(localStorage["users"]);
 }
+
+/* Contents */
 function saveContents(){
 	localStorage["contents"] = JSON.stringify(contents);
 }
-
 function loadContents(){
 	contents = JSON.parse(localStorage["contents"]);
 }
 
+/* Check if we can load from localStorage or if we need to use the default values */
 if (localStorage["firstRunOccurred"] !== undefined && localStorage["firstRunOccurred"] == "true"){
 	console.log('Loading from localStorage...');
 	loadUsers();

@@ -155,6 +155,7 @@ function populateEpisodes(season){
 			episode.appendChild(title);
 			var playContainer = document.createElement("div");
 			playContainer.className = "playContainer";
+			playContainer.title = 'Watch '+getEpisodeSeasonStr(season,i+1)+' - '+contents[contentId].seasons[season-1].episodes[i].title;
 				var playGradient = document.createElement("div");
 				playGradient.className = "gradient";
 				playContainer.appendChild(playGradient);
