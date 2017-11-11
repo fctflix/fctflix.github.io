@@ -33,6 +33,7 @@ body {
   white-space: nowrap;
   direction: ltr;
   text-align:center;
+  cursor: default;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -253,6 +254,11 @@ button.large, select.large {
 button.small, select.small {
   width: 8em;
 }
+button:disabled, button:disabled:hover {
+  background-color: rgba(66,107,189,0.3);
+  color: rgba(218, 218, 218, 0.3);
+  cursor: not-allowed;
+}
 /* NEW CHECKBOXES */
 .container {
   display: inline-block;
@@ -429,6 +435,46 @@ button.small, select.small {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+/* SNACKBAR */
+/* Credit: https://www.w3schools.com/howto/howto_js_snackbar.asp */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -180px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 10000; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }
 /* MISC */
 a {

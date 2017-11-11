@@ -28,7 +28,7 @@ function reset(){
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
-			"avatar": "./images/default_avatar.jpg"
+			"avatar": "/images/default_avatar.jpg"
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://i.imgur.com/TdYZdrY.jpg"

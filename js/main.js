@@ -51,3 +51,42 @@ function getRatingStarString(rating) {
 	}
 	return ratingsString;
 }
+
+function getCurrentDateTime(){
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var HH = today.getHours();
+	var MM = today.getMinutes();
+
+	var yyyy = today.getFullYear();
+	if(dd<10){
+		dd='0'+dd;
+	} 
+	if(mm<10){
+		mm='0'+mm;
+	}
+	if(HH<10){
+		HH='0'+HH;
+	}
+	if(MM<10){
+		MM='0'+MM;
+	}
+	return yyyy+'-'+mm+'-'+dd+' '+HH+':'+MM;
+}
+
+//Credit: https://www.w3schools.com/howto/howto_js_snackbar.asp
+function showSnackbar(htmlMessage) {
+	// Get the snackbar DIV
+	var x = document.getElementById("snackbar")
+
+	// Add the "show" class to DIV
+	x.className = "show";
+
+	x.innerHTML = htmlMessage;
+
+	// After 3 seconds, remove the show class from DIV
+	setTimeout(function() {
+		x.className = x.className.replace("show", "");
+	}, 3000);
+};

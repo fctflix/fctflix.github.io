@@ -15,21 +15,16 @@
 	</head>
 	<body>
 		<div id="overlay">
-			<div id="addReview" class="modal">
-				<script type="text/javascript">
-					var newReview = {};
-					newReview.user = 0;
-					newReview.text = 'Empty review is empty';
-					newReview.rating = 0;
-				</script>
+			<div id="addReview" class="modal noselect">
 				<div class="review">
 					<div class="info">
 						<span class="rating">
-							<i class="material-icons" onclick="newReview.rating = 1;">star_border</i>
-							<i class="material-icons" onclick="newReview.rating = 2;">star_border</i>
-							<i class="material-icons" onclick="newReview.rating = 3;">star_border</i>
-							<i class="material-icons" onclick="newReview.rating = 4;">star_border</i>
-							<i class="material-icons" onclick="newReview.rating = 5;">star_border</i>
+							<input type="hidden" id="reviewRating" />
+							<i class="material-icons" onclick="rate(1)" id="reviewModalStar1">star_border</i>
+							<i class="material-icons" onclick="rate(2)" id="reviewModalStar2">star_border</i>
+							<i class="material-icons" onclick="rate(3)" id="reviewModalStar3">star_border</i>
+							<i class="material-icons" onclick="rate(4)" id="reviewModalStar4">star_border</i>
+							<i class="material-icons" onclick="rate(5)" id="reviewModalStar5">star_border</i>
 						</span>
 						<img src="../images/default_avatar.jpg" class="avatar">
 						<span>
@@ -37,11 +32,11 @@
 							<div>now</div>
 						</span>
 					</div>
-					<p><textarea id="reviewText"></textarea></p>
+					<p><textarea id="reviewText" oninput="validateReview(false);"></textarea></p>
 					<div class="modalButtons">
-						<button class="small" onclick="alert('this does not work yet :(')">Post</button>
+						<button class="small" id="postReview" onclick="addReview();" disabled="1">Post</button>
 						<span class="spacer"></span>
-						<button class="small" onclick="$('#reviewText').val('');$('#overlay').hide();">Cancel</button>
+						<button class="small" onclick="$('#overlay').hide();$('#reviewText').val('');rate(0);document.getElementById('postReview').disabled = true;">Cancel</button>
 					</div>
 				</div>
 			</div>
@@ -163,77 +158,18 @@
 				<h2 style="display: inline-block;">Reviews</h2>
 				<span style="float: right;">
 					<b>Sort: </b>
-					<select class="button">
-						<option selected="1">Best</option>
-						<option>Recent</option>
-						<option>Highest Rating</option>
-						<option>Lowest Rating</option>
+					<select class="button" onchange="populateReviewsSorted(this.value);">
+						<option selected="1" value="best">Best</option>
+						<option value="recent">Recent</option>
+						<option value="highest">Highest Rating</option>
+						<option value="lowest">Lowest Rating</option>
 					</select>
 				</span>
 				<br><br>	
 				<button class="wide" onclick="$('#overlay').show();">Add Review</button>
 				<br><br>
-				<div class="review">
-					<div class="info">
-						<span class="rating">
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star_border</i>
-						</span>
-						<img src="https://i.imgur.com/TdYZdrY.jpg" class="avatar">
-						<span>
-							<div>JamesDoe</div>
-							<div>2017-09-21 07:40</div>
-						</span>
-					</div>
-					<p>A smart show that's constantly hilarious and packed with great characters. A must watch!</p>
-					<div class="score">
-						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">92% found this helpful</span>
-					</div>
-				</div>
-				<div class="review">
-					<div class="info">
-						<span class="rating">
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-						</span>
-						<img src="https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg" class="avatar">
-						<span>
-							<div>SchrondingerFedora</div>
-							<div>2017-03-02 17:42</div>
-						</span>
-					</div>
-					<p>To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn’t appreciate, for instance, the humour in Rick’s existential catchphrase “Wubba Lubba Dub Dub,” which itself is a cryptic reference to Turgenev’s Russian epic Fathers and Sons. I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon’s genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂
-
-	And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid 😎</p>
-					<div class="score">
-						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">69% found this helpful</span>
-					</div>
-				</div>
-				<div class="review">
-					<div class="info">
-						<span class="rating">
-							<i class="material-icons">star</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-							<i class="material-icons">star_border</i>
-						</span>
-						<img src="http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg" class="avatar">
-						<span>
-							<div>PeteTheFrog</div>
-							<div>2017-04-20 02:57</div>
-						</span>
-					</div>
-					<p>Bland show for neckbeards!</p>
-					<div class="score">
-						<span>Was this review helpful?</span><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_up</i><span class="spacer"></span><i class="material-icons" onclick="alert('this does not work yet :(')">thumb_down</i><span class="average">1% found this helpful</span>
-					</div>
+				<div id="reviewsList">
+					
 				</div>
 			</div>
 		</main>
@@ -244,5 +180,6 @@
 				Made with ❤ in Almada
 			</div>
 		</footer>
+		<div id="snackbar">Uh oh... You shouldn't be able to see this. Hi?</div>
 	</body>
 </html>
