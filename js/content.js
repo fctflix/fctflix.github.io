@@ -6,7 +6,7 @@ if (isNaN(contentId) || contentId > contents.length || contentId < 0){
 
 $(document).ready(function() {
 	//TODO REMOVE
-	console.log('//TODO Add to list; Like/Dislike Review;');
+	console.log('//TODO Like/Dislike Review;');
 
 	populateInfo();
 	if (contents[contentId].isShow){
@@ -14,12 +14,10 @@ $(document).ready(function() {
 		$('#episodes').show();
 	}
 	populateActors();
-	populateReviews();
+	populateReviews("best");
 });
 
 function populateInfo(){
-	console.log("Populating info");
-
 	//Poster
 	var poster = $("#showPoster")[0];
 	poster.children[0].src = contents[contentId].poster;
@@ -91,6 +89,43 @@ function populateInfo(){
 	var spacer = document.createElement("span");
 	spacer.className = "spacer";
 	infoDetails.appendChild(spacer);
+
+	//Lists
+	var listsList = document.getElementById("listsList");
+	for (var i = 0; i < users[0].lists.length; i++){
+		var listContainsContent = $.inArray(contentId, users[0].lists[i].contents) > -1;
+
+		var listEntry = document.createElement("div");
+		listEntry.className = "dropdownEntry";
+		var str = ""+i;
+		listEntry.onclick = function(){ toggleAddToList(this.children); };
+			var contains = document.createElement("input");
+			contains.type = "hidden";
+			contains.name = "contains";
+			if (listContainsContent){
+				contains.value = "1";
+			} else {
+				contains.value = "0";
+			}
+			listEntry.appendChild(contains);
+			var list = document.createElement("input");
+			list.type = "hidden";
+			list.name = "list";
+			list.value = i;
+			listEntry.appendChild(list);
+			var title = document.createElement("span");
+			title.innerHTML = users[0].lists[0].title;
+			listEntry.appendChild(title);
+			var icon = document.createElement("i");
+			icon.className = "material-icons";
+			if (listContainsContent){
+				icon.innerHTML = "playlist_add_check";
+			} else {
+				icon.innerHTML = "playlist_add";
+			}
+			listEntry.appendChild(icon);
+		listsList.appendChild(listEntry);
+	}
 	
 	//Synopsis
 	document.getElementById('synopsis').innerHTML = contents[contentId].synopsis;
@@ -100,8 +135,6 @@ function populateInfo(){
 }
 
 function populateSeasons(){
-	console.log("Populating seasons");
-
 	var seasonsList = document.getElementById("seasonsList");
 	for (var i = 1; i <= contents[contentId].seasons.length; i++){
 		var season = document.createElement("a");
@@ -168,8 +201,6 @@ function populateEpisodes(season){
 }
 
 function populateActors(){
-	console.log("Populating actors");
-
 	var actorsList = document.getElementById('actorsList');
 	for (i = 0; i < contents[contentId].actors.length; i++){
 		var actor = document.createElement("div");
@@ -197,12 +228,7 @@ function populateActors(){
 	}
 }
 
-function populateReviews(){
-	console.log("Populating reviews");
-	populateReviewsSorted("best");
-}
-
-function populateReviewsSorted(sort){
+function populateReviews(sort){
 	console.log("Populating reviews using sort: "+sort);
 
 	var reviewsList = document.getElementById('reviewsList');
@@ -417,11 +443,33 @@ function addReview(){
 	document.getElementById("postReview").disabled = true;
 	document.getElementById("cancelReview").disabled = true;
 
-	console.log('Saving to localStorage...');
 	contents[contentId].reviews.push(newReview);
+	
+	console.log('Saving to localStorage...');
 	saveContents();
 
 	showSnackbar("Thanks for your review of \""+contents[contentId].title+"\"!");
 
 	setTimeout(location.reload.bind(location), 2500);
+}
+
+function toggleAddToList(dropdownEntry){
+	var list = users[0].lists[Number.parseInt(dropdownEntry[1].value)];
+	if (dropdownEntry[0].value == "1") {
+		//Remove from list
+		list.contents.splice( $.inArray(contentId, list.contents), 1 );
+
+		showSnackbar("\""+contents[contentId].title+"\" was removed from \""+list.title+"\"");
+		dropdownEntry[0].value = "0";
+		dropdownEntry[3].innerHTML = "playlist_add";
+	} else {
+		//Add to list
+		list.contents.push(contentId);
+
+		showSnackbar("\""+contents[contentId].title+"\" was added to \""+list.title+"\"");
+		dropdownEntry[0].value = "1";
+		dropdownEntry[3].innerHTML = "playlist_add_check";
+	}
+	console.log('Saving to localStorage...');
+	saveUsers();
 }

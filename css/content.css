@@ -45,13 +45,13 @@
 	opacity: 0.3;
 }
 #showInfo .infoContainer {
-	width: auto;
+	margin-left: 136px;
 	padding-left: 0.8rem;
 	min-height: 200px;
-	overflow: hidden;
+	width: calc(100% - 136px);
 }
 #showInfo .infoContainer div {
-	margin-bottom: 0.8rem;
+	
 }
 .rating {
 	float: right
@@ -59,7 +59,10 @@
 .rating .material-icons {
 	color: gold;
 }
-#showInfo .infoContainer div:nth-child(3) {
+#showInfo .infoContainer #infoMain, #showInfo .infoContainer #infoDetails, #showInfo .infoContainer #infoButtons {
+	margin-bottom: 0.8rem;
+}
+#infoButtons {
 	display: flex;
 	justify-content: space-around;
 }
@@ -167,4 +170,37 @@ textarea {
 }
 .seasonSelector {
 	margin-right: 5px;
+}
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0!important;
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: rgb(56,97,179);
+    width: 16em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+.dropdown button {
+	cursor: default;
+}
+.dropdownEntry {
+	line-height: 24px;
+	padding: 10px;
+}
+.dropdownEntry:hover {	
+    background-color: rgb(46,87,169);
+}
+.dropdownEntry i {
+	float: right;
+}
+.dropdownEntry, .dropdownEntry span, .dropdownEntry i {
+	cursor: pointer;
 }
