@@ -33,3 +33,21 @@ $(document).ready(function() {
 		return false;
 	});
 });
+
+function getRatingStarString(rating) {
+	var ratingsString = "";
+	var intPart = Math.floor(rating);
+	var remaining = 5;
+	for (i = 0; i < intPart; i++){
+		ratingsString += '<i class="material-icons">star</i>';
+		remaining--;
+	}
+	if (rating - intPart >= 0.5){
+		ratingsString += '<i class="material-icons">star_half</i>';
+		remaining--;
+	}
+	for (i = 0; i < remaining; i++){
+		ratingsString += '<i class="material-icons">star_border</i>';
+	}
+	return ratingsString;
+}

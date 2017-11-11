@@ -71,33 +71,26 @@
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
 			<div class="card" id="showInfo">
 				<div class="poster">
-					<img src="https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg">
+					<img id="showPoster" src="">
 				</div>
 				<div class="infoContainer">
 					<div>
-						<h1>Rick and Morty</h1>
-						<span class="rating">
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star</i>
-							<i class="material-icons">star_half</i>
+						<h1 id="contentTitle">Loading...</h1>
+						<span class="rating" id="contentRating">
+							Loading...
 						</span>
 					</div>
-					<div>
-						<b>Airs: </b><span>Mondays at 23PM</span><span class="spacer"></span>
-						<b>Network: </b><span>Comedy Central</span><span class="spacer"></span>
-						<b>Language: </b><span>English</span><span class="spacer"></span>
-						<b>Genres: </b><span>Animation, Comedy, SciFi</span><span class="spacer"></span>
+					<div id="infoDetails">
+						
 					</div>
 					<div>
 						<button class="large" onclick="alert('this does not work yet :(')">Add to List</button>
-						<button class="large" id="gotoCommunity">Go to Community page</button>
+						<button class="large" id="gotoCommunity" onclick="goToCommunity();">Go to Community page</button>
 					</div>
-					<div><b>Synopsis:</b> A sociopathic scientist drags his unintelligent grandson on insanely dangerous adventures across the universe.</div>
+					<div><b>Synopsis: </b><span id="synopsis">Loading...</span></div>
 				</div>
 			</div>
-			<div class="card" id="episodes">
+			<div class="card" id="episodes" style="display: none;">
 				<h2>Episodes</h2>
 				<div style="margin-bottom: 0.6em;">
 					<b>Season:</b> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">1</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">2</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">3</a> <a href="javascript:void(0)" class="selected" onclick="alert('this does not work yet :(')">4</a>
@@ -162,35 +155,8 @@
 			</div>
 			<div class="card" id="actors">
 				<h2>Actors</h2>
-				<div class="contentList">
-					<div class="actor" onclick="alert('this does not work yet :(')">
-						<img src="https://walter.trakt.tv/images/people/000/471/529/headshots/thumb/fe304eb105.jpg">
-						<div class="info">
-							<p class="name" title="Justin Roiland">Justin Roiland</p>
-							<p class="character" title="Rick Sanchez / Morty Smith">Rick Sanchez / Morty Smith</p>
-						</div>
-					</div>
-					<div class="actor" onclick="alert('this does not work yet :(')">
-						<img src="https://walter.trakt.tv/images/people/000/421/126/headshots/thumb/dfe58f45de.jpg">
-						<div class="info">
-							<p class="name" title="Chris Parnell">Chris Parnell</p>
-							<p class="character" title="Jerry Smith">Jerry Smith</p>
-						</div>
-					</div>
-					<div class="actor" onclick="alert('this does not work yet :(')">
-						<img src="https://walter.trakt.tv/images/people/000/428/041/headshots/thumb/65a865ff57.jpg">
-						<div class="info">
-							<p class="name" title="Sarah Chalke">Sarah Chalke</p>
-							<p class="character" title="Beth Smith">Beth Smith</p>
-						</div>
-					</div>
-					<div class="actor" onclick="alert('this does not work yet :(')">
-						<img src="https://walter.trakt.tv/images/people/000/434/202/headshots/thumb/45d54aec34.jpg">
-						<div class="info">
-							<p class="name" title="Spencer Grammer">Spencer Grammer</p>
-							<p class="character" title="Summer Smith">Summer Smith</p>
-						</div>
-					</div>
+				<div class="contentList" id="actorsList">
+
 				</div>
 			</div>
 			<div class="card" id="reviews">

@@ -38,7 +38,7 @@
 .actor {
 	width: 140px;
 	display: inline-block;
-	margin-right: 5px;
+	margin-right: 10px;
 	cursor: pointer;
 }
 .actor img {
@@ -59,7 +59,8 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-size: normal;
+	font-weight: normal;
+	color: #dadada;
 }
 .actor .info .character {
 	margin: 0;
@@ -67,7 +68,9 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	font-weight: normal;
 	font-size: small;
+	color: #dadada;
 	opacity: 0.7
 }
 /* REVIEWS */
