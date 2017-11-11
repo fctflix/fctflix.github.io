@@ -339,7 +339,7 @@ button:disabled, button:disabled:hover {
   height: 160px;
   position: relative;
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .content .thumbnail {
   background-color: black;

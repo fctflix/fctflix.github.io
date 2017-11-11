@@ -6,7 +6,7 @@ if (isNaN(contentId) || contentId > contents.length || contentId < 0){
 
 $(document).ready(function() {
 	//TODO REMOVE
-	console.log('//TODO Episodes; Add to list; Like/Dislike Review;');
+	console.log('//TODO Add to list; Like/Dislike Review;');
 
 	populateInfo();
 	if (contents[contentId].isShow){
@@ -21,7 +21,13 @@ function populateInfo(){
 	console.log("Populating info");
 
 	//Poster
-	document.getElementById('showPoster').src = contents[contentId].poster;
+	var poster = $("#showPoster")[0];
+	poster.children[0].src = contents[contentId].poster;
+	if (contents[contentId].isShow){
+		poster.onclick = function(){ window.location = '../player.html?contentId='+contentId+'&season=1&episode=1'; };
+	} else {
+		poster.onclick = function(){ window.location = '../player.html?contentId='+contentId; };
+	}
 
 	//Title
 	document.getElementById('contentTitle').innerHTML = contents[contentId].title;
@@ -95,12 +101,69 @@ function populateInfo(){
 
 function populateSeasons(){
 	console.log("Populating seasons");
+
+	var seasonsList = document.getElementById("seasonsList");
+	for (var i = 1; i <= contents[contentId].seasons.length; i++){
+		var season = document.createElement("a");
+		season.href = "javascript:void(0)";
+		season.onclick = function(){ populateEpisodes(this.innerHTML); };
+		season.id = "seasonSelector"+i;
+		if (i == 1){
+			season.className = "seasonSelector selected";
+		} else {
+			season.className = "seasonSelector";
+		}		
+		season.innerHTML = i;
+		seasonsList.appendChild(season);
+	}
 	populateEpisodes(1);
 }
 
 function populateEpisodes(season){
-	console.log("Populating episodes for season "+season);
-	console.log("TODO populateEpisodes(season)");
+	console.log("Populating episodes for season: "+season);
+
+	//Update selector
+	var selected = document.getElementById("selectedSeason");
+	document.getElementById("seasonSelector"+selected.value).className = "seasonSelector";
+	document.getElementById("seasonSelector"+season).className = "seasonSelector selected";
+	selected.value = season;
+
+	var episodesList = document.getElementById("episodesList");
+	
+	episodesList.innerHTML = "";
+
+	for (var i = 0; i < contents[contentId].seasons[season-1].episodes.length; i++){
+		var episode = document.createElement("div");
+		episode.className = "content";
+		episode.value = "season="+season+"&episode="+(i+1);
+		episode.onclick = function(){ window.location = '../player.html?contentId='+contentId+'&'+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "thumbnail";
+			thumbnail.src = contents[contentId].seasons[season-1].episodes[i].thumbnail;
+			episode.appendChild(thumbnail);
+			var thumbGradient = document.createElement("div");
+			thumbGradient.className = "gradient";
+			episode.appendChild(thumbGradient);
+			var title = document.createElement("div");
+			title.className = "title";
+				var b = document.createElement("b");
+				b.innerHTML = getEpisodeSeasonStr(season,i+1);
+				title.appendChild(b);
+				var span = document.createElement("span");
+				span.innerHTML = contents[contentId].seasons[season-1].episodes[i].title;
+				title.appendChild(span);
+			episode.appendChild(title);
+			var playContainer = document.createElement("div");
+			playContainer.className = "playContainer";
+				var playGradient = document.createElement("div");
+				playGradient.className = "gradient";
+				playContainer.appendChild(playGradient);
+				var play = document.createElement("div");
+				play.className = "play";
+				playContainer.appendChild(play);
+			episode.appendChild(playContainer);
+		episodesList.appendChild(episode);
+	}
 }
 
 function populateActors(){
@@ -325,7 +388,7 @@ function rate(newRating){
 }
 
 function validateReview(showAlert){
-	if (document.getElementById("reviewRating").value == 0 || document.getElementById("reviewText").value == ""){
+	if (Number.parseInt(document.getElementById("reviewRating").value) == 0 || document.getElementById("reviewText").value == ""){
 		document.getElementById("postReview").disabled = true;
 		if (showAlert){
 			alert("Make sure you've rated and typed your review");
@@ -340,7 +403,7 @@ function validateReview(showAlert){
 function addReview(){
 	var newReview = {};
 	newReview.user = 0;
-	newReview.rating = document.getElementById("reviewRating").value;
+	newReview.rating = Number.parseInt(document.getElementById("reviewRating").value);
 	newReview.date = getCurrentDateTime();
 	newReview.text = document.getElementById("reviewText").value;
 	newReview.likes = 1;
@@ -349,6 +412,9 @@ function addReview(){
 	if (!validateReview(true)){
 		return;
 	}
+
+	document.getElementById("postReview").disabled = true;
+	document.getElementById("cancelReview").disabled = true;
 
 	contents[contentId].reviews.push(newReview);
 	saveContents();

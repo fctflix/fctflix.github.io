@@ -36,7 +36,7 @@
 					<div class="modalButtons">
 						<button class="small" id="postReview" onclick="addReview();" disabled="1">Post</button>
 						<span class="spacer"></span>
-						<button class="small" onclick="$('#overlay').hide();$('#reviewText').val('');rate(0);document.getElementById('postReview').disabled = true;">Cancel</button>
+						<button class="small" id="cancelReview" onclick="$('#overlay').hide();$('#reviewText').val('');rate(0);document.getElementById('postReview').disabled = true;">Cancel</button>
 					</div>
 				</div>
 			</div>
@@ -65,8 +65,12 @@
 			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./content.html?id=0">watch them</a> or something...</p></div>
 			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
 			<div class="card" id="showInfo">
-				<div class="poster">
-					<img id="showPoster" src="">
+				<div id="showPoster" class="poster">
+					<img src="">
+					<div class="playContainer">
+						<div class="gradient"></div>
+						<div class="play"></div>
+					</div>
 				</div>
 				<div class="infoContainer">
 					<div>
@@ -88,64 +92,11 @@
 			<div class="card" id="episodes" style="display: none;">
 				<h2>Episodes</h2>
 				<div style="margin-bottom: 0.6em;">
-					<b>Season:</b> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">1</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">2</a> <a href="javascript:void(0)" onclick="alert('this does not work yet :(')">3</a> <a href="javascript:void(0)" class="selected" onclick="alert('this does not work yet :(')">4</a>
+					<input type="hidden" id="selectedSeason" value="1" />
+					<b>Season:</b> <span id="seasonsList"></span>
 				</div>
-				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/711/968/screenshots/thumb/224cb11ddc.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x10</b><span>The Rickchurian Mortydate</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/711/967/screenshots/thumb/d651bb8065.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x09</b><span>The ABC's of Beth</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/679/857/screenshots/thumb/00ea485423.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x08</b><span>Morty's Mind Blowers</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/679/856/screenshots/thumb/53fe97cca9.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x07</b><span>The Ricklantis Mixup</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://walter.trakt.tv/images/episodes/002/674/642/screenshots/thumb/d011a7e9af.jpg">
-						<div class="gradient"></div>
-						<div class="title">
-							<b>3x06</b><span>Rest and Ricklaxation</span>
-						</div>
-						<div class="playContainer">
-							<div class="gradient"></div>
-							<div class="play"></div>
-						</div>
-					</div>
+				<div class="contentList" id="episodesList">
+					
 				</div>
 			</div>
 			<div class="card" id="actors">

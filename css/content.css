@@ -6,11 +6,43 @@
 	height: 200px;
 	width: 136px;
 	float: left;
+	cursor: pointer;
 }
 .poster img {
-	height: 100%;
+	height: 200px;
+	width: 136px;
 	border: 4px solid white;
 	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
+	position: absolute;
+}
+.poster .playContainer {
+	width: 136px;
+	height: 200px;
+	opacity: 0.3;
+	-webkit-transform: translateZ(0);
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+.poster .playContainer:hover {
+	opacity: 1;
+}
+.poster .play {
+	background: url('../images/play.png') center no-repeat;
+	background-size: auto 25%;
+	width: 136px;
+	height: 200px;
+	position: absolute;
+}
+.poster .playContainer .gradient {
+	background: black;
+	background-size: auto 25%;
+	width: 136px;
+	height: 200px;
+	position: absolute;
+	opacity: 0.3;
 }
 #showInfo .infoContainer {
 	width: auto;
@@ -120,8 +152,7 @@
 }
 /* MISC */
 .selected {
-	text-decoration: underline;
-	text-underline-position: under;
+	border-bottom: 1px solid white;
 }
 textarea {
 	background-color: #b4b4b4;
@@ -133,4 +164,7 @@ textarea {
 	justify-content: flex-end;
 	padding: 10px;
 	border-top: 1px solid rgba(0,0,0,0.2);
+}
+.seasonSelector {
+	margin-right: 5px;
 }

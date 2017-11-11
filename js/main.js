@@ -75,6 +75,16 @@ function getCurrentDateTime(){
 	return yyyy+'-'+mm+'-'+dd+' '+HH+':'+MM;
 }
 
+function getEpisodeSeasonStr(season, episode){
+	var connector;
+	if (episode < 10){
+		connector = "x0";
+	} else {
+		connector = "x";
+	}
+	return season + connector + episode;
+}
+
 //Credit: https://www.w3schools.com/howto/howto_js_snackbar.asp
 function showSnackbar(htmlMessage) {
 	// Get the snackbar DIV
