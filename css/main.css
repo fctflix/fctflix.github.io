@@ -259,6 +259,11 @@ button:disabled, button:disabled:hover {
   color: rgba(218, 218, 218, 0.3);
   cursor: not-allowed;
 }
+textarea {
+  background-color: #b4b4b4;
+  width: 100%;
+  height: 120px;
+}
 /* NEW CHECKBOXES */
 .container {
   display: inline-block;

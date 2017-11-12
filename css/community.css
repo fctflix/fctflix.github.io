@@ -48,15 +48,16 @@ h4.post-title {
 }
 .post-timestamp {
 	display:inline-block;
-	width:12%;
-    position: relative;
-    bottom: 2.2rem;
     text-align: right;
+    float:right;
 }
 span.post-title {
     vertical-align: middle;
     line-height: normal;
     display: inline-block;
+}
+.post-image {
+	width:100%;
 }
 .post-content {
 	width: 100%;
@@ -68,8 +69,6 @@ span.post-title {
 .card h2 {
 	margin-bottom:0px;
 }
-
-
 /* SHOW INFO */
 #showInfo {
 	min-height: 200px;
@@ -120,7 +119,55 @@ button.show-comments {
     margin-bottom: 0.8rem;
 	height: 2rem;
     padding-bottom: 1em;
+    line-height: 1rem;
 }
 .card.large {
     margin-bottom: 0.5rem;
+}
+.discussion {
+	width:100%;
+	margin-bottom: 0.8rem;
+}
+/*NEW POST*/
+.newpost {
+	border: 1px solid rgba(0,0,0,0.1);
+	background: #161616;
+	box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+	margin-bottom: 10px;
+}
+.newpost .info {
+	padding: 10px;
+}
+.newpost .avatar {
+	height: 48px;
+	width: 48px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+	vertical-align: middle;
+	object-fit: cover;
+}
+.newpost .info span:last-child {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.newpost .info span:last-child div:last-child {
+	opacity: 0.7;
+}
+.newpost p {
+	margin: 0;
+	padding: 10px;
+}
+.modalButtons {
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+textarea.title {
+    height: 30px;
+    margin-bottom: -1rem;
+    font-size: large;
 }

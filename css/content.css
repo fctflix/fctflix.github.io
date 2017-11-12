@@ -154,11 +154,6 @@
 .selected {
 	border-bottom: 1px solid white;
 }
-textarea {
-	background-color: #b4b4b4;
-	width: 100%;
-	height: 120px;
-}
 .modalButtons {
 	display: flex;
 	justify-content: flex-end;

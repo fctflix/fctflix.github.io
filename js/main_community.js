@@ -1,68 +1,23 @@
-var contentId = Number.parseInt(getQueryParameterByName("id"));
-if (isNaN(contentId) || contentId >= contents.length || contentId < 0){
-	alert('Invalid content id');
-	window.location = '../dashboard.html';
-}
-
 $(document).ready(function() {
 
-	setupCommunity();
+	setupSubscriptions();
 	fillCommunityPosts();
 
 });
 
-function setupCommunity() {
-	console.log("Preparing community info...");
-
-	//Poster
-	var poster = $("#showPoster")[0];
-	poster.children[0].src = contents[contentId].poster;
-
-	//Title
-	document.getElementById('contentTitle').innerHTML = contents[contentId].title;
-
-	//Rating
-	document.getElementById('contentRating').innerHTML = getRatingStarString(contents[contentId].rating);
-
-	//Genres
-	var genresString = "";
-	for (i = 0; i < contents[contentId].genres.length; i++){
-		if (genresString.length > 0){
-			genresString += ", ";
-		}
-		genresString += contents[contentId].genres[i];
-	}
-	document.getElementById('genreList').innerHTML = genresString;
-
-	//is subscribed or not
-	updateSubscription()
-}
-
-function toggleSubscription() {
-	if(users[0].subscriptions.includes(contentId)) {
-		users[0].subscriptions = users[0].subscriptions.filter(e => e !== contentId)
-	} else {
-		users[0].subscriptions.push(contentId)
-	}
-	updateSubscription()
-	saveUsers()
-}
-
-function updateSubscription() {
-	//uhh we should check who is logged in instead of using zero but ok
-	if(users[0].subscriptions.includes(contentId)) {
-		$("#subscribe").addClass("subscribed")
-		$("#subscribe > span").html("Subscribed!")
-	} else {
-		$("#subscribe").removeClass("subscribed")
-		$("#subscribe > span").html("Subscribe")
-	}
+function setupSubscriptions() {
+	console.log("//TODO: change the subscriptions shown on top");
 }
 
 function fillCommunityPosts() {
 	console.log("Filling the community with posts...");
 
-	var posts = contents[contentId].posts;
+	var posts = []
+	for(show of contents) {
+		for(post of show.posts) {
+			posts.push(post)
+		}
+	}
 	posts.sort( (a,b) => Date.parse(b["date"]) - Date.parse(a["date"]))
 	var postHTML = []
 
@@ -134,11 +89,10 @@ function fillCommunityPosts() {
 	}
 
 	//this makes sure that both sides have a somewhat even height i think
-	$(".left")[0].append(postHTML[0])
-	var leftHeight = document.getElementsByClassName("discussion")[0].offsetHeight + postHTML[0].offsetHeight
+	var leftHeight = 0
 	var rightHeight = 0
 
-	for(var i = 1; i < postHTML.length; i++) {
+	for(var i = 0; i < postHTML.length; i++) {
 		var elem = postHTML[i]
 		if(leftHeight <= rightHeight) {
 			$(".left")[0].append(elem)
@@ -161,41 +115,4 @@ function calculateTimeDifference(date) {
 	if(millis < 60*60*24) return Math.floor(millis/60/60)+"h"
 	if(millis < 60*60*24*365) return Math.floor(millis/60/60/24)+"d"
 	return "null" //safety measure
-}
-
-function validatePost(showAlert){
-	if (Number.parseInt(document.getElementById("postTitle").value) == "" || document.getElementById("postText").value == ""){
-		document.getElementById("postPost").disabled = true;
-		if (showAlert){
-			alert("Make sure you've typed a title and message for your post");
-		}
-		return false;
-	} else {
-		document.getElementById("postPost").disabled = false;
-		return true;
-	}
-}
-
-function addPost(){
-	var newPost = {};
-	newPost.user = 0;
-	newPost.comments = [];
-	newPost.date = getCurrentDateTime();
-	newPost.title = document.getElementById("postTitle").value;
-	newPost.text = document.getElementById("postText").value;
-	newPost.likes = 1;
-	newPost.dislikes = 0;
-
-	if (!validatePost(true)) return
-
-	document.getElementById("postPost").disabled = true;
-	document.getElementById("cancelPost").disabled = true;
-
-	console.log('Saving to localStorage...');
-	contents[contentId].posts.push(newPost);
-	saveContents();
-
-	showSnackbar("Thanks for your post on <b>"+contents[contentId].title+"</b>'s community!");
-
-	setTimeout(location.reload.bind(location), 2500);
 }
