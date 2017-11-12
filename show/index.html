@@ -50,8 +50,8 @@
 				</button>
 			</div>
 			<div class="perc30 automargins noselect">
-				<a class="perc10 toplinks automargins" href="../browse.html">Browse</a>
-				<a class="perc10 toplinks automargins" href="../community.html" style="margin-right: 50%;">Community</a>
+				<a class="perc10 toplinks automargins" href="/browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="/community.html" style="margin-right: 50%;">Community</a>
 			</div>
 			<div class="perc5 automargins noselect" onclick="showNotifs()">
 				<span class="material-icons xx-large pointnclick">notifications</span>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 				<div class="infoContainer">
-					<div>
+					<div id="infoMain">
 						<h1 id="contentTitle">Loading...</h1>
 						<span class="rating" id="contentRating">
 							Loading...
@@ -82,8 +82,14 @@
 					<div id="infoDetails">
 						
 					</div>
-					<div>
-						<button class="large" onclick="alert('this does not work yet :(')">Add to List</button>
+					<div id="infoButtons">
+						<div class="dropdown">
+							<input id="addToListCount" type="hidden" value="0">
+							<button id="addToListBtn" class="large">Add to List</button>
+							<div id="listsList" class="dropdownContent noselect">
+								
+							</div>
+						</div>
 						<button class="large" id="gotoCommunity" onclick="goToCommunity();">Go to Community page</button>
 					</div>
 					<div><b>Synopsis: </b><span id="synopsis">Loading...</span></div>
@@ -109,7 +115,7 @@
 				<h2 style="display: inline-block;">Reviews</h2>
 				<span style="float: right;">
 					<b>Sort: </b>
-					<select class="button" onchange="populateReviewsSorted(this.value);">
+					<select class="button" onchange="populateReviews(this.value);">
 						<option selected="1" value="best">Best</option>
 						<option value="recent">Recent</option>
 						<option value="highest">Highest Rating</option>

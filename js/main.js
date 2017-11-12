@@ -101,6 +101,8 @@ function getEpisodeSeasonStr(season, episode){
 
 //Credit: https://www.w3schools.com/howto/howto_js_snackbar.asp
 function showSnackbar(htmlMessage) {
+	console.log("[Snackbar] "+htmlMessage);
+
 	// Get the snackbar DIV
 	var x = document.getElementById("snackbar")
 
