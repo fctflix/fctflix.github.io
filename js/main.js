@@ -40,7 +40,22 @@ $(document).ready(function() {
 	        search();
 	    }
 	});
+
+	getNotifications();
 });
+
+function getNotifications() {
+	//uhh we should check who is logged in instead of using zero but ok
+	var notifs = users[0].notifications
+	if(!notifs) notifs = [] //safety measure
+	$("#new_notifs").html(notifs.length)
+	if(notifs.length <= 0) {
+		$("#notif_popup").html("You have no new notifications.")
+	} else {
+		console.log("//TODO: add a notification display system")
+		console.log("//TODO: add an actual notification database or whatever fuck if i know")
+	}
+}
 
 function getRatingStarString(rating) {
 	var ratingsString = "";
@@ -114,4 +129,8 @@ function showSnackbar(htmlMessage) {
 function search(){
 	var query = document.getElementById("searchbar").value;
 	window.location = "/search.html?q="+encodeURIComponent(query);
+}
+
+function urlifyPost(text) {
+    return text.replace(/(https?:\/\/[^\s]+)/g, '<img class="post-image" src="$1"/>');
 }

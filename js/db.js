@@ -43,7 +43,7 @@ function reset(){
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
-			"avatar": "/images/default_avatar.jpg",
+			"avatar": "https://78.media.tumblr.com/84365fe19039b5fd917d6d449ca86290/tumblr_op4lb5DPRe1qg6rkio1_1280.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
@@ -69,7 +69,9 @@ function defaultUsers(){
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
 							"contents": [1]
-						}]
+						}],
+			"subscriptions": [0],
+			"notifications": []
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://i.imgur.com/TdYZdrY.jpg",
@@ -78,7 +80,9 @@ function defaultUsers(){
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
 							"contents": [0,1]
-						}]
+						}],
+			"subscriptions": [0],
+			"notifications": []
 			},
 			{"name": "SchrondingerFedora",
 			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg",
@@ -87,7 +91,9 @@ function defaultUsers(){
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
 							"contents": [0,1]
-						}]
+						}],
+			"subscriptions": [0,1],
+			"notifications": []
 			},
 			{"name": "PeteTheFrog",
 			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
@@ -96,7 +102,9 @@ function defaultUsers(){
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
 							"contents": [0,1]
-						}]
+						}],
+			"subscriptions": [1],
+			"notifications": []
 			},
 			{"name": "Sethmore",
 			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png",
@@ -105,7 +113,9 @@ function defaultUsers(){
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
 							"contents": [0,1]
-						}]
+						}],
+			"subscriptions": [1],
+			"notifications": []
 			}];
 }
 function defaultContents(){
@@ -114,6 +124,7 @@ function defaultContents(){
 			"isShow": true,
 			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
 			"rating": 4.7,
+			"subscribers": 485001,
 			"airs": "Mondays at 23PM",
 			"network": "Comedy Central",
 			"language": "English",
@@ -191,7 +202,7 @@ function defaultContents(){
 						{"user": 3,
 						"title": "WUBBA LUBBA DUB DUB",
 						"date": "2017-08-20 02:57",
-						"text": "And that's the way the news goes!",
+						"text": "And that's the way the news goes!http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
 						"likes": 1,
 						"dislikes": 99,
 						"comments": [
@@ -213,12 +224,41 @@ function defaultContents(){
 									"likes": 1,
 									"dislikes": 99
 									}]
+						},
+						{"user": 2,
+						"title": "the rick and morty copypasta but ran through google translate a few times",
+						"date": "2017-11-10 05:31",
+						"text": "We welcome IQ, Rick Morty to teach. The most humorous game and the typical audience in theoretical physics do not work solidly with subtlety. Fans. I realized that this is not only fun, but they must understand the power of deep intelligence games, but they say nothing is very important in life. As a result, people like to make Ricks really like, for example, when Russia's speech as epic poets for the new Rybakoven took a bad action \"VUB Lebanon is\" stupid and talented Dan Harmon because it is an imaginary addict that marks the confusion on your TV screen and scratches on your head and laughs now watching sons. Who's stupid to believe ... but not for them. News, yes by the way, I want Rick Morgan. You can not see women who are going to test for five years before IC (cheaper).",
+						"likes": 500,
+						"dislikes": 7,
+						"comments": [
+									{"user": 0,
+									"date": "2017-11-10 12:01",
+									"text": "why has no one commented yet? this is gret quality pasta",
+									"likes": 0,
+									"dislikes": 0
+									}]
+						},
+						{"user": 2,
+						"title": "the rick and morty copypasta but ran through google translate a few times",
+						"date": "2017-11-10 17:31",
+						"text": "We welcome IQ, Rick Morty to teach. The most humorous game and the typical audience in theoretical physics do not work solidly with subtlety. Fans. I realized that this is not only fun, but they must understand the power of deep intelligence games, but they say nothing is very important in life. As a result, people like to make Ricks really like, for example, when Russia's speech as epic poets for the new Rybakoven took a bad action \"VUB Lebanon is\" stupid and talented Dan Harmon because it is an imaginary addict that marks the confusion on your TV screen and scratches on your head and laughs now watching sons. Who's stupid to believe ... but not for them. News, yes by the way, I want Rick Morgan. You can not see women who are going to test for five years before IC (cheaper).",
+						"likes": 4,
+						"dislikes": 204,
+						"comments": [
+									{"user": 1,
+									"date": "2017-11-10 17:45",
+									"text": "please dont repost this shit.",
+									"likes": 56,
+									"dislikes": 0
+									}]
 						}]
 			},
 			{"title": "Fifty Shades Darker",
 			"isShow": false,
 			"poster": "https://walter.trakt.tv/images/movies/000/222/332/posters/thumb/5efccbca57.jpg",
 			"rating": 3.4,
+			"subscribers": 58920,
 			"released": "2017-02-10",
 			"language": "English",
 			"genres": ["Drama"],

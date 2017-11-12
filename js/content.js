@@ -1,5 +1,5 @@
 var contentId = Number.parseInt(getQueryParameterByName("id"));
-if (contentId == null || isNaN(contentId) || contentId > contents.length || contentId < 0){
+if (contentId == null || isNaN(contentId) || contentId >= contents.length || contentId < 0){
 	alert('Invalid content id');
 	window.location = '../dashboard.html';
 }
@@ -454,7 +454,7 @@ function addReview(){
 	console.log('Saving to localStorage...');
 	saveContents();
 
-	showSnackbar("Thanks for your review of \""+contents[contentId].title+"\"!");
+	showSnackbar("Thanks for your review of <b>"+contents[contentId].title+"</b>!");
 
 	setTimeout(location.reload.bind(location), 2500);
 }
