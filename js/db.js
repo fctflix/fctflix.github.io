@@ -58,7 +58,16 @@ function defaultUsers(){
 							"contents": [1]
 						}],
 			"subscriptions": [0],
-			"notifications": []
+			"notifications": [
+								{
+									"type":"new_episode",
+									"showId":0
+								},
+								{
+									"type":"post_reply",
+									"showId":0,
+									"postId":3
+								}]
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://i.imgur.com/TdYZdrY.jpg",
@@ -237,6 +246,20 @@ function defaultContents(){
 									"date": "2017-11-10 17:45",
 									"text": "please dont repost this shit.",
 									"likes": 56,
+									"dislikes": 0
+									}]
+						},
+						{"user": 0,
+						"title": "hey guys",
+						"date": "2017-11-12 10:11",
+						"text": "hey guys im new",
+						"likes": 2,
+						"dislikes": 0,
+						"comments": [
+									{"user": 4,
+									"date": "2017-11-12 11:15",
+									"text": "hi new, im dad",
+									"likes": 1,
 									"dislikes": 0
 									}]
 						}]

@@ -52,8 +52,40 @@ function getNotifications() {
 	if(notifs.length <= 0) {
 		$("#notif_popup").html("You have no new notifications.")
 	} else {
-		console.log("//TODO: add a notification display system")
-		console.log("//TODO: add an actual notification database or whatever fuck if i know")
+		$("#notif_popup").html("")
+		for(var i = 0; i < notifs.length; i++) {
+			var n = notifs[i]
+			if(n.type == "new_episode") {
+				var item = document.createElement("div")
+				item.className = "notif-item"
+				var img = document.createElement("img")
+				img.className = "notif-img"
+				img.src = contents[n.showId].poster
+				item.appendChild(img)
+				var text = document.createElement("div")
+				text.className = "notif-text"
+				text.innerHTML = "A new episode of <u>"+contents[n.showId].title+"</u> has just come out. You should check it out!"
+				item.appendChild(text)
+				$("#notif_popup").append(item)
+			} else if(n.type == "post_reply") {
+				var item = document.createElement("div")
+				item.className = "notif-item"
+				var img = document.createElement("img")
+				img.className = "notif-img"
+				img.src = contents[n.showId].poster
+				item.appendChild(img)
+				var text = document.createElement("div")
+				text.className = "notif-text"
+				text.innerHTML = "Someone commented on your post <b>"+contents[n.showId].posts[n.postId].title+"</b> on <u>"+contents[n.showId].title+"</u>'s community."
+				item.appendChild(text)
+				$("#notif_popup").append(item)
+			}
+			if(i < notifs.length - 1) {
+				var spacer = document.createElement("div")
+				spacer.className = "spacer"
+				$("#notif_popup").append(spacer)
+			}
+		}
 	}
 }
 
