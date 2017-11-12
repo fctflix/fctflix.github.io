@@ -27,19 +27,6 @@ function reset(){
 }
 
 /* Defaults */
-
-
-[
-			{"owner": 0,
-			"title": "Watchlist",
-			"contents": [1]
-			},
-			{"owner": 1,
-			"title": "Watchlist",
-			"contents": [0, 1]
-			}];
-
-
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
