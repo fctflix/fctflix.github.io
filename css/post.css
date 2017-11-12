@@ -10,18 +10,28 @@
 	display: inline-block;
     width: 4%;
 }
-.left, .right {
-	width: 47%;
+.full-post {
+	width: 100%;
     display: inline-block;
     text-align: left;
 	vertical-align: text-top;
 }
+.avatar-medium {
+	max-height: 68px;
+    max-width: 68px;
+    clip-path: circle(32px at center);
+}
 hr {
 	border:0px;
+}
+.separator {
+	border-bottom: 1px inset rgb(60,60,60);
 }
 .post-avatar {
 	width:10%;
 	display:inline-block;
+}
+.post-avatar.comment {
 	position: relative;
     bottom: 0.6rem;
 }
@@ -29,6 +39,10 @@ hr {
 	width: 6%;
     display: inline-block;
     text-align: center;
+    margin-left: -1rem;
+}
+.post-votes.comment {
+	margin-left: -3rem;
 }
 .material-icons.votes {
 	font-size:20px;
@@ -44,6 +58,13 @@ h4.post-title {
     bottom: 1.7rem;
     height: 54px;
     line-height: 54px;
+    margin-left: 10px;
+}
+div.post-title {
+    display: inline-block;
+    width: 83%;
+    position: relative;
+    bottom: 1.7rem;
     margin-left: 10px;
 }
 .post-timestamp {
@@ -63,12 +84,17 @@ span.post-title {
 .post-content {
 	width: 100%;
 	margin-top: -25px;
+	padding: 5px 0;
 }
 .content .title {
 	height:50px;
 }
 .card h2 {
 	margin-bottom:0px;
+}
+.card.large.separator, .comment {
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
 }
 /* SHOW INFO */
 #showInfo {
@@ -116,11 +142,7 @@ button.subscribed:hover span {
 }
 button.show-comments {
     width: 100%;
-    margin-top: -0.8rem;
-    margin-bottom: 0.8rem;
 	height: 2rem;
-    padding-bottom: 1em;
-    line-height: 1rem;
 }
 .card.large {
     margin-bottom: 0.5rem;

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	console.log("//TODO: something about the lists i dont know")
 	populateLists();
 	populateUsers();
 
@@ -17,11 +18,10 @@ function populateLists() {
 			if(show.genres.includes(genre) && ((show.isShow && showTV) || (!show.isShow && showMovies))) {
 				var content = document.createElement("div")
 				content.className = "content"
-				//note: this doesn't fucking work properly
+				content.value = i
 				content.onclick = function() {
-					window.location = './show/index.html?id='+i;
+					window.location = './show/index.html?id='+this.value;
 				}
-				//
 				var thumbnail = document.createElement("img")
 				thumbnail.className = "thumbnail"
 				thumbnail.src = "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png" //temporary

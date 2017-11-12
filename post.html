@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>FCTFlix</title>
-		<link rel="icon" type="image/png" href="../images/favicon.png">
-		<link rel="stylesheet" href="../css/main.css">
-		<link rel="stylesheet" href="../css/community.css">
-		<script type="text/javascript" src="../js/libs/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="../js/db.js"></script>
-		<script type="text/javascript" src="../js/main.js"></script>
-		<script type="text/javascript" src="../js/community.js"></script>
+		<link rel="icon" type="image/png" href="./images/favicon.png">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/post.css">
+		<script type="text/javascript" src="./js/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="./js/db.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/post.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
@@ -18,24 +18,23 @@
 			<div id="addPost" class="modal noselect">
 				<div class="newpost">
 					<div class="info">
-						<img src="../images/default_avatar.jpg" class="avatar">
+						<img src="./images/default_avatar.jpg" class="avatar">
 						<span>
 							<div>You</div>
 							<div>now</div>
 						</span>
 					</div>
-					<p><textarea class="title" id="postTitle" placeholder="Title" oninput="validatePost(false);"></textarea></p>
 					<p><textarea id="postText" placeholder="Write something here..." oninput="validatePost(false);"></textarea></p>
 					<div class="modalButtons">
 						<button class="small" id="postPost" onclick="addPost();" disabled="1">Post</button>
 						<span class="spacer"></span>
-						<button class="small" id="cancelPost" onclick="$('#overlay').hide();$('#postText').val('');$('#postTitle').val('');document.getElementById('postPost').disabled = true;">Cancel</button>
+						<button class="small" id="cancelPost" onclick="$('#overlay').hide();$('#postText').val('');document.getElementById('postPost').disabled = true;">Cancel</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		<header>
-			<a href="../dashboard.html" class="header-logo automargins"><img src="../images/logo_large.png" alt="logo" class="logo"></a>
+			<a href="../dashboard.html" class="header-logo automargins"><img src="./images/logo_large.png" alt="logo" class="logo"></a>
 			<div class="search automargins">
 				<input class="searchbar" id="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
 				<button style="width:8%;" onclick="search();">
@@ -43,15 +42,15 @@
 				</button>
 			</div>
 			<div class="perc30 automargins noselect">
-				<a class="perc10 toplinks automargins" href="../browse.html">Browse</a>
-				<a class="perc10 toplinks automargins" href="../community.html" style="margin-right: 50%;">Community</a>
+				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
 			</div>
 			<div class="perc5 automargins noselect" onclick="showNotifs()">
 				<span class="material-icons xx-large pointnclick">notifications</span>
 				<span class="notif-alert" id="new_notifs">3</span>
 			</div>
 				<div class="automargins avatar-out pointnclick" id="user_defs" onclick="showDefs()">
-					<img class="avatar-small" src="../images/default_avatar.jpg"/>
+					<img class="avatar-small" src="./images/default_avatar.jpg"/>
 				</div>
 		</header>
 		<main>
@@ -89,12 +88,7 @@
 				</div>
 			</div>
 			<div class=postContainer>
-				<div class="left">
-					<button class="discussion" onclick="$('#overlay').show();">Start a discussion!</button>
-					<!-- Loading... -->
-				</div>
-				<div class="postSeparator"></div>
-				<div class="right">
+				<div class="full-post">
 					<!-- Loading... -->
 				</div>
 			</div>

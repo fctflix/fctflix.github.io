@@ -42,6 +42,7 @@ $(document).ready(function() {
 	});
 
 	getNotifications();
+	getUserDefs();
 });
 
 function getNotifications() {
@@ -87,6 +88,20 @@ function getNotifications() {
 			}
 		}
 	}
+}
+
+function getUserDefs() {
+	//uhh we should check who is logged in instead of using zero but ok
+	var user = users[0]
+	$("#username").html(user.name+"!")
+}
+
+function changeAvatar() {
+	alert("work in progress")
+}
+
+function logOut() {
+	alert("work in progress")
 }
 
 function getRatingStarString(rating) {

@@ -562,7 +562,6 @@ a:hover {
   color: gold;
 }
 .notif-item {
-  background-color: white;
   border-radius: 6px;
   background-color: rgba(255,255,255,0.9);
 }
@@ -579,4 +578,12 @@ a:hover {
   margin-top: 3px;
   padding-right: 10px;
   font-size:small;
+}
+.user-defs {
+  padding: 5px;
+}
+.user-option {
+  border-top: 1px inset black;
+  margin: 5px -5px;
+  padding-top: 5px;
 }

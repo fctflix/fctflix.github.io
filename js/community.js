@@ -68,7 +68,7 @@ function updateSubscription() {
 function fillCommunityPosts() {
 	console.log("Filling the community with posts...");
 
-	var posts = contents[contentId].posts;
+	var posts = contents[contentId].posts.slice();
 	posts.sort( (a,b) => Date.parse(b["date"]) - Date.parse(a["date"]))
 	var postHTML = []
 
@@ -77,7 +77,6 @@ function fillCommunityPosts() {
 		//main div
 		var post_main = document.createElement("div")
 		post_main.className = "post"
-		post_main.id = i
 		//the post contents
 		var post_card = document.createElement("div")
 		post_card.className = "card large"
@@ -87,6 +86,10 @@ function fillCommunityPosts() {
 		comm_btn.innerHTML = "Show "+post.comments.length+" comment"
 		if(post.comments.length != 1) {
 			comm_btn.innerHTML += "s"
+		}
+		comm_btn.value = contents[contentId].posts.indexOf(post)
+		comm_btn.onclick = function() {
+			window.location = "../post.html?community="+contentId+"&postId="+this.value
 		}
 		//the post avatar
 		var post_avatar = document.createElement("div")
@@ -157,7 +160,7 @@ function fillCommunityPosts() {
 }
 
 function validatePost(showAlert){
-	if (Number.parseInt(document.getElementById("postTitle").value) == "" || document.getElementById("postText").value == ""){
+	if (document.getElementById("postTitle").value == "" || document.getElementById("postText").value == "") {
 		document.getElementById("postPost").disabled = true;
 		if (showAlert){
 			alert("Make sure you've typed a title and message for your post");

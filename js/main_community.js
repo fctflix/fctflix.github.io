@@ -32,16 +32,17 @@ function fillCommunityPosts() {
 	console.log("Filling the community with posts...");
 
 	var posts = []
-	for(show of contents) {
+	for(var i = 0; i < contents.length; i++) {
+		var show = contents[i]
 		for(post of show.posts) {
-			posts.push(post)
+			posts.push({"community":i, "post":post})
 		}
 	}
-	posts.sort( (a,b) => Date.parse(b["date"]) - Date.parse(a["date"]))
+	posts.sort( (a,b) => Date.parse(b.post["date"]) - Date.parse(a.post["date"]))
 	var postHTML = []
 
 	for(var i = 0; i < posts.length; i++) {
-		var post = posts[i]
+		var post = posts[i].post
 		//main div
 		var post_main = document.createElement("div")
 		post_main.className = "post"
@@ -55,6 +56,10 @@ function fillCommunityPosts() {
 		comm_btn.innerHTML = "Show "+post.comments.length+" comment"
 		if(post.comments.length != 1) {
 			comm_btn.innerHTML += "s"
+		}
+		comm_btn.value = posts[i].community+"&postId="+contents[posts[i].community].posts.indexOf(post)
+		comm_btn.onclick = function() {
+			window.location = "./post.html?community="+this.value
 		}
 		//the post avatar
 		var post_avatar = document.createElement("div")
