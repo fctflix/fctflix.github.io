@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FCTFlix</title>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/search.css">
+		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/db.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/search.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<a href="./dashboard.html" class="header-logo automargins"><img src="./images/logo_large.png" alt="logo" class="logo"></a>
+			<div class="search automargins">
+				<input class="searchbar" id="searchbar" type="text" placeholder="Search TV Shows, Movies, Lists and People..."/>
+				<button style="width:8%;" onclick="search();">
+					<i class="material-icons">search</i>
+				</button>
+			</div>
+			<div class="perc30 automargins noselect">
+				<a class="perc10 toplinks automargins" href="./browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="./community.html" style="margin-right: 50%;">Community</a>
+			</div>
+			<div class="perc5 automargins noselect" onclick="showNotifs()">
+				<span class="material-icons xx-large pointnclick">notifications</span>
+				<!-- look we have notifications -->
+				<span class="notif-alert" id="new_notifs">3</span>
+			</div>
+				<div class="automargins avatar-out pointnclick" id="user_defs" onclick="showDefs()">
+					<img class="avatar-small" src="./images/default_avatar.jpg"/>
+				</div>
+		</header>
+		<main>
+			<div class="notif-popup" id="notif_popup">hi there<p>wubba lubba dub dub!!! new RICH AND MORTO episodes! go <a href="./content.html?id=0">watch them</a> or something...</p></div>
+			<div class="notif-popup user-popup" id="user_popup">welcome back<p>doggo<p>this will be a settings page i guess just move along for now</div>
+			<div class="card large">
+				<h2>Search Results for "Bojack Horseman"</h2>
+				<div class="dropdown">
+					<button id="genreBtn" class="small">Genres</button>
+					<div id="genresList" class="dropdownContent noselect small">
+						<div class="dropdownEntry"><input type="hidden" name="contains" value="1"><input type="hidden" name="list" value="0"><span>Watchlist</span><i class="material-icons">check</i></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Action</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Adventure</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Animation</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Comedy</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Drama</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Fantasy</span></div>
+						<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>SciFi</span></div>
+					</div>
+				</div>
+				Year: ____-____
+				<b>Rating: </b>
+				<span class="rating">
+					<input type="hidden" id="searchRating" />
+					<i class="material-icons" onclick="filterRate(1)" id="reviewModalStar1">star_border</i>
+					<i class="material-icons" onclick="filterRate(2)" id="reviewModalStar2">star_border</i>
+					<i class="material-icons" onclick="filterRate(3)" id="reviewModalStar3">star_border</i>
+					<i class="material-icons" onclick="filterRate(4)" id="reviewModalStar4">star_border</i>
+					<i class="material-icons" onclick="filterRate(5)" id="reviewModalStar5">star_border</i>
+				</span>
+				<button id="sortReviewsBtn" class="small">Filter</button>
+			</div>
+			<div class="card large">
+				<h3>TV Shows</h3>
+				<div id="tvList" class="contentList">
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://metrouk2.files.wordpress.com/2017/08/the-simpsons-main.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							The Simpsons
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://metrouk2.files.wordpress.com/2017/08/the-simpsons-main.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							The Simpsons
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://metrouk2.files.wordpress.com/2017/08/the-simpsons-main.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							The Simpsons
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card large">
+				<h3>Movies</h3>
+				<div id="movieList" class="contentList">
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="http://resources4.atgtickets.com/static/34866_full.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							Fifty Shades Darker
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="http://resources4.atgtickets.com/static/34866_full.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							Fifty Shades Darker
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="http://resources4.atgtickets.com/static/34866_full.jpg">
+						<div class="gradient-top"></div>
+						<div class="rating"><span>5.0</span><i class="material-icons">star</i></div>
+						<div class="gradient"></div>
+						<div class="title">
+							Fifty Shades Darker
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card large">
+				<h3>Lists</h3>
+				<div id="listsList" class="contentList">
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png">
+						<div class="gradient"></div>
+						<div class="title">
+							Watchlist
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png">
+						<div class="gradient"></div>
+						<div class="title">
+							Watchlist
+						</div>
+					</div>
+					<div class="content" onclick="alert('this does not work yet :(')">
+						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png">
+						<div class="gradient"></div>
+						<div class="title">
+							Watchlist
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card large">
+				<h3>Users</h3>
+				<div id="usersList" class="contentList">
+					<div class="content center smaller" onclick="alert('this does not work yet :(')">
+						<img class="user-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
+						<div class="username">
+							JohnDoe
+						</div>
+					</div>
+					<div class="content center smaller" onclick="alert('this does not work yet :(')">
+						<img class="user-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
+						<div class="username">
+							JohnDoe
+						</div>
+					</div>
+					<div class="content center smaller" onclick="alert('this does not work yet :(')">
+						<img class="user-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
+						<div class="username">
+							JohnDoe
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="copyright">
+				© 2017
+				<br>
+				Made with ❤ in Almada
+			</div>
+		</footer>
+	</body>
+</html>

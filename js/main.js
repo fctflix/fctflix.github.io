@@ -32,6 +32,14 @@ $(document).ready(function() {
 		$('html, body').animate({ scrollTop: target.offset().top-100 }, 1000);
 		return false;
 	});
+
+	//Search when enter is hit
+	$("#searchbar").on('keyup', function (e) {
+		console.log('stuff');
+	    if (e.keyCode == 13) {
+	        search();
+	    }
+	});
 });
 
 function getRatingStarString(rating) {
@@ -102,3 +110,8 @@ function showSnackbar(htmlMessage) {
 		x.className = x.className.replace("show", "");
 	}, 3000);
 };
+
+function search(){
+	var query = document.getElementById("searchbar").value;
+	window.location = "/search.html?q="+encodeURIComponent(query);
+}

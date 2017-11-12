@@ -1,0 +1,27 @@
+.rating span {
+  vertical-align: middle;
+}
+.rating .material-icons {
+  vertical-align: middle;
+  padding-bottom: 1px;
+  padding-left: 5px;
+}
+.username {
+  color: #fff;
+  text-shadow: 0 0 20px black;
+  font-size: 18px;
+  width: 175px;
+  padding: 5px;
+  height: 28px;
+  text-align: center;
+}
+.user-thumbnail {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  clip-path: circle(50px at center);
+}
+.content.smaller {
+  height: 100px;
+  width: 175px;
+}

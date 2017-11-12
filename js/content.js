@@ -1,5 +1,5 @@
 var contentId = Number.parseInt(getQueryParameterByName("id"));
-if (isNaN(contentId) || contentId > contents.length || contentId < 0){
+if (contentId == null || isNaN(contentId) || contentId > contents.length || contentId < 0){
 	alert('Invalid content id');
 	window.location = '../dashboard.html';
 }
@@ -421,7 +421,7 @@ function rate(newRating){
 }
 
 function validateReview(showAlert){
-	if (Number.parseInt(document.getElementById("reviewRating").value) == 0 || document.getElementById("reviewText").value == ""){
+	if (Number.parseInt(document.getElementById("reviewRating").value) == 0 || document.getElementById("reviewRating").value == "" || document.getElementById("reviewText").value == ""){
 		document.getElementById("postReview").disabled = true;
 		if (showAlert){
 			alert("Make sure you've rated and typed your review");
