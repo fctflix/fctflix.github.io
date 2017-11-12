@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="js/db.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/browse.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
@@ -42,493 +43,61 @@
 			<div class="center card small-right">
 				<span class="uhh">List: </span>
 				<label class="container">TV Shows
-					<input type="checkbox" name="filter1" id="tv" checked>
+					<input type="checkbox" name="filter1" id="tv" checked onchange="populateLists()">
 					<span class="checkmark"></span>
 				</label>
 				<div class="vert-spacer"></div>
 				<label class="container">Movies
-					<input type="checkbox" name="filter1" id="movies" checked>
+					<input type="checkbox" name="filter1" id="movies" checked onchange="populateLists()">
 					<span class="checkmark"></span>
 				</label>
 			</div>
-			<div class="card large" id="action">
+			<div class="card large shows" id="Action">
 				<h3>Action</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="adventure">
+			<div class="card large shows" id="Adventure">
 				<h3>Adventure</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="animation">
+			<div class="card large shows" id="Animation">
 				<h3>Animation</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="comedy">
+			<div class="card large shows" id="Comedy">
 				<h3>Comedy</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="drama">
+			<div class="card large shows" id="Drama">
 				<h3>Drama</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="fantasy">
+			<div class="card large shows" id="Fantasy">
 				<h3>Fantasy</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="horror">
+			<div class="card large shows" id="Horror">
 				<h3>Horror</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
-			<div class="card large" id="scifi">
+			<div class="card large shows" id="SciFi">
 				<h3>Science Fiction</h3>
 				<div class="contentList">
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png"/>
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Watch List
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							pew pew pew
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							Shows with dogs in them
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							kinky
-						</div>
-					</div>
-					<div class="content" onclick="alert('this does not work yet :(')">
-						<img class="thumbnail" src="https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg">
-						<div class="gradient-top"></div>
-						<div class="rating">
-							5.0<i class="material-icons align">star</i>
-						</div>
-						<div class="gradient"></div>
-						<div class="title">
-							i dunno man
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
 			<div class="spacer"></div>
@@ -576,66 +145,7 @@
 			<div class="card large" id="users">
 				<h3>Users</h3>
 				<div class="contentList">
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://art-s.nflximg.net/095e2/1fd8fb8f5ad5c6a191fb646928ad6058e26095e2.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="http://lebonsalon.com/wp-content/uploads/2017/07/futurama.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://www.sensacionalista.com.br/wp-content/uploads/2016/10/GreysCoverPhoto.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/himym_title.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://art-s.nflximg.net/095e2/1fd8fb8f5ad5c6a191fb646928ad6058e26095e2.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="http://lebonsalon.com/wp-content/uploads/2017/07/futurama.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
-					<div class="content center smaller" onclick="alert('this does not work yet :(')">
-						<img class="user-thumbnail" src="https://www.sensacionalista.com.br/wp-content/uploads/2016/10/GreysCoverPhoto.jpg"/>
-						<div class="username">
-							hi
-						</div>
-					</div>
+					<!-- Loading... -->
 				</div>
 			</div>
 		</main>

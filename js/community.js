@@ -21,6 +21,9 @@ function setupCommunity() {
 	//Title
 	document.getElementById('contentTitle').innerHTML = contents[contentId].title;
 
+	//Community + num subscribers
+	document.getElementById('numSubs').innerHTML = "Community - " + contents[contentId].subscribers + " subscribers"
+
 	//Rating
 	document.getElementById('contentRating').innerHTML = getRatingStarString(contents[contentId].rating);
 
@@ -41,11 +44,14 @@ function setupCommunity() {
 function toggleSubscription() {
 	if(users[0].subscriptions.includes(contentId)) {
 		users[0].subscriptions = users[0].subscriptions.filter(e => e !== contentId)
+		contents[contentId].subscribers--
 	} else {
 		users[0].subscriptions.push(contentId)
+		contents[contentId].subscribers++
 	}
 	updateSubscription()
 	saveUsers()
+	saveContents()
 }
 
 function updateSubscription() {
@@ -148,19 +154,6 @@ function fillCommunityPosts() {
 			rightHeight += elem.offsetHeight
 		}
 	}
-}
-
-function calculateTimeDifference(date) {
-	var millis = Date.now() - Date.parse(date)
-	millis /= 1000
-	//less than 1 minute
-	if(millis < 60) return Math.floor(millis)+"s"
-	//less than 1 hour
-	if(millis < 60*60) return Math.floor(millis/60)+"m"
-	//less than 1 day
-	if(millis < 60*60*24) return Math.floor(millis/60/60)+"h"
-	if(millis < 60*60*24*365) return Math.floor(millis/60/60/24)+"d"
-	return "null" //safety measure
 }
 
 function validatePost(showAlert){

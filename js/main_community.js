@@ -6,7 +6,26 @@ $(document).ready(function() {
 });
 
 function setupSubscriptions() {
-	console.log("//TODO: change the subscriptions shown on top");
+	//uhh we should check who is logged in instead of using zero but ok
+	for(sub of users[0].subscriptions) {
+		var content = document.createElement("div")
+		content.className = "content"
+		content.onclick = function() {
+			window.location = './show/community.html?id='+sub;
+		}
+		var thumbnail = document.createElement("img")
+		thumbnail.className = "thumbnail"
+		thumbnail.src = "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png" //temporary
+		content.appendChild(thumbnail)
+		var gradient = document.createElement("div")
+		gradient.className = "gradient"
+		content.appendChild(gradient)
+		var title = document.createElement("div")
+		title.className = "title"
+		title.innerHTML = contents[sub].title+"<br>"+contents[sub].subscribers+" subscribers"
+		content.appendChild(title)
+		$("#communityList").append(content)
+	}
 }
 
 function fillCommunityPosts() {
@@ -102,17 +121,4 @@ function fillCommunityPosts() {
 			rightHeight += elem.offsetHeight
 		}
 	}
-}
-
-function calculateTimeDifference(date) {
-	var millis = Date.now() - Date.parse(date)
-	millis /= 1000
-	//less than 1 minute
-	if(millis < 60) return Math.floor(millis)+"s"
-	//less than 1 hour
-	if(millis < 60*60) return Math.floor(millis/60)+"m"
-	//less than 1 day
-	if(millis < 60*60*24) return Math.floor(millis/60/60)+"h"
-	if(millis < 60*60*24*365) return Math.floor(millis/60/60/24)+"d"
-	return "null" //safety measure
 }

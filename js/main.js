@@ -134,3 +134,16 @@ function search(){
 function urlifyPost(text) {
     return text.replace(/(https?:\/\/[^\s]+)/g, '<img class="post-image" src="$1"/>');
 }
+
+function calculateTimeDifference(date) {
+	var millis = Date.now() - Date.parse(date)
+	millis /= 1000
+	//less than 1 minute
+	if(millis < 60) return Math.floor(millis)+"s"
+	//less than 1 hour
+	if(millis < 60*60) return Math.floor(millis/60)+"m"
+	//less than 1 day
+	if(millis < 60*60*24) return Math.floor(millis/60/60)+"h"
+	if(millis < 60*60*24*365) return Math.floor(millis/60/60/24)+"d"
+	return "null" //safety measure
+}
