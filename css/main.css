@@ -111,6 +111,9 @@ header .logo {
   margin:auto;
   display:inline-flex;
 }
+.search button i.material-icons {
+  cursor: pointer;
+}
 .avatar-small {
   max-height:44px;
   max-width:44px;
@@ -251,8 +254,14 @@ button.wide, select.wide {
 button.large, select.large {
   width: 16em;
 }
+button.normal, select.normal {
+  width: 10em;
+}
 button.small, select.small {
   width: 8em;
+}
+button.tiny, select.tiny {
+  width: 4em;
 }
 button:disabled, button:disabled:hover {
   background-color: rgba(66,107,189,0.3);
@@ -275,14 +284,23 @@ button:disabled, button:disabled:hover {
 .dropdownContent.large {
     width: 16em;
 }
+.dropdownContent.normal {
+    width: 10em;
+}
 .dropdownContent.small {
     width: 8em;
+}
+.dropdownContent.tiny {
+    width: 4em;
 }
 .dropdown:hover .dropdownContent {
     display: block;
 }
 .dropdown button {
   cursor: default;
+}
+.dropdown button.align-left {
+  text-align: left;
 }
 .dropdownEntry {
   line-height: 24px;

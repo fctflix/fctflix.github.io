@@ -25,3 +25,12 @@
   height: 100px;
   width: 175px;
 }
+.year {
+  background-color: #b4b4b4;
+  padding: 10px;
+  font-size: medium;
+  width: 4em;
+}
+.material-icons.filterIcon {
+  float: none;
+}

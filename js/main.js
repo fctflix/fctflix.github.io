@@ -174,8 +174,16 @@ function showSnackbar(htmlMessage) {
 };
 
 function search(){
-	var query = document.getElementById("searchbar").value;
-	window.location = "/search.html?q="+encodeURIComponent(query);
+	var query = document.getElementById("searchbar").value.trim();
+	if (window.location.pathname !== "/search.html"){
+		if (query.length > 0){
+			window.location = "/search.html?q="+encodeURIComponent(query);
+		} else {
+			window.location = "/search.html";
+		}
+	} else {
+		filter();
+	}
 }
 
 function urlifyPost(text) {
