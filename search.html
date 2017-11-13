@@ -51,7 +51,7 @@
 				<span>
 					<b>Genres: </b>
 					<div class="dropdown">
-						<button id="genreBtn" class="small">All</button>
+						<button id="genreBtn" class="small">All Genres</button>
 						<div id="genresList" class="dropdownContent noselect small">
 							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Action</span><i class="material-icons">check_box</i></div>
 							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Adventure</span><i class="material-icons">check_box</i></div>
@@ -63,18 +63,22 @@
 						</div>
 					</div>
 				</span>
-				<span style="margin-left: 10px;">
+				<span class="spacer"></span>
+				<span class="spacer"></span>
+				<span>
 					<b>Year: </b>
 					<input type="text" id="year1Filter" class="year" onkeypress='return event.charCode >= 48 && event.charCode <= 57 && this.value.length < 4'>
 					<b>-</b>
 					<input type="text" id="year2Filter" class="year" onkeypress='return event.charCode >= 48 && event.charCode <= 57 && this.value.length < 4'>
 				</span>
-				<span style="margin-left: 10px;">
+				<span class="spacer"></span>
+				<span class="spacer"></span>
+				<span>
 					<b>Rating: </b>
 					<div class="dropdown" style="vertical-align: middle;">
-						<button id="filterRating" class="normal align-left">All</button>
+						<button id="filterRating" class="normal align-left">Loading...</button>
 						<div class="dropdownContent noselect normal">
-							<div class="dropdownEntry" onclick="filterRate(0)"><span>All</span></div>
+							<div class="dropdownEntry" onclick="filterRate(0)"><span>All Ratings</span></div>
 							<div class="dropdownEntry" onclick="filterRate(1)"><i class="material-icons filterIcon">star</i></div>
 							<div class="dropdownEntry" onclick="filterRate(2)"><i class="material-icons filterIcon">star</i><i class="material-icons filterIcon">star</i></div>
 							<div class="dropdownEntry" onclick="filterRate(3)"><i class="material-icons filterIcon">star</i><i class="material-icons filterIcon">star</i><i class="material-icons filterIcon">star</i></div>

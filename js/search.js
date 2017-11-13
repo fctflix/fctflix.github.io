@@ -59,7 +59,7 @@ function filterRate(r) {
 	rating = r;
 	var rateStr = '';
 	if (r == 0){
-		rateStr = '<span style="font-size: 24px;vertical-align: middle;"></span></span>All</span>'; //empty span because of layout issues and I don't want to change the size of the text
+		rateStr = '<span style="font-size: 24px;vertical-align: middle;"></span></span>All Ratings</span>'; //empty span because of layout issues and I don't want to change the size of the text
 	} else {
 		for (var i = 1; i <= rating; i++){
 			rateStr += '<i class="material-icons">star</i>';
