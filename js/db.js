@@ -35,27 +35,27 @@ function defaultUsers(){
 						{
 							"title": "Watchlist",
 							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						},
+						{
+							"title": "pew pew pew",
+							"thumbnail": "https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg",
+							"contents": [0,1]
+						},
+						{
+							"title": "Shows with dogs in them",
+							"thumbnail": "http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg",
+							"contents": [0]
+						},
+						{
+							"title": "kinky",
+							"thumbnail": "http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg",
 							"contents": [1]
 						},
 						{
-							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
-							"contents": [1]
-						},
-						{
-							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
-							"contents": [1]
-						},
-						{
-							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
-							"contents": [1]
-						},
-						{
-							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
-							"contents": [1]
+							"title": "i dunno man",
+							"thumbnail": "https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg",
+							"contents": [0]
 						}],
 			"subscriptions": [0],
 			"notifications": [
@@ -67,7 +67,9 @@ function defaultUsers(){
 									"type":"post_reply",
 									"showId":0,
 									"postId":3
-								}]
+								}],
+			"following": [1,2,3,4],
+			"recommendedShow": 2
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://i.imgur.com/TdYZdrY.jpg",
@@ -78,7 +80,9 @@ function defaultUsers(){
 							"contents": [0,1]
 						}],
 			"subscriptions": [0],
-			"notifications": []
+			"notifications": [],
+			"following": [],
+			"recommendedShow": 2
 			},
 			{"name": "SchrondingerFedora",
 			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg",
@@ -89,7 +93,9 @@ function defaultUsers(){
 							"contents": [0,1]
 						}],
 			"subscriptions": [0,1],
-			"notifications": []
+			"notifications": [],
+			"following": [],
+			"recommendedShow": 2
 			},
 			{"name": "PeteTheFrog",
 			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
@@ -100,7 +106,9 @@ function defaultUsers(){
 							"contents": [0,1]
 						}],
 			"subscriptions": [1],
-			"notifications": []
+			"notifications": [],
+			"following": [],
+			"recommendedShow": 2
 			},
 			{"name": "Sethmore",
 			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png",
@@ -111,13 +119,16 @@ function defaultUsers(){
 							"contents": [0,1]
 						}],
 			"subscriptions": [1],
-			"notifications": []
+			"notifications": [],
+			"following": [],
+			"recommendedShow": 2
 			}];
 }
 function defaultContents(){
 	return [
 			{"title": "Rick and Morty",
 			"isShow": true,
+			"year": 2013,
 			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
 			"rating": 4.7,
 			"subscribers": 485001,
@@ -266,6 +277,7 @@ function defaultContents(){
 			},
 			{"title": "Fifty Shades Darker",
 			"isShow": false,
+			"year": 2017,
 			"poster": "https://walter.trakt.tv/images/movies/000/222/332/posters/thumb/5efccbca57.jpg",
 			"rating": 3.4,
 			"subscribers": 58920,
@@ -306,6 +318,70 @@ function defaultContents(){
 									"dislikes": 18
 									}]
 						}]
+			},
+			{
+				"title": "The Simpsons",
+				"isShow": true,
+				"year": 1989,
+				"poster": "https://walter.trakt.tv/images/shows/000/000/455/posters/thumb/8b737766ea.jpg",
+				"rating": 4.5,
+				"subscribers": 1056308,
+				"airs": "Mondays at 1AM",
+				"network": "FOX",
+				"language": "English",
+				"genres": ["Animation","Comedy"],
+				"synopsis": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands.",
+				"seasons": [{
+					"episodes": [{
+						"title": "Simpsons Roasting on an Open Fire",
+						"thumbnail": "https://walter.trakt.tv/images/episodes/000/025/734/screenshots/thumb/560b43bd81.jpg"
+					}]
+				}],
+				"actors": [{"name": "Nancy Cartwright",
+							"character": "Bart Simpson",
+							"photo": "https://walter.trakt.tv/images/people/000/415/153/headshots/thumb/311c8d7b38.jpg",
+							"imdb": "http://www.imdb.com/name/nm0004813"
+							},
+							{"name": "Dan Castellaneta",
+										"character": "Homer Simpson",
+										"photo": "https://walter.trakt.tv/images/people/000/410/980/headshots/thumb/7fcdac59ca.jpg",
+										"imdb": "http://www.imdb.com/name/nm0144657"
+							},
+							{"name": "Julie Kavner",
+										"character": "Marge Simpson",
+										"photo": "https://walter.trakt.tv/images/people/000/417/696/headshots/thumb/10b29beab6.jpg",
+										"imdb": "http://www.imdb.com/name/nm0001413"
+							},
+							{"name": "Yeardley Smith",
+										"character": "Lisa Simpson",
+										"photo": "https://walter.trakt.tv/images/people/000/418/077/headshots/thumb/9eee2c2a02.jpg",
+										"imdb": "http://www.imdb.com/name/nm0810379"
+							},
+							{"name": "Harry Shearer",
+										"character": "Mr. Burns / Principal Skinner",
+										"photo": "https://walter.trakt.tv/images/people/000/411/726/headshots/thumb/1a5bf66e67.jpg",
+										"imdb": "http://www.imdb.com/name/nm0790434"
+							}],
+				"reviews": [{"user": 1,
+							"rating": 5,
+							"date": "2017-06-10 18:30",
+							"text": "love it",
+							"likes": 500,
+							"dislikes": 1
+				}],
+				"posts": [{"user": 0,
+							"title": "conspiracy theory",
+							"date": "2017-11-13 23:41",
+							"text": "what if... the simpsons are actually part of the illuminati?????",
+							"likes": 5,
+							"dislikes": 3,
+							"comments": [{"user": 3,
+										"date": "2017-11-14 00:22",
+										"text": "what the fuck",
+										"likes": 1,
+										"dislikes": 0
+							}]
+				}]
 			}];
 }
 

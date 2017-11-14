@@ -1,8 +1,11 @@
 .recom-title {
 	width: 100%;
-    text-align: left;
-    cursor: default;
-    padding-top: 8px;
+  text-align: left;
+  cursor: default;
+  padding-top: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .avatar-verysmall {
   max-height:18px;
