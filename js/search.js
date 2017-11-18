@@ -8,6 +8,7 @@ $(document).ready(function() {
 		query = "";
 	}
 	if (query.length > 0){
+		query = query.trim();
 		document.getElementById("searchbar").value = query;
 		document.getElementById("queryOut").innerHTML = 'Search Results for "'+query+'"';
 		document.getElementById("queryOut").style = "";
@@ -45,9 +46,6 @@ $(document).ready(function() {
 
 	//Search
 	searchDb();
-
-	//TODO REMOVE
-	console.log('//TODO Filters only apply to tv and movies; Search; Suggestions if no results; Filters; Fill with real data');
 });
 
 function fillSelectedGenres() {
@@ -123,5 +121,280 @@ function filter() {
 }
 
 function searchDb() {
-	console.log("This will be fun to implement");
+	showSnackbar("Searching...");
+	console.log("[Search] Query: \""+query+"\" | Genres: ["+selectedGenres+"] | Year range: ("+year1+"-"+year2+") | Rating: "+rating);
+
+	var showsList = [];
+	var moviesList = [];
+	var listsList = [];
+	var usersList = [];
+
+	for (content in contents) {
+		if (query.length > 0) {
+			// Non-empty query			
+			if (contents[content].title.toUpperCase().search(query.toUpperCase()) == -1){
+				// Content title doesn't contain query
+				continue;
+			}
+		}
+
+		if (selectedGenres.length < genres.length) {
+			// Genres are being filtered
+			var selectedGenresIntersect = $.grep(selectedGenres, function(v,i) {
+			    return $.inArray(v, contents[content].genres) !== -1;
+			}).length === selectedGenres.length;
+			if (!selectedGenresIntersect) {
+				// Some or all selected genres are not in the content's genres
+				continue;
+			}
+		}
+		
+		if (contents[content].year < year1 || contents[content].year > year2){
+			// Content outside time range
+			console.log(contents[content].title);
+			continue;
+		}
+
+		if (rating != 0){
+			// Rating is being filtered
+			if (rating == 5 && contents[content].rating < 4.5){
+				// We want 5 stars and rating is below 5 stars
+				continue;
+			} else if (rating == 4 && (contents[content].rating < 3.5 || contents[content].rating >= 4.5)){
+				// We want 4 stars and rating is below or above 4 stars
+				continue;
+			} else if (rating == 3 && (contents[content].rating < 2.5 || contents[content].rating >= 3.5)){
+				// We want 3 stars and rating is below or above 3 stars
+				continue;
+			} else if (rating == 2 && (contents[content].rating < 1.5 || contents[content].rating >= 2.5)){
+				// We want 2 stars and rating is below or above 2 stars
+				continue;
+			} else if (rating == 1 && contents[content].rating >= 1.5){
+				// We want 1 star and rating is above 1 star
+				continue;
+			}
+		}
+
+		if (contents[content].isShow){
+			// Show
+			showsList.push(content);
+		} else {
+			// Movie
+			moviesList.push(content);
+		}
+	}
+
+	var suggestShows = showsList.length == 0;
+	var suggestMovies = moviesList.length == 0;
+
+	if (suggestShows || suggestMovies){
+		for (content in contents) {
+			if (contents[content].isShow && !suggestShows){
+				// Don't need to suggest shows
+				continue;
+			} else if (!contents[content].isShow && !suggestMovies){
+				// Don't need to suggest movies
+				continue;
+			}
+
+			if (selectedGenres.length < genres.length) {
+				// Genres are being filtered
+				var selectedGenresIntersect = $.grep(selectedGenres, function(v,i) {
+				    return $.inArray(v, contents[content].genres) !== -1;
+				}).length === selectedGenres.length;
+				if (!selectedGenresIntersect) {
+					// Some or all selected genres are not in the content's genres
+					continue;
+				}
+			}
+			
+			if (contents[content].year < year1 || contents[content].year > year2){
+				// Content outside time range
+				continue;
+			}
+
+			if (rating != 0){
+				// Rating is being filtered
+				if (rating == 5 && contents[content].rating < 4.5){
+					// We want 5 stars and rating is below 5 stars
+					continue;
+				} else if (rating == 4 && (contents[content].rating < 3.5 || contents[content].rating >= 4.5)){
+					// We want 4 stars and rating is below or above 4 stars
+					continue;
+				} else if (rating == 3 && (contents[content].rating < 2.5 || contents[content].rating >= 3.5)){
+					// We want 3 stars and rating is below or above 3 stars
+					continue;
+				} else if (rating == 2 && (contents[content].rating < 1.5 || contents[content].rating >= 2.5)){
+					// We want 2 stars and rating is below or above 2 stars
+					continue;
+				} else if (rating == 1 && contents[content].rating >= 1.5){
+					// We want 1 star and rating is above 1 star
+					continue;
+				}
+			}
+
+			if (contents[content].isShow){
+				// Show
+				showsList.push(content);
+			} else {
+				// Movie
+				moviesList.push(content);
+			}
+		}
+	}
+
+	if (query.length > 0) {
+		for (user in users) {
+			if (users[user].name.toUpperCase().search(query.toUpperCase()) != -1 || users[user].name.toUpperCase().search(query.replace(/\s+/g, '_').toUpperCase()) != -1 || users[user].name.toUpperCase().search(query.replace(/\s+/g, '-').toUpperCase()) != -1 || users[user].name.toUpperCase().search(query.replace(/\s+/g, '').toUpperCase()) != -1){
+				// User name contains query
+				usersList.push(user);
+			}
+
+			for (list in users[user].lists) {
+				if (users[user].lists[list].title.toUpperCase().search(query.toUpperCase()) != -1){
+					// List title contains query
+					listsList.push([Number.parseInt(user), Number.parseInt(list)]);
+				}
+			}
+		}
+	}
+
+	fillShows(showsList, suggestShows);
+	fillMovies(moviesList, suggestMovies);
+	fillLists(listsList);
+	fillUsers(usersList);
+}
+
+function fillShows(showsList, isSuggestions) {
+	if (showsList.length == 0) {
+		$('#noTVResults').show();
+	} else if (isSuggestions) {
+		$('#suggestTV').show();
+	}
+
+	var tvList = document.getElementById("tvList");
+	for (entry in showsList){
+		var show = document.createElement("div");
+		show.className = "content";
+		show.value = showsList[entry];
+		show.onclick = function(){ window.location = './show/index.html?id='+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "thumbnail";
+			thumbnail.src = contents[showsList[entry]].thumbnail;
+			show.appendChild(thumbnail);
+			var ratingGradient = document.createElement("div");
+			ratingGradient.className = "gradient-top";
+			show.appendChild(ratingGradient);
+			var ratingDiv = document.createElement("div");
+			ratingDiv.className = "rating";
+			ratingDiv.innerHTML = '<span>'+contents[showsList[entry]].rating+'</span><i class="material-icons">star</i>';
+			show.appendChild(ratingDiv);
+			var thumbGradient = document.createElement("div");
+			thumbGradient.className = "gradient";
+			show.appendChild(thumbGradient);
+			var title = document.createElement("div");
+			title.className = "title";
+				var span = document.createElement("span");
+				span.innerHTML = contents[showsList[entry]].title;
+				span.title = contents[showsList[entry]].title;
+				title.appendChild(span);
+			show.appendChild(title);
+		tvList.appendChild(show);
+	}
+}
+
+function fillMovies(moviesList, isSuggestions) {
+	if (moviesList.length == 0) {
+		$('#noMovieResults').show();
+	} else if (isSuggestions) {
+		$('#suggestMovie').show();
+	}
+
+	var movieList = document.getElementById("movieList");
+	for (entry in moviesList){
+		var movie = document.createElement("div");
+		movie.className = "content";
+		movie.value = moviesList[entry];
+		movie.onclick = function(){ window.location = './show/index.html?id='+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "thumbnail";
+			thumbnail.src = contents[moviesList[entry]].thumbnail;
+			movie.appendChild(thumbnail);
+			var ratingGradient = document.createElement("div");
+			ratingGradient.className = "gradient-top";
+			movie.appendChild(ratingGradient);
+			var ratingDiv = document.createElement("div");
+			ratingDiv.className = "rating";
+			ratingDiv.innerHTML = '<span>'+contents[moviesList[entry]].rating+'</span><i class="material-icons">star</i>';
+			movie.appendChild(ratingDiv);
+			var thumbGradient = document.createElement("div");
+			thumbGradient.className = "gradient";
+			movie.appendChild(thumbGradient);
+			var title = document.createElement("div");
+			title.className = "title";
+				var span = document.createElement("span");
+				span.innerHTML = contents[moviesList[entry]].title;
+				span.title = contents[moviesList[entry]].title;
+				title.appendChild(span);
+			movie.appendChild(title);
+		movieList.appendChild(movie);
+	}
+}
+
+function fillLists(listsList) {
+	if (listsList.length == 0) {
+		$('#noListResults').show();
+	}
+	
+	var listList = document.getElementById("listList");
+	for (entry in listsList){
+		var list = document.createElement("div");
+		list.className = "content";
+		list.value = 'user='+listsList[entry][0]+'&id='+listsList[entry][1];
+		list.onclick = function(){ window.location = './list.html?'+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "thumbnail";
+			thumbnail.src = users[listsList[entry][0]].lists[listsList[entry][1]].thumbnail;
+			list.appendChild(thumbnail);
+			var thumbGradient = document.createElement("div");
+			thumbGradient.className = "gradient";
+			list.appendChild(thumbGradient);
+			var title = document.createElement("div");
+			title.className = "title";
+				var span = document.createElement("span");
+				span.innerHTML = users[listsList[entry][0]].lists[listsList[entry][1]].title;
+				span.title = users[listsList[entry][0]].lists[listsList[entry][1]].title;
+				title.appendChild(span);
+				var span2 = document.createElement("span");
+				span2.style = "opacity: 0.7;font-size: 12px;vertical-align: middle;";
+				span2.innerHTML = "by "+users[listsList[entry][0]].name;
+				span2.title = "by "+users[listsList[entry][0]].name;
+				title.appendChild(span2);
+			list.appendChild(title);
+		listList.appendChild(list);
+	}
+}
+
+function fillUsers(usersList) {
+	if (usersList.length == 0) {
+		$('#noUserResults').show();
+	}
+	
+	var userList = document.getElementById("userList");
+	for (entry in usersList){
+		var user = document.createElement("div");
+		user.className = "content center smaller";
+		user.value = usersList[entry];
+		user.onclick = function(){ window.location = './user.html?id='+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "user-thumbnail";
+			thumbnail.src = users[usersList[entry]].avatar;
+			user.appendChild(thumbnail);
+			var username = document.createElement("div");
+			username.className = "username";
+			username.innerHTML = users[usersList[entry]].name;
+			username.title = users[usersList[entry]].name;
+			user.appendChild(username);
+		userList.appendChild(user);
+	}
 }

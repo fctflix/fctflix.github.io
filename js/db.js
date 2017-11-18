@@ -122,6 +122,19 @@ function defaultUsers(){
 			"notifications": [],
 			"following": [],
 			"recommendedShow": 2
+			},
+			{"name": "where-is-bojack-horseman",
+			"avatar": "http://www.apaixonadosporseries.com.br/wp-content/arquivos/2015/07/bojack-horseman.jpg",
+			"lists": [
+						{
+							"title": "Watchlist",
+							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"contents": [0,1]
+						}],
+			"subscriptions": [1],
+			"notifications": [],
+			"following": [],
+			"recommendedShow": 2
 			}];
 }
 function defaultContents(){
@@ -130,6 +143,7 @@ function defaultContents(){
 			"isShow": true,
 			"year": 2013,
 			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
+			"thumbnail": "https://image.tmdb.org/t/p/original/ptZO3SuJAXT4sm0doQavofRrRfq.jpg",
 			"rating": 4.7,
 			"subscribers": 485001,
 			"airs": "Mondays at 23PM",
@@ -279,6 +293,8 @@ function defaultContents(){
 			"isShow": false,
 			"year": 2017,
 			"poster": "https://walter.trakt.tv/images/movies/000/222/332/posters/thumb/5efccbca57.jpg",
+			"thumbnail": "https://image.tmdb.org/t/p/original/rXBB8F6XpHAwci2dihBCcixIHrK.jpg",
+			"rating": 4.7,
 			"rating": 3.4,
 			"subscribers": 58920,
 			"released": "2017-02-10",
@@ -324,7 +340,8 @@ function defaultContents(){
 				"isShow": true,
 				"year": 1989,
 				"poster": "https://walter.trakt.tv/images/shows/000/000/455/posters/thumb/8b737766ea.jpg",
-				"rating": 4.5,
+				"thumbnail": "https://image.tmdb.org/t/p/original/lnnrirKFGwFW18GiH3AmuYy40cz.jpg",
+				"rating": 4.4,
 				"subscribers": 1056308,
 				"airs": "Mondays at 1AM",
 				"network": "FOX",

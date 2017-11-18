@@ -6,7 +6,7 @@ if (contentId == null || isNaN(contentId) || contentId >= contents.length || con
 
 $(document).ready(function() {
 	//TODO REMOVE
-	console.log('//TODO Like/Dislike Review;');
+	console.log('//TODO Like/Dislike Review; Recommend show;');
 
 	populateInfo();
 	if (contents[contentId].isShow){

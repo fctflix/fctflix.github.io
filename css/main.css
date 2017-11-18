@@ -115,9 +115,10 @@ header .logo {
   cursor: pointer;
 }
 .avatar-small {
-  max-height:44px;
-  max-width:44px;
-  clip-path:circle(18px at center);
+  max-height:36px;
+  max-width:36px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .avatar-out {
   width:3%;

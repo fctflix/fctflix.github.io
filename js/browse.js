@@ -24,7 +24,7 @@ function populateLists() {
 				}
 				var thumbnail = document.createElement("img")
 				thumbnail.className = "thumbnail"
-				thumbnail.src = "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png" //temporary
+				thumbnail.src = show.thumbnail;
 				content.appendChild(thumbnail)
 				var gradientTop = document.createElement("div")
 				gradientTop.className = "gradient-top"
