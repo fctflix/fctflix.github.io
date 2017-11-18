@@ -5,9 +5,6 @@ if (contentId == null || isNaN(contentId) || contentId >= contents.length || con
 }
 
 $(document).ready(function() {
-	//TODO REMOVE
-	console.log('//TODO Like/Dislike Review; Recommend show;');
-
 	populateInfo();
 	if (contents[contentId].isShow){
 		populateSeasons();
@@ -306,28 +303,68 @@ function populateReviews(sort){
 					spacer1.className = "spacer";
 					div.appendChild(spacer1);
 					var up = document.createElement("i");
-					up.className = "material-icons";
-					up.onclick = function(){alert('this does not work yet :(');};
+					if ($.inArray(0, contents[contentId].reviews[i].likes) != -1) {
+						up.className = "material-icons active"; // Liked
+					} else {
+						up.className = "material-icons";
+					}
+					up.onclick = function(){ voteReview($(this), true); };
 					up.innerHTML = "thumb_up";
 					div.appendChild(up);
 					var spacer2 = document.createElement("span");
 					spacer2.className = "spacer";
 					div.appendChild(spacer2);
 					var down = document.createElement("i");
-					down.className = "material-icons";
-					down.onclick = function(){alert('this does not work yet :(');};
+					if ($.inArray(0, contents[contentId].reviews[i].dislikes) != -1) {
+						down.className = "material-icons active"; // Disliked
+					} else {
+						down.className = "material-icons";
+					}
+					down.onclick = function(){ voteReview($(this), false); };
 					down.innerHTML = "thumb_down";
 					div.appendChild(down);
 					var average = document.createElement("span");
 					average.className = "average";
-					var likes = sortedReviews[i].likes;
-					var dislikes = sortedReviews[i].dislikes;
-					average.innerHTML = ((likes/(likes+dislikes))*100)+"% found this helpful";
+					var likes = sortedReviews[i].likes.length;
+					var dislikes = sortedReviews[i].dislikes.length;
+					average.value = i;
+					average.innerHTML = Math.round((likes/(likes+dislikes))*100)+"% found this helpful";
 					div.appendChild(average);
 				review.appendChild(div);
 			reviewsList.appendChild(review);
 		}
 	}	
+}
+
+function voteReview(context, like){
+	var parentChildren = context.parent().children();
+	var reviewId = parentChildren[5].value;
+	var userId = 0;
+
+	//Remove old vote
+	contents[contentId].reviews[reviewId].likes = jQuery.grep(contents[contentId].reviews[reviewId].likes, function(value) { return value != userId; });
+	contents[contentId].reviews[reviewId].dislikes = jQuery.grep(contents[contentId].reviews[reviewId].dislikes, function(value) { return value != userId; });
+
+	//Add new vote
+	if (like) {
+		parentChildren[2].className = "material-icons active";
+		parentChildren[4].className = "material-icons";	
+		contents[contentId].reviews[reviewId].likes.push(userId);
+	} else {
+		parentChildren[2].className = "material-icons";
+		parentChildren[4].className = "material-icons active";
+		contents[contentId].reviews[reviewId].dislikes.push(userId);
+	}
+
+	//Save in the db
+	saveContents();
+
+	//Update count
+	var likes = contents[contentId].reviews[reviewId].likes.length;
+	var dislikes = contents[contentId].reviews[reviewId].dislikes.length;
+	parentChildren[5].innerHTML = Math.round((likes/(likes+dislikes))*100)+"% found this helpful";
+
+	showSnackbar("Thank you for your feedback!");
 }
 
 function sortReviews(reviews, sort){
@@ -439,8 +476,8 @@ function addReview(){
 	newReview.rating = Number.parseInt(document.getElementById("reviewRating").value);
 	newReview.date = getCurrentDateTime();
 	newReview.text = document.getElementById("reviewText").value;
-	newReview.likes = 1;
-	newReview.dislikes = 0;
+	newReview.likes = [0];
+	newReview.dislikes = [];
 
 	if (!validateReview(true)){
 		return;

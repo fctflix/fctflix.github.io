@@ -271,6 +271,13 @@ button:disabled, button:disabled:hover {
   color: rgba(218, 218, 218, 0.3);
   cursor: not-allowed;
 }
+.score .material-icons {
+  opacity: 0.7;
+}
+.score .material-icons.active{
+  opacity: 1;
+  color: rgb(86,127,209);
+}
 /* DROPDOWN */
 .dropdown {
     position: relative;

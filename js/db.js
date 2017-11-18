@@ -202,22 +202,22 @@ function defaultContents(){
 						"rating": 4,
 						"date": "2017-09-21 07:40",
 						"text": "A smart show that's constantly hilarious and packed with great characters. A must watch!",
-						"likes": 92,
-						"dislikes": 8
+						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8]
 						},
 						{"user": 2,
 						"rating": 5,
 						"date": "2017-03-02 17:42",
 						"text": "To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn’t appreciate, for instance, the humour in Rick’s existential catchphrase “Wubba Lubba Dub Dub,” which itself is a cryptic reference to Turgenev’s Russian epic Fathers and Sons. I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon’s genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂 And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid 😎",
-						"likes": 69,
-						"dislikes": 31
+						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
 						},
 						{"user": 3,
 						"rating": 1,
 						"date": "2017-04-20 02:57",
 						"text": "Bland show for neckbeards!",
-						"likes": 1,
-						"dislikes": 99
+						"likes": [1],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 						}],
 			"posts": [
 						{"user": 3,
@@ -317,8 +317,8 @@ function defaultContents(){
 						"rating": 3,
 						"date": "2017-10-02 17:52",
 						"text": "A review that doesn't say anything an interested viewer needs.",
-						"likes": 1,
-						"dislikes": 0
+						"likes": [1],
+						"dislikes": []
 						}],
 			"posts": [
 						{"user": 3,
@@ -384,8 +384,8 @@ function defaultContents(){
 							"rating": 5,
 							"date": "2017-06-10 18:30",
 							"text": "love it",
-							"likes": 500,
-							"dislikes": 1
+							"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+							"dislikes": [1]
 				}],
 				"posts": [{"user": 0,
 							"title": "conspiracy theory",
@@ -459,14 +459,7 @@ function defaultContents(){
 						"photo": "https://fctflix.github.io/images/db/52.jpg",
 						"imdb": "http://www.imdb.com/name/nm3361199/"
 						}],
-			"reviews": [
-						{"user": 1,
-						"rating": 4,
-						"date": "2017-09-21 07:40",
-						"text": "Generic review text",
-						"likes": 92,
-						"dislikes": 8
-						}],
+			"reviews": [],
 			"posts": [
 						{"user": 3,
 						"title": "DAE notice this?",
