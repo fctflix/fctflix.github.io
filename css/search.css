@@ -44,3 +44,10 @@
 .material-icons.filterIcon {
   float: none;
 }
+.content .material-icons {
+  cursor: pointer;
+}
+button, select {
+  height: 2em;
+  padding: 1px 6px;
+}
