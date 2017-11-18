@@ -57,7 +57,7 @@ function defaultUsers(){
 							"thumbnail": "https://fctflix.github.io/images/db/5.jpg",
 							"contents": [0]
 						}],
-			"subscriptions": [0],
+			"subscriptions": [2,3],
 			"notifications": [
 								{
 									"type":"new_episode",
@@ -511,7 +511,7 @@ function defaultContents(){
 						{"user": 4,
 						"title": "Here's a drawing of Elliot I made",
 						"date": "2017-11-20 07:42",
-						"text": "https://fctflix.github.io/images/db/53.jpg",
+						"text": "https://fctflix.github.io/images/db/54.jpg",
 						"likes": 782,
 						"dislikes": 26,
 						"comments": [
