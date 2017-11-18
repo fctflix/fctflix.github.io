@@ -118,7 +118,7 @@ function populateInfo(){
 			list.value = i;
 			listEntry.appendChild(list);
 			var title = document.createElement("span");
-			title.innerHTML = users[0].lists[0].title;
+			title.innerHTML = users[0].lists[i].title;
 			listEntry.appendChild(title);
 			var icon = document.createElement("i");
 			icon.className = "material-icons";

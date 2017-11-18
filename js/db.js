@@ -30,31 +30,31 @@ function reset(){
 function defaultUsers(){
 	return [
 			{"name": "Doggo",
-			"avatar": "https://78.media.tumblr.com/84365fe19039b5fd917d6d449ca86290/tumblr_op4lb5DPRe1qg6rkio1_1280.jpg",
+			"avatar": "https://fctflix.github.io/images/db/0.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/1.png",
 							"contents": [0,1]
 						},
 						{
 							"title": "pew pew pew",
-							"thumbnail": "https://uproxx.files.wordpress.com/2010/10/halo-dog-pew-pew-pew.jpg",
+							"thumbnail": "https://fctflix.github.io/images/db/2.jpg",
 							"contents": [0,1]
 						},
 						{
 							"title": "Shows with dogs in them",
-							"thumbnail": "http://wallpaper.pickywallpapers.com/1280x720/shiba-inu.jpg",
+							"thumbnail": "https://fctflix.github.io/images/db/3.jpg",
 							"contents": [0]
 						},
 						{
 							"title": "kinky",
-							"thumbnail": "http://mms.businesswire.com/media/20150812006323/en/480981/5/ExtraKinky_Logo_2-15HR1.jpg",
+							"thumbnail": "https://fctflix.github.io/images/db/4.jpg",
 							"contents": [1]
 						},
 						{
 							"title": "i dunno man",
-							"thumbnail": "https://i.ytimg.com/vi/V3gdcindxRo/hqdefault.jpg",
+							"thumbnail": "https://fctflix.github.io/images/db/5.jpg",
 							"contents": [0]
 						}],
 			"subscriptions": [0],
@@ -72,11 +72,11 @@ function defaultUsers(){
 			"recommendedShow": 2
 			},
 			{"name": "JamesDoe",
-			"avatar": "https://i.imgur.com/TdYZdrY.jpg",
+			"avatar": "https://fctflix.github.io/images/db/6.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/7.png",
 							"contents": [0,1]
 						}],
 			"subscriptions": [0],
@@ -85,11 +85,11 @@ function defaultUsers(){
 			"recommendedShow": 2
 			},
 			{"name": "SchrondingerFedora",
-			"avatar": "https://img1.etsystatic.com/041/1/5493921/il_340x270.572585825_n5px.jpg",
+			"avatar": "https://fctflix.github.io/images/db/8.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/9.png",
 							"contents": [0,1]
 						}],
 			"subscriptions": [0,1],
@@ -98,11 +98,11 @@ function defaultUsers(){
 			"recommendedShow": 2
 			},
 			{"name": "PeteTheFrog",
-			"avatar": "http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
+			"avatar": "https://fctflix.github.io/images/db/10.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/11.png",
 							"contents": [0,1]
 						}],
 			"subscriptions": [1],
@@ -111,11 +111,11 @@ function defaultUsers(){
 			"recommendedShow": 2
 			},
 			{"name": "Sethmore",
-			"avatar": "https://www.mcdonalds.com/content/dam/Canada/en/product_pages/snacks-sides/hero/hero_world-famous-fries.png",
+			"avatar": "https://fctflix.github.io/images/db/12.png",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/13.png",
 							"contents": [0,1]
 						}],
 			"subscriptions": [1],
@@ -124,11 +124,11 @@ function defaultUsers(){
 			"recommendedShow": 2
 			},
 			{"name": "where-is-bojack-horseman",
-			"avatar": "http://www.apaixonadosporseries.com.br/wp-content/arquivos/2015/07/bojack-horseman.jpg",
+			"avatar": "https://fctflix.github.io/images/db/14.jpg",
 			"lists": [
 						{
 							"title": "Watchlist",
-							"thumbnail": "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png",
+							"thumbnail": "https://fctflix.github.io/images/db/15.png",
 							"contents": [0,1]
 						}],
 			"subscriptions": [1],
@@ -142,59 +142,59 @@ function defaultContents(){
 			{"title": "Rick and Morty",
 			"isShow": true,
 			"year": 2013,
-			"poster": "https://walter.trakt.tv/images/shows/000/069/829/posters/thumb/16434b4797.jpg",
-			"thumbnail": "https://image.tmdb.org/t/p/original/ptZO3SuJAXT4sm0doQavofRrRfq.jpg",
+			"poster": "https://fctflix.github.io/images/db/16.jpg",
+			"thumbnail": "https://fctflix.github.io/images/db/17.jpg",
 			"rating": 4.7,
 			"subscribers": 485001,
-			"airs": "Mondays at 23PM",
-			"network": "Comedy Central",
+			"airs": "Mondays at 4:30AM",
+			"network": "Adult Swim",
 			"language": "English",
 			"genres": ["Animation","Comedy","SciFi"],
 			"synopsis": "A sociopathic scientist drags his unintelligent grandson on insanely dangerous adventures across the universe.",
 			"seasons": [
 						{"episodes":[
 							{"title": "Pilot",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/001/167/595/screenshots/thumb/38d22c0db6.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/18.jpg"
 							},
 							{"title": "Lawnmower Dog",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/001/167/687/screenshots/thumb/4ee1e54f1c.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/19.jpg"
 							}]
 						},
 						{"episodes":[
 							{"title": "A Rickle in Time",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/001/732/564/screenshots/thumb/f7b6963a5c.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/20.jpg"
 							},
 							{"title": "Mortynight Run",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/001/917/687/screenshots/thumb/471994ccd6.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/21.jpg"
 							}]
 						},
 						{"episodes":[
 							{"title": "The Rickshank Rickdemption",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/002/530/948/screenshots/thumb/d854c1a3cd.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/22.jpg"
 							},
 							{"title": "Rickmancing the Stone",
-							"thumbnail": "https://walter.trakt.tv/images/episodes/002/560/335/screenshots/thumb/d670eeff72.jpg"
+							"thumbnail": "https://fctflix.github.io/images/db/23.jpg"
 							}]
 						}],
 			"actors": [
 						{"name": "Justin Roiland",
 						"character": "Rick Sanchez / Morty Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/471/529/headshots/thumb/fe304eb105.jpg",
+						"photo": "https://fctflix.github.io/images/db/24.jpg",
 						"imdb": "https://www.imdb.com/name/nm1551598/"
 						},
 						{"name": "Chris Parnell",
 						"character": "Jerry Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/421/126/headshots/thumb/dfe58f45de.jpg",
+						"photo": "https://fctflix.github.io/images/db/25.jpg",
 						"imdb": "https://www.imdb.com/name/nm0663177/"
 						},
 						{"name": "Sarah Chalke",
 						"character": "Beth Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/428/041/headshots/thumb/65a865ff57.jpg",
+						"photo": "https://fctflix.github.io/images/db/26.jpg",
 						"imdb": "https://www.imdb.com/name/nm0149950/"
 						},
 						{"name": "Spencer Grammer",
 						"character": "Summer Smith",
-						"photo": "https://walter.trakt.tv/images/people/000/434/202/headshots/thumb/45d54aec34.jpg",
+						"photo": "https://fctflix.github.io/images/db/27.jpg",
 						"imdb": "https://www.imdb.com/name/nm0334561/"
 						}],
 			"reviews": [
@@ -223,7 +223,7 @@ function defaultContents(){
 						{"user": 3,
 						"title": "WUBBA LUBBA DUB DUB",
 						"date": "2017-08-20 02:57",
-						"text": "And that's the way the news goes!http://dazedimg.dazedgroup.netdna-cdn.com/786/azure/dazed-prod/1140/3/1143350.jpg",
+						"text": "And that's the way the news goes!https://fctflix.github.io/images/db/28.jpg",
 						"likes": 1,
 						"dislikes": 99,
 						"comments": [
@@ -292,8 +292,8 @@ function defaultContents(){
 			{"title": "Fifty Shades Darker",
 			"isShow": false,
 			"year": 2017,
-			"poster": "https://walter.trakt.tv/images/movies/000/222/332/posters/thumb/5efccbca57.jpg",
-			"thumbnail": "https://image.tmdb.org/t/p/original/rXBB8F6XpHAwci2dihBCcixIHrK.jpg",
+			"poster": "https://fctflix.github.io/images/db/29.jpg",
+			"thumbnail": "https://fctflix.github.io/images/db/30.jpg",
 			"rating": 4.7,
 			"rating": 3.4,
 			"subscribers": 58920,
@@ -304,12 +304,13 @@ function defaultContents(){
 			"actors": [
 						{"name": "Dakota Johnson",
 						"character": "Anastasia Steele",
-						"photo": "https://walter.trakt.tv/images/people/000/438/351/headshots/thumb/271ef4ea5d.jpg",
+						"photo": "https://fctflix.github.io/images/db/31.jpg",
 						"imdb": "https://www.imdb.com/name/nm0424848/"
 						},
 						{"name": "Jamie Dornan",
 						"character": "Christian Grey",
-						"photo": "https://walter.trakt.tv/images/people/000/416/100/headshots/thumb/d7ec4c7a4a.jpg"
+						"photo": "https://fctflix.github.io/images/db/32.jpg",
+						"imdb": "https://www.imdb.com/name/nm1946193/"
 						}],
 			"reviews": [
 						{"user": 4,
@@ -339,9 +340,9 @@ function defaultContents(){
 				"title": "The Simpsons",
 				"isShow": true,
 				"year": 1989,
-				"poster": "https://walter.trakt.tv/images/shows/000/000/455/posters/thumb/8b737766ea.jpg",
-				"thumbnail": "https://image.tmdb.org/t/p/original/lnnrirKFGwFW18GiH3AmuYy40cz.jpg",
-				"rating": 4.4,
+				"poster": "https://fctflix.github.io/images/db/33.jpg",
+				"thumbnail": "https://fctflix.github.io/images/db/34.jpg",
+				"rating": 4.3,
 				"subscribers": 1056308,
 				"airs": "Mondays at 1AM",
 				"network": "FOX",
@@ -351,32 +352,32 @@ function defaultContents(){
 				"seasons": [{
 					"episodes": [{
 						"title": "Simpsons Roasting on an Open Fire",
-						"thumbnail": "https://walter.trakt.tv/images/episodes/000/025/734/screenshots/thumb/560b43bd81.jpg"
+						"thumbnail": "https://fctflix.github.io/images/db/35.jpg"
 					}]
 				}],
 				"actors": [{"name": "Nancy Cartwright",
 							"character": "Bart Simpson",
-							"photo": "https://walter.trakt.tv/images/people/000/415/153/headshots/thumb/311c8d7b38.jpg",
+							"photo": "https://fctflix.github.io/images/db/36.jpg",
 							"imdb": "http://www.imdb.com/name/nm0004813"
 							},
 							{"name": "Dan Castellaneta",
 										"character": "Homer Simpson",
-										"photo": "https://walter.trakt.tv/images/people/000/410/980/headshots/thumb/7fcdac59ca.jpg",
+										"photo": "https://fctflix.github.io/images/db/37.jpg",
 										"imdb": "http://www.imdb.com/name/nm0144657"
 							},
 							{"name": "Julie Kavner",
 										"character": "Marge Simpson",
-										"photo": "https://walter.trakt.tv/images/people/000/417/696/headshots/thumb/10b29beab6.jpg",
+										"photo": "https://fctflix.github.io/images/db/38.jpg",
 										"imdb": "http://www.imdb.com/name/nm0001413"
 							},
 							{"name": "Yeardley Smith",
 										"character": "Lisa Simpson",
-										"photo": "https://walter.trakt.tv/images/people/000/418/077/headshots/thumb/9eee2c2a02.jpg",
+										"photo": "https://fctflix.github.io/images/db/39.jpg",
 										"imdb": "http://www.imdb.com/name/nm0810379"
 							},
 							{"name": "Harry Shearer",
 										"character": "Mr. Burns / Principal Skinner",
-										"photo": "https://walter.trakt.tv/images/people/000/411/726/headshots/thumb/1a5bf66e67.jpg",
+										"photo": "https://fctflix.github.io/images/db/40.jpg",
 										"imdb": "http://www.imdb.com/name/nm0790434"
 							}],
 				"reviews": [{"user": 1,
@@ -399,6 +400,142 @@ function defaultContents(){
 										"dislikes": 0
 							}]
 				}]
+			},
+			{"title": "Mr. Robot",
+			"isShow": true,
+			"year": 2015,
+			"poster": "https://fctflix.github.io/images/db/41.jpg",
+			"thumbnail": "https://fctflix.github.io/images/db/42.jpg",
+			"rating": 4.5,
+			"subscribers": 264851,
+			"airs": "Thursdays at 3:00AM",
+			"network": "USA Network",
+			"language": "English",
+			"genres": ["Drama"],
+			"synopsis": "Mr. Robot follows Elliot, a young programmer who works as a cyber-security engineer by day and a vigilante hacker by night. Elliot finds himself at a crossroads when the mysterious leader of an underground hacker group recruits him to destroy the corporation he is paid to protect.",
+			"seasons": [
+						{"episodes":[
+							{"title": "eps1.0_hellofriend.mov",
+							"thumbnail": "https://fctflix.github.io/images/db/43.jpg"
+							},
+							{"title": "eps1.1_ones-and-zer0es.mpeg",
+							"thumbnail": "https://fctflix.github.io/images/db/44.jpg"
+							}]
+						},
+						{"episodes":[
+							{"title": "eps2.0_unm4sk-pt1.tc",
+							"thumbnail": "https://fctflix.github.io/images/db/45.jpg"
+							},
+							{"title": "eps2.0_unm4sk-pt2.tc",
+							"thumbnail": "https://fctflix.github.io/images/db/46.jpg"
+							}]
+						},
+						{"episodes":[
+							{"title": "eps3.0_power-saver-mode.h",
+							"thumbnail": "https://fctflix.github.io/images/db/47.jpg"
+							},
+							{"title": "eps3.1_undo.gz",
+							"thumbnail": "https://fctflix.github.io/images/db/48.jpg"
+							}]
+						}],
+			"actors": [
+						{"name": "Rami Malek",
+						"character": "Elliot Alderson",
+						"photo": "https://fctflix.github.io/images/db/49.jpg",
+						"imdb": "http://www.imdb.com/name/nm1785339/"
+						},
+						{"name": "Christian Slater",
+						"character": "Mr. Robot",
+						"photo": "https://fctflix.github.io/images/db/50.jpg",
+						"imdb": "http://www.imdb.com/name/nm0000225/"
+						},
+						{"name": "Portia Doubleday",
+						"character": "Angela Moss",
+						"photo": "https://fctflix.github.io/images/db/51.jpg",
+						"imdb": "http://www.imdb.com/name/nm0234668/"
+						},
+						{"name": "Carly Chaikin",
+						"character": "Darlene",
+						"photo": "https://fctflix.github.io/images/db/52.jpg",
+						"imdb": "http://www.imdb.com/name/nm3361199/"
+						}],
+			"reviews": [
+						{"user": 1,
+						"rating": 4,
+						"date": "2017-09-21 07:40",
+						"text": "Generic review text",
+						"likes": 92,
+						"dislikes": 8
+						}],
+			"posts": [
+						{"user": 3,
+						"title": "DAE notice this?",
+						"date": "2017-08-20 02:57",
+						"text": "Is it just me or does Rami Malek look like a pepe?https://fctflix.github.io/images/db/53.jpg",
+						"likes": 1,
+						"dislikes": 99,
+						"comments": [
+									{"user": 4,
+									"date": "2017-08-20 02:58",
+									"text": "Could you just stop spamming everything?",
+									"likes": 99,
+									"dislikes": 1
+									},
+									{"user": 3,
+									"date": "2017-08-20 03:34",
+									"text": "To be fair, you have to have a very high IQ to understand Mr Robot. The social commentary is extremely subtle, and without a solid grasp of Marxist philosophy most of the critique will go over a typical viewer’s head. There’s also Eliot’s nihilistic, alienated outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Feuerbach, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of the cinematography, to realise that they’re not just great shots- they draw upon a rich history of FILM. As a consequence people who dislike Mr Robot truly ARE idiots- of course they wouldn’t appreciate, for instance, the Philosophical humour in Eliot’s existential catchphrase “Please tell me you’re seeing this too,” which itself is a cryptic reference to David Fincher’s cinematic masterpiece “Fight Club” . I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Sam Esmail’s genius storytelling unfolds itself on their television screens. What fools.. how I pity them.<br>And yes, by the way, i DO have a Mr Robot tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid",
+									"likes": 3,
+									"dislikes": 25
+									}]
+						},
+						{"user": 2,
+						"title": "Rami Malek winning Emmy reaction",
+						"date": "2017-11-10 05:31",
+						"text": "https://www.youtube.com/watch?v=-mJMNqNKfMI",
+						"likes": 2618,
+						"dislikes": 63,
+						"comments": [
+									{"user": 1,
+									"date": "2017-11-10 12:01",
+									"text": "Congratulations Rami!",
+									"likes": 2,
+									"dislikes": 0
+									},
+									{"user": 3,
+									"date": "2017-11-10 17:56",
+									"text": "FAKE!!!1",
+									"likes": 0,
+									"dislikes": 78
+									}]
+						},
+						{"user": 4,
+						"title": "Here's a drawing of Elliot I made",
+						"date": "2017-11-20 07:42",
+						"text": "https://fctflix.github.io/images/db/53.jpg",
+						"likes": 782,
+						"dislikes": 26,
+						"comments": [
+									{"user": 1,
+									"date": "2017-11-20 07:45",
+									"text": "That's beautiful.",
+									"likes": 56,
+									"dislikes": 0
+									}]
+						},
+						{"user": 5,
+						"title": "A theory about Elliot's routine",
+						"date": "2017-11-15 23:14",
+						"text": "Look I could write some text here but that's not the point. So I'll just go ahead and say random stuff. Or maybe not, who knows. Wait a minute, I just did it, din't I? Oh well...",
+						"likes": 2,
+						"dislikes": 0,
+						"comments": [
+									{"user": 4,
+									"date": "2017-11-16 02:41",
+									"text": "Interesting post...",
+									"likes": 69,
+									"dislikes": 0
+									}]
+						}]
 			}];
 }
 

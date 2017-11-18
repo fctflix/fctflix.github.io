@@ -186,7 +186,20 @@ function search(){
 }
 
 function urlifyPost(text) {
-    return text.replace(/(https?:\/\/[^\s]+)/g, '<img class="post-image" src="$1"/>');
+	console.log(getId(text));
+	text = text.replace(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/, '<div class="videoContainer"><iframe class="video" src="https://www.youtube.com/embed/$2" frameborder="0" allowfullscreen></iframe></div>');
+	return text.replace(/(https?:\/\/[^\s]+(.jpg|.jpeg|.png|.gif|.webp|.bmp|.svg))/g, '<img class="post-image" src="$1"/>');
+}
+
+function getId(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
 }
 
 function calculateTimeDifference(date) {
