@@ -35,17 +35,17 @@ function defaultUsers(){
 						{
 							"title": "Watchlist",
 							"thumbnail": "https://fctflix.github.io/images/db/1.png",
-							"contents": [0,1]
+							"contents": [1,2]
 						},
 						{
 							"title": "pew pew pew",
 							"thumbnail": "https://fctflix.github.io/images/db/2.jpg",
-							"contents": [0,1]
+							"contents": [1,2]
 						},
 						{
 							"title": "Shows with dogs in them",
 							"thumbnail": "https://fctflix.github.io/images/db/3.jpg",
-							"contents": [0]
+							"contents": [2,3]
 						},
 						{
 							"title": "kinky",
@@ -55,13 +55,13 @@ function defaultUsers(){
 						{
 							"title": "i dunno man",
 							"thumbnail": "https://fctflix.github.io/images/db/5.jpg",
-							"contents": [0]
+							"contents": [3]
 						}],
 			"subscriptions": [2,3],
 			"notifications": [
 								{
 									"type":"new_episode",
-									"showId":0
+									"showId":2
 								},
 								{
 									"type":"post_reply",
@@ -316,7 +316,7 @@ function defaultContents(){
 						{"user": 4,
 						"rating": 3,
 						"date": "2017-10-02 17:52",
-						"text": "A review that doesn't say anything an interest viewer needs.",
+						"text": "A review that doesn't say anything an interested viewer needs.",
 						"likes": 1,
 						"dislikes": 0
 						}],
