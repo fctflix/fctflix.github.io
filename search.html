@@ -51,15 +51,16 @@
 				<span>
 					<b>Genres: </b>
 					<div class="dropdown">
-						<button id="genreBtn" class="small">All Genres</button>
+						<button id="genreBtn" class="small">Loading...</button>
 						<div id="genresList" class="dropdownContent noselect small">
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Action</span><i class="material-icons">check_box</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Adventure</span><i class="material-icons">check_box</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Animation</span><i class="material-icons">check_box_outline_blank</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Comedy</span><i class="material-icons">check_box_outline_blank</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Drama</span><i class="material-icons">check_box_outline_blank</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>Fantasy</span><i class="material-icons">check_box_outline_blank</i></div>
-							<div class="dropdownEntry" onclick="alert('this does not work yet :(')"><span>SciFi</span><i class="material-icons">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Action');"><span>Action</span><i class="material-icons" id="selectAction">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Adventure');"><span>Adventure</span><i class="material-icons" id="selectAdventure">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Animation');"><span>Animation</span><i class="material-icons" id="selectAnimation">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Comedy');"><span>Comedy</span><i class="material-icons" id="selectComedy">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Drama');"><span>Drama</span><i class="material-icons" id="selectDrama">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Fantasy');"><span>Fantasy</span><i class="material-icons" id="selectFantasy">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('Horror');"><span>Horror</span><i class="material-icons" id="selectHorror">check_box_outline_blank</i></div>
+							<div class="dropdownEntry" onclick="toggleGenre('SciFi');"><span>SciFi</span><i class="material-icons" id="selectSciFi">check_box_outline_blank</i></div>
 						</div>
 					</div>
 				</span>
@@ -211,5 +212,6 @@
 				Made with ❤ in Almada
 			</div>
 		</footer>
+		<div id="snackbar">Uh oh... You shouldn't be able to see this. Hi?</div>
 	</body>
 </html>

@@ -1,4 +1,5 @@
-var query, genres, year1, year2, rating;
+var query, selectedGenres, year1, year2, rating;
+var genres = ["Action", "Adventure", "Animation", "Comedy", "Drama", "Fantasy", "Horror", "SciFi"];
 
 $(document).ready(function() {
 	//Fill query
@@ -13,15 +14,14 @@ $(document).ready(function() {
 	}
 
 	//Fill genres
-	genres = getQueryParameterByName("g");
-	if (genres == null){
-		genres = ['test','derp'];
+	selectedGenres = getQueryParameterByName("g");
+	if (selectedGenres == null){
+		selectedGenres = genres.slice(0); //slice is here so we don't change the original list
 	} else {
-		genres = genres.split(',');
+		selectedGenres = selectedGenres.split(',');
 	}
-	fillGenres(genres);
+	fillSelectedGenres();
 
-	console.log("gothere");
 	//Fill years
 	year1 = getQueryParameterByName("y1");
 	if (year1 == null){
@@ -47,12 +47,45 @@ $(document).ready(function() {
 	searchDb();
 
 	//TODO REMOVE
-	console.log('//TODO Genres dropdown # select text in button; Filters only apply to tv and movies; Suggestions; Search; Filters; Filters layout; Fill with real data');
+	console.log('//TODO Filters only apply to tv and movies; Search; Suggestions if no results; Filters; Fill with real data');
 });
 
-function fillGenres(g) {
-	console.log("TODO fill genres");
-	console.log(g);
+function fillSelectedGenres() {
+	for (genre in selectedGenres){
+		$('#select'+selectedGenres[genre])[0].innerHTML = "check_box";
+	};
+
+	updateSelectedGenresDropdown();
+}
+
+function toggleGenre(genre) {
+	var selected = $.inArray(genre, selectedGenres);
+	if (selected != -1) {
+		//Remove from list
+		selectedGenres.splice(selected, 1 );
+
+		$('#select'+genre)[0].innerHTML = "check_box_outline_blank";
+		console.log("No longer showing results for genre: "+genre);
+	} else {	
+		//Add to list
+		selectedGenres.push(genre);
+
+		$('#select'+genre)[0].innerHTML = "check_box";
+		console.log("Now showing results for genre: "+genre);
+	}
+
+	updateSelectedGenresDropdown();
+}
+
+function updateSelectedGenresDropdown(){
+	if (selectedGenres.length == genres.length){
+		$('#genreBtn')[0].innerHTML = "All";
+	} else if (selectedGenres.length == 0){
+		$('#genreBtn')[0].innerHTML = "None";
+	} else {
+		$('#genreBtn')[0].innerHTML = selectedGenres.length+" selected";
+	}
+	
 }
 
 function filterRate(r) {
@@ -75,6 +108,10 @@ function filter() {
 	year1 = document.getElementById("year1Filter").value;
 	year2 = document.getElementById("year2Filter").value;
 
+	if (selectedGenres.length == 0){
+		selectedGenres = genres;
+	}
+
 	if (year1 > year2) {
 		document.getElementById("year1Filter").value = year2;
 		document.getElementById("year2Filter").value = year1;
@@ -82,7 +119,7 @@ function filter() {
 		year1 = year2;
 		year2 = tmp;
 	}
-	window.location = "./search.html?q="+encodeURIComponent(query)+"&g="+encodeURIComponent(genres)+"&y1="+encodeURIComponent(year1)+"&y2="+encodeURIComponent(year2)+"&r="+encodeURIComponent(rating);
+	window.location = "./search.html?q="+encodeURIComponent(query)+"&g="+encodeURIComponent(selectedGenres)+"&y1="+encodeURIComponent(year1)+"&y2="+encodeURIComponent(year2)+"&r="+encodeURIComponent(rating);
 }
 
 function searchDb() {

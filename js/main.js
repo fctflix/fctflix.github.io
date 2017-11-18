@@ -35,8 +35,7 @@ $(document).ready(function() {
 
 	//Search when enter is hit
 	$("#searchbar").on('keyup', function (e) {
-		console.log('stuff');
-	    if (e.keyCode == 13) {
+		if (e.keyCode == 13) {
 	        search();
 	    }
 	});
