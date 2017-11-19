@@ -32,12 +32,13 @@ function fillCommunityPosts() {
 	console.log("Filling the community with posts...");
 
 	var posts = []
-	for(var i = 0; i < contents.length; i++) {
-		var show = contents[i]
+	for(sub of users[0].subscriptions) {
+		var show = contents[sub];
 		for(post of show.posts) {
-			posts.push({"community":i, "post":post})
-		}
+			posts.push({"community":sub, "post":post})
+		}		
 	}
+	
 	posts.sort( (a,b) => Date.parse(b.post["date"]) - Date.parse(a.post["date"]))
 	var postHTML = []
 
