@@ -45,8 +45,9 @@ function fillRecommendations() {
 	for(user of users[0].following) {
 		var content = document.createElement("div");
 		content.className = "content";
+		content.value = users[user].recommendedShow;
 		content.onclick = function() {
-			alert('this does not work yet :(');
+			window.location = './show/index.html?id='+this.value;
 		}
 		var thumbnail = document.createElement("img");
 		thumbnail.className = "thumbnail";
