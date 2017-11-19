@@ -66,7 +66,7 @@ function fillCommunityPosts() {
 		post_avatar.className = "post-avatar"
 		//the actual image
 		var avatar_img = document.createElement("img")
-		avatar_img.className = "avatar-small"
+		avatar_img.className = "avatar small"
 		avatar_img.src = users[post.user].avatar
 		post_avatar.appendChild(avatar_img)
 		post_card.appendChild(post_avatar)

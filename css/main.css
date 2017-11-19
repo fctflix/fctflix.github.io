@@ -114,14 +114,6 @@ header .logo {
 .search button i.material-icons {
   cursor: pointer;
 }
-.avatar-small {
-  height: 36px;
-  width: 36px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
-  object-fit: cover;
-}
 .avatar-out {
   width:3%;
   margin-right:2%;
@@ -207,6 +199,36 @@ a.toplinks {
 .user-popup {
   left: 83%;
   width:15%;
+}
+/* AVATAR */
+.avatar {
+  background-color: #000;
+  height: 48px;
+  width: 48px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
+  object-fit: cover;
+}
+.avatar.huge {
+  height: 128px;
+  width: 128px;
+}
+.avatar.large {
+  height: 100px;
+  width: 100px;
+}
+.avatar.medium {
+  height: 68px;
+  width: 68px;
+}
+.avatar.small {
+  height: 36px;
+  width: 36px;
+}
+.avatar.tiny {
+  height: 18px;
+  width: 18px;
 }
 /* CARDS */
 .card { 
@@ -413,6 +435,14 @@ textarea {
   cursor: pointer;
   margin-right: 10px;
 }
+.content.high {
+  height: 135px;
+  width: 175px;
+}
+.content.smaller {
+  height: 135px;
+  width: 175px;
+}
 .content .thumbnail {
   background-color: black;
   width: 280px;
@@ -486,6 +516,18 @@ textarea {
   height: 160px;
   position: absolute;
   opacity: 0.3;
+}
+.content .username {
+  color: #fff;
+  text-shadow: 0 0 20px black;
+  font-size: 18px;
+  width: 175px;
+  padding: 5px;
+  height: 28px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* OVERLAY */
 #overlay {

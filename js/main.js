@@ -194,6 +194,7 @@ function calculateTimeDifference(date) {
 	var millis = Date.now() - Date.parse(date)
 	millis /= 1000
 	//less than 1 minute
+	if(millis <= 0) return "now";
 	if(millis < 60) return Math.floor(millis)+"s"
 	//less than 1 hour
 	if(millis < 60*60) return Math.floor(millis/60)+"m"

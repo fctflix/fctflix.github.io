@@ -119,13 +119,7 @@
 	padding: 10px;
 }
 .review .avatar {
-	height: 48px;
-	width: 48px;
-	border: 2px solid #fff;
-	border-radius: 50%;
-	box-shadow: 0 1px 2px 2px rgba(0,0,0,0.07);
 	vertical-align: middle;
-	object-fit: cover;
 }
 .review .info span:last-child {
 	display: inline-block;

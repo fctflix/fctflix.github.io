@@ -1,21 +1,29 @@
+.contentContainer {
+  display: inline-block;
+  width: 280px;
+  cursor: pointer;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .recom-title {
 	width: 100%;
   text-align: left;
   cursor: default;
   padding-top: 8px;
-  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
-.avatar-verysmall {
-  max-height:18px;
-  max-width:18px;
-  clip-path:circle(8px at center);
+.recom-title .avatar {
+  vertical-align: middle;
 }
 .recom-title span {
-	margin: 0 5px 0 5px;
+  vertical-align: middle;
+  margin: 0 5px 0 5px;
 }
 .recom-name {
-	font-weight:bold;
+	font-weight: bold;
 	text-decoration: underline;
 }

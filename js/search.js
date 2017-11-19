@@ -384,16 +384,16 @@ function fillUsers(usersList) {
 	for (entry in usersList){
 		var user = document.createElement("div");
 		user.className = "content center smaller";
+		user.title = users[usersList[entry]].name;
 		user.value = usersList[entry];
 		user.onclick = function(){ window.location = './user.html?id='+this.value; };
 			var thumbnail = document.createElement("img");
-			thumbnail.className = "user-thumbnail";
+			thumbnail.className = "avatar large";
 			thumbnail.src = users[usersList[entry]].avatar;
 			user.appendChild(thumbnail);
 			var username = document.createElement("div");
 			username.className = "username";
 			username.innerHTML = users[usersList[entry]].name;
-			username.title = users[usersList[entry]].name;
 			user.appendChild(username);
 		userList.appendChild(user);
 	}

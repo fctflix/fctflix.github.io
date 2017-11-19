@@ -96,7 +96,7 @@ function fillCommunityPosts() {
 	post_avatar.className = "post-avatar"
 	//the actual image
 	var avatar_img = document.createElement("img")
-	avatar_img.className = "avatar-medium"
+	avatar_img.className = "avatar medium"
 	avatar_img.src = users[post.user].avatar
 	post_avatar.appendChild(avatar_img)
 	post_card.appendChild(post_avatar)
@@ -153,7 +153,7 @@ function fillCommunityPosts() {
 		comment_avatar.className = "post-avatar comment"
 		//the actual image
 		var comment_avatar_img = document.createElement("img")
-		comment_avatar_img.className = "avatar-small"
+		comment_avatar_img.className = "avatar small"
 		comment_avatar_img.src = users[comment.user].avatar
 		comment_avatar.appendChild(comment_avatar_img)
 		comment_card.appendChild(comment_avatar)

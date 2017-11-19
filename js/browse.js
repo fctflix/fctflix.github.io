@@ -49,21 +49,21 @@ function populateLists() {
 function populateUsers() {
 	var userList = $("#users > .contentList")
 	for(var i = 0; i < users.length; i++) {
-		var user = users[i]
+		var user = users[i];
 		if(user == users[0]) continue; //current user shouldn't appear in the list?
-		var content = document.createElement("div")
-		content.className = "content center smaller"
-		content.onclick = function() {
-			alert('this does not work yet :(')
-		}
-		var thumbnail = document.createElement("img")
-		thumbnail.className = "user-thumbnail"
-		thumbnail.src = user.avatar
-		content.appendChild(thumbnail)
-		var title = document.createElement("div")
-		title.className = "username"
-		title.innerHTML = user.name
-		content.appendChild(title)
-		userList.append(content)
+		var content = document.createElement("div");
+		content.className = "content center smaller";
+		content.title = user.name;
+		content.value = i;
+		content.onclick = function(){ window.location = './user.html?id='+this.value; };
+			var thumbnail = document.createElement("img");
+			thumbnail.className = "avatar large";
+			thumbnail.src = user.avatar;
+			content.appendChild(thumbnail);
+			var title = document.createElement("div");
+			title.className = "username";
+			title.innerHTML = user.name;
+			content.appendChild(title);
+		userList.append(content);
 	}
 }
