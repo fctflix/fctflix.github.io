@@ -15,7 +15,7 @@ function setupSubscriptions() {
 		}
 		var thumbnail = document.createElement("img")
 		thumbnail.className = "thumbnail"
-		thumbnail.src = "https://www.fiweh.com/wp-content/uploads/2017/10/thewatchlist.png" //temporary
+		thumbnail.src = contents[sub].thumbnail;
 		content.appendChild(thumbnail)
 		var gradient = document.createElement("div")
 		gradient.className = "gradient"
@@ -61,6 +61,9 @@ function fillCommunityPosts() {
 		comm_btn.onclick = function() {
 			window.location = "./post.html?community="+this.value
 		}
+		//Container for the top elements of the post
+		var post_top = document.createElement("div");
+		post_top.className = "post-top";
 		//the post avatar
 		var post_avatar = document.createElement("div")
 		post_avatar.className = "post-avatar"
@@ -69,11 +72,7 @@ function fillCommunityPosts() {
 		avatar_img.className = "avatar small"
 		avatar_img.src = users[post.user].avatar
 		post_avatar.appendChild(avatar_img)
-		post_card.appendChild(post_avatar)
-		//a small spacer thing
-		var small_spacer = document.createElement("div")
-		small_spacer.className = "small-spacer"
-		post_card.appendChild(small_spacer)
+		post_top.appendChild(post_avatar)
 		//post votes amount
 		var post_votes = document.createElement("div")
 		post_votes.className = "post-votes"
@@ -88,19 +87,21 @@ function fillCommunityPosts() {
 		post_votes.appendChild(post_up)
 		post_votes.appendChild(num_votes)
 		post_votes.appendChild(post_down)
-		post_card.appendChild(post_votes)
+		post_top.appendChild(post_votes)
 		//post title
 		var post_title = document.createElement("h4")
 		var post_title2 = document.createElement("span")
 		post_title2.className = post_title.className = "post-title"
 		post_title2.innerHTML = post.title
 		post_title.appendChild(post_title2)
-		post_card.appendChild(post_title)
+		post_top.appendChild(post_title)
 		//timestamp
 		var post_time = document.createElement("div")
 		post_time.className = "post-timestamp"
 		post_time.innerHTML = calculateTimeDifference(post.date)
-		post_card.appendChild(post_time)
+		post_top.appendChild(post_time)
+
+		post_card.appendChild(post_top);
 		//post content
 		var post_content = document.createElement("div")
 		post_content.className = "post-content"

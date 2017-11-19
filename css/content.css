@@ -1,20 +1,4 @@
 /* SHOW INFO */
-#showInfo {
-	min-height: 200px;
-}
-.poster {
-	height: 200px;
-	width: 136px;
-	float: left;
-	cursor: pointer;
-}
-.poster img {
-	height: 200px;
-	width: 136px;
-	border: 4px solid white;
-	box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1);
-	position: absolute;
-}
 .poster .playContainer {
 	width: 136px;
 	height: 200px;
@@ -43,21 +27,6 @@
 	height: 200px;
 	position: absolute;
 	opacity: 0.3;
-}
-#showInfo .infoContainer {
-	margin-left: 136px;
-	padding-left: 0.8rem;
-	min-height: 200px;
-	width: calc(100% - 136px);
-}
-#showInfo .infoContainer div {
-	
-}
-.rating {
-	float: right
-}
-.rating .material-icons {
-	color: gold;
 }
 #showInfo .infoContainer #infoMain, #showInfo .infoContainer #infoDetails, #showInfo .infoContainer #infoButtons {
 	margin-bottom: 0.8rem;
