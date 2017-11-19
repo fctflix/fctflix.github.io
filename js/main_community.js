@@ -10,8 +10,9 @@ function setupSubscriptions() {
 	for(sub of users[0].subscriptions) {
 		var content = document.createElement("div")
 		content.className = "content"
+		content.value = sub;
 		content.onclick = function() {
-			window.location = './show/community.html?id='+sub;
+			window.location = './show/community.html?id='+this.value;
 		}
 		var thumbnail = document.createElement("img")
 		thumbnail.className = "thumbnail"
