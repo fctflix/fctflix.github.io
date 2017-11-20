@@ -111,13 +111,24 @@ function fillCommunityPosts() {
 		var post_votes = document.createElement("div")
 		post_votes.className = "post-votes"
 		var num_votes = document.createElement("div")
+		num_votes.value = i
 		num_votes.className = "center"
-		num_votes.innerHTML = post.likes - post.dislikes
+		num_votes.innerHTML = post.likes.length - post.dislikes.length
 		var post_up = document.createElement("div")
 		post_up.innerHTML = "keyboard_arrow_up"
 		var post_down = document.createElement("div")
 		post_down.innerHTML = "keyboard_arrow_down"
 		post_down.className = post_up.className = "material-icons votes pointnclick"
+
+		if ($.inArray(0, post.likes) != -1) {
+			post_up.className += " active"; // Liked
+		}
+		post_up.onclick = function(){ votePost($(this), true); };
+		if ($.inArray(0, post.dislikes) != -1) {
+			post_down.className += " active"; // Liked
+		}
+		post_down.onclick = function(){ votePost($(this), false); };
+
 		post_votes.appendChild(post_up)
 		post_votes.appendChild(num_votes)
 		post_votes.appendChild(post_down)
@@ -199,4 +210,35 @@ function addPost(){
 	showSnackbar("Thanks for your post on <b>"+contents[contentId].title+"</b>'s community!");
 
 	setTimeout(location.reload.bind(location), 2500);
+}
+
+function votePost(context, like){
+	var parentChildren = context.parent().children()
+	var postId = parentChildren[1].value
+	var userId = 0;
+
+	//Remove old vote
+	contents[contentId].posts[postId].likes = jQuery.grep(contents[contentId].posts[postId].likes, function(value) { return value != userId; });
+	contents[contentId].posts[postId].dislikes = jQuery.grep(contents[contentId].posts[postId].dislikes, function(value) { return value != userId; });
+
+	//Add new vote
+	if (like) {
+		parentChildren[0].className += " active";
+		parentChildren[2].classList.remove("active");	
+		contents[contentId].posts[postId].likes.push(userId);
+	} else {
+		parentChildren[0].classList.remove("active");
+		parentChildren[2].className += " active";	
+		contents[contentId].posts[postId].dislikes.push(userId);
+	}
+
+	//Save in the db
+	saveContents();
+
+	//Update count
+	var likes = contents[contentId].posts[postId].likes.length;
+	var dislikes = contents[contentId].posts[postId].dislikes.length;
+	parentChildren[1].innerHTML = likes - dislikes;
+
+	showSnackbar("Thank you for your feedback!");
 }

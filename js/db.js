@@ -69,7 +69,13 @@ function defaultUsers(){
 									"postId":3
 								}],
 			"following": [1,2,3,4],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": [
+				{"show":3,"season":0,"episode":0},
+				{"show":1},
+				{"show":0,"season":0,"episode":0},
+				{"show":3,"season":0,"episode":1},
+				{"show":2,"season":0,"episode":0}]
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://fctflix.github.io/images/db/6.jpg",
@@ -82,7 +88,8 @@ function defaultUsers(){
 			"subscriptions": [0],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": []
 			},
 			{"name": "SchrondingerFedora",
 			"avatar": "https://fctflix.github.io/images/db/8.jpg",
@@ -95,7 +102,8 @@ function defaultUsers(){
 			"subscriptions": [0,1],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": []
 			},
 			{"name": "PeteTheFrog",
 			"avatar": "https://fctflix.github.io/images/db/10.jpg",
@@ -108,7 +116,8 @@ function defaultUsers(){
 			"subscriptions": [1],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": []
 			},
 			{"name": "Sethmore",
 			"avatar": "https://fctflix.github.io/images/db/12.png",
@@ -121,7 +130,8 @@ function defaultUsers(){
 			"subscriptions": [1],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": []
 			},
 			{"name": "where-is-bojack-horseman",
 			"avatar": "https://fctflix.github.io/images/db/14.jpg",
@@ -134,7 +144,8 @@ function defaultUsers(){
 			"subscriptions": [1],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2
+			"recommendedShow": 2,
+			"history": []
 			}];
 }
 function defaultContents(){
@@ -224,68 +235,68 @@ function defaultContents(){
 						"title": "WUBBA LUBBA DUB DUB",
 						"date": "2017-08-20 02:57",
 						"text": "And that's the way the news goes!https://fctflix.github.io/images/db/28.jpg",
-						"likes": 1,
-						"dislikes": 99,
+						"likes": [1],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
 						"comments": [
 									{"user": 3,
 									"date": "2017-08-20 02:58",
 									"text": "I'M PICKLE RICK!",
-									"likes": 1,
-									"dislikes": 99
+									"likes": [1],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 									},
 									{"user": 3,
 									"date": "2017-08-20 02:59",
 									"text": "TIME TO GET SCHWIFTY!",
-									"likes": 1,
-									"dislikes": 99
+									"likes": [1],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 									},
 									{"user": 3,
 									"date": "2017-08-20 03:00",
 									"text": "wow u guys are really butthurt XD",
-									"likes": 1,
-									"dislikes": 99
+									"likes": [1],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 									}]
 						},
 						{"user": 2,
 						"title": "the rick and morty copypasta but ran through google translate a few times",
 						"date": "2017-11-10 05:31",
 						"text": "We welcome IQ, Rick Morty to teach. The most humorous game and the typical audience in theoretical physics do not work solidly with subtlety. Fans. I realized that this is not only fun, but they must understand the power of deep intelligence games, but they say nothing is very important in life. As a result, people like to make Ricks really like, for example, when Russia's speech as epic poets for the new Rybakoven took a bad action \"VUB Lebanon is\" stupid and talented Dan Harmon because it is an imaginary addict that marks the confusion on your TV screen and scratches on your head and laughs now watching sons. Who's stupid to believe ... but not for them. News, yes by the way, I want Rick Morgan. You can not see women who are going to test for five years before IC (cheaper).",
-						"likes": 500,
-						"dislikes": 7,
+						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7],
 						"comments": [
 									{"user": 0,
 									"date": "2017-11-10 12:01",
 									"text": "why has no one commented yet? this is gret quality pasta",
-									"likes": 0,
-									"dislikes": 0
+									"likes": [],
+									"dislikes": []
 									}]
 						},
 						{"user": 2,
 						"title": "the rick and morty copypasta but ran through google translate a few times",
 						"date": "2017-11-10 17:31",
 						"text": "We welcome IQ, Rick Morty to teach. The most humorous game and the typical audience in theoretical physics do not work solidly with subtlety. Fans. I realized that this is not only fun, but they must understand the power of deep intelligence games, but they say nothing is very important in life. As a result, people like to make Ricks really like, for example, when Russia's speech as epic poets for the new Rybakoven took a bad action \"VUB Lebanon is\" stupid and talented Dan Harmon because it is an imaginary addict that marks the confusion on your TV screen and scratches on your head and laughs now watching sons. Who's stupid to believe ... but not for them. News, yes by the way, I want Rick Morgan. You can not see women who are going to test for five years before IC (cheaper).",
-						"likes": 4,
-						"dislikes": 204,
+						"likes": [1, 2, 3, 4],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
 						"comments": [
 									{"user": 1,
 									"date": "2017-11-10 17:45",
 									"text": "please dont repost this shit.",
-									"likes": 56,
-									"dislikes": 0
+									"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36],
+									"dislikes": []
 									}]
 						},
 						{"user": 0,
 						"title": "hey guys",
 						"date": "2017-11-12 10:11",
 						"text": "hey guys im new",
-						"likes": 2,
-						"dislikes": 0,
+						"likes": [1, 2],
+						"dislikes": [],
 						"comments": [
 									{"user": 4,
 									"date": "2017-11-12 11:15",
 									"text": "hi new, im dad",
-									"likes": 1,
-									"dislikes": 0
+									"likes": [1],
+									"dislikes": []
 									}]
 						}]
 			},
@@ -325,14 +336,14 @@ function defaultContents(){
 						"title": "Still a better love story than Twilight",
 						"date": "2017-08-25 03:57",
 						"text": "see title",
-						"likes": 1,
-						"dislikes": 79,
+						"likes": [1],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
 						"comments": [
 									{"user": 3,
 									"date": "2017-08-25 06:18",
 									"text": "why the downvotes?",
-									"likes": 1,
-									"dislikes": 18
+									"likes": [1],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 									}]
 						}]
 			},
@@ -391,13 +402,13 @@ function defaultContents(){
 							"title": "conspiracy theory",
 							"date": "2017-11-13 23:41",
 							"text": "what if... the simpsons are actually part of the illuminati?????",
-							"likes": 5,
-							"dislikes": 3,
+							"likes": [1, 2, 3, 4, 5],
+							"dislikes": [1, 2, 3],
 							"comments": [{"user": 3,
 										"date": "2017-11-14 00:22",
 										"text": "what the fuck",
-										"likes": 1,
-										"dislikes": 0
+										"likes": [1],
+										"dislikes": []
 							}]
 				}]
 			},
@@ -465,68 +476,68 @@ function defaultContents(){
 						"title": "DAE notice this?",
 						"date": "2017-08-20 02:57",
 						"text": "Is it just me or does Rami Malek look like a pepe?https://fctflix.github.io/images/db/53.jpg",
-						"likes": 1,
-						"dislikes": 99,
+						"likes": [1],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
 						"comments": [
 									{"user": 4,
 									"date": "2017-08-20 02:58",
 									"text": "Could you just stop spamming everything?",
-									"likes": 99,
-									"dislikes": 1
+									"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
+									"dislikes": [1]
 									},
 									{"user": 3,
 									"date": "2017-08-20 03:34",
 									"text": "To be fair, you have to have a very high IQ to understand Mr Robot. The social commentary is extremely subtle, and without a solid grasp of Marxist philosophy most of the critique will go over a typical viewer’s head. There’s also Eliot’s nihilistic, alienated outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Feuerbach, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of the cinematography, to realise that they’re not just great shots- they draw upon a rich history of FILM. As a consequence people who dislike Mr Robot truly ARE idiots- of course they wouldn’t appreciate, for instance, the Philosophical humour in Eliot’s existential catchphrase “Please tell me you’re seeing this too,” which itself is a cryptic reference to David Fincher’s cinematic masterpiece “Fight Club” . I’m smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Sam Esmail’s genius storytelling unfolds itself on their television screens. What fools.. how I pity them.<br>And yes, by the way, i DO have a Mr Robot tattoo. And no, you cannot see it. It’s for the ladies’ eyes only- and even then they have to demonstrate that they’re within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid",
-									"likes": 3,
-									"dislikes": 25
+									"likes": [1, 2, 3],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 									}]
 						},
 						{"user": 2,
 						"title": "Rami Malek winning Emmy reaction",
 						"date": "2017-11-10 05:31",
 						"text": "https://www.youtube.com/watch?v=-mJMNqNKfMI",
-						"likes": 2618,
-						"dislikes": 63,
+						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 						"comments": [
 									{"user": 1,
 									"date": "2017-11-10 12:01",
 									"text": "Congratulations Rami!",
-									"likes": 2,
-									"dislikes": 0
+									"likes": [1, 2],
+									"dislikes": []
 									},
 									{"user": 3,
 									"date": "2017-11-10 17:56",
 									"text": "FAKE!!!1",
-									"likes": 0,
-									"dislikes": 78
+									"likes": [],
+									"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78]
 									}]
 						},
 						{"user": 4,
 						"title": "Here's a drawing of Elliot I made",
 						"date": "2017-11-20 07:42",
 						"text": "https://fctflix.github.io/images/db/54.jpg",
-						"likes": 782,
-						"dislikes": 26,
+						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112],
+						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
 						"comments": [
 									{"user": 1,
 									"date": "2017-11-20 07:45",
 									"text": "That's beautiful.",
-									"likes": 56,
-									"dislikes": 0
+									"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+									"dislikes": []
 									}]
 						},
 						{"user": 5,
 						"title": "A theory about Elliot's routine",
 						"date": "2017-11-15 23:14",
 						"text": "Look I could write some text here but that's not the point. So I'll just go ahead and say random stuff. Or maybe not, who knows. Wait a minute, I just did it, din't I? Oh well...",
-						"likes": 2,
-						"dislikes": 0,
+						"likes": [1, 2],
+						"dislikes": [],
 						"comments": [
 									{"user": 4,
 									"date": "2017-11-16 02:41",
 									"text": "Interesting post...",
-									"likes": 69,
-									"dislikes": 0
+									"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+									"dislikes": []
 									}]
 						}]
 			}];

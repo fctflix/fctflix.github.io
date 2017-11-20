@@ -111,12 +111,22 @@ function fillCommunityPosts() {
 	post_votes.className = "post-votes"
 	var num_votes = document.createElement("div")
 	num_votes.className = "center"
-	num_votes.innerHTML = post.likes - post.dislikes
+	num_votes.innerHTML = post.likes.length - post.dislikes.length
 	var post_up = document.createElement("div")
 	post_up.innerHTML = "keyboard_arrow_up"
 	var post_down = document.createElement("div")
 	post_down.innerHTML = "keyboard_arrow_down"
 	post_down.className = post_up.className = "material-icons votes pointnclick"
+
+	if ($.inArray(0, post.likes) != -1) {
+		post_up.className += " active"; // Liked
+	}
+	post_up.onclick = function(){ votePost($(this), true); };
+	if ($.inArray(0, post.dislikes) != -1) {
+		post_down.className += " active"; // Liked
+	}
+	post_down.onclick = function(){ votePost($(this), false); };
+
 	post_votes.appendChild(post_up)
 	post_votes.appendChild(num_votes)
 	post_votes.appendChild(post_down)
@@ -145,13 +155,14 @@ function fillCommunityPosts() {
 	post_main.appendChild(post_card)
 	$(".full-post")[0].append(post_main)
 
-	for(comment of post.comments) {
+	for(var i = 0; i < post.comments.length; i++) {
+		var comment = post.comments[i]
 		var comment_main = document.createElement("div")
 		comment_main.className = "comment"
 		//the comment contents
 		var comment_card = document.createElement("div")
 		comment_card.className = "card large"
-		if(post.comments.indexOf(comment) < post.comments.length - 1) comment_card.className += " separator"
+		if(i < post.comments.length - 1) comment_card.className += " separator"
 		//Container for the top elements of the comment
 		var comment_top = document.createElement("div");
 		comment_top.className = "post-top comment";
@@ -168,13 +179,24 @@ function fillCommunityPosts() {
 		var comment_votes = document.createElement("div")
 		comment_votes.className = "post-votes comment"
 		var comment_num_votes = document.createElement("div")
+		comment_num_votes.value = i
 		comment_num_votes.className = "center"
-		comment_num_votes.innerHTML = comment.likes - comment.dislikes
+		comment_num_votes.innerHTML = comment.likes.length - comment.dislikes.length
 		var comment_up = document.createElement("div")
 		comment_up.innerHTML = "keyboard_arrow_up"
 		var comment_down = document.createElement("div")
 		comment_down.innerHTML = "keyboard_arrow_down"
 		comment_down.className = comment_up.className = "material-icons votes pointnclick"
+
+		if ($.inArray(0, comment.likes) != -1) {
+			comment_up.className += " active"; // Liked
+		}
+		comment_up.onclick = function(){ voteComment($(this), true); };
+		if ($.inArray(0, comment.dislikes) != -1) {
+			comment_down.className += " active"; // Liked
+		}
+		comment_down.onclick = function(){ voteComment($(this), false); };
+
 		comment_votes.appendChild(comment_up)
 		comment_votes.appendChild(comment_num_votes)
 		comment_votes.appendChild(comment_down)
@@ -232,4 +254,65 @@ function addPost(){
 	showSnackbar("Thanks for your comment on <b>"+contents[contentId].posts[postId].title+"</b>!");
 
 	setTimeout(location.reload.bind(location), 2500);
+}
+
+function voteComment(context, like){
+	var parentChildren = context.parent().children()
+	var commId = parentChildren[1].value
+	var userId = 0;
+
+	//Remove old vote
+	contents[contentId].posts[postId].comments[commId].likes = jQuery.grep(contents[contentId].posts[postId].comments[commId].likes, function(value) { return value != userId; });
+	contents[contentId].posts[postId].comments[commId].dislikes = jQuery.grep(contents[contentId].posts[postId].comments[commId].dislikes, function(value) { return value != userId; });
+
+	//Add new vote
+	if (like) {
+		parentChildren[0].className += " active";
+		parentChildren[2].classList.remove("active");	
+		contents[contentId].posts[postId].comments[commId].likes.push(userId);
+	} else {
+		parentChildren[0].classList.remove("active");
+		parentChildren[2].className += " active";	
+		contents[contentId].posts[postId].comments[commId].dislikes.push(userId);
+	}
+
+	//Save in the db
+	saveContents();
+
+	//Update count
+	var likes = contents[contentId].posts[postId].comments[commId].likes.length;
+	var dislikes = contents[contentId].posts[postId].comments[commId].dislikes.length;
+	parentChildren[1].innerHTML = likes - dislikes;
+
+	showSnackbar("Thank you for your feedback!");
+}
+
+function votePost(context, like){
+	var parentChildren = context.parent().children()
+	var userId = 0;
+
+	//Remove old vote
+	contents[contentId].posts[postId].likes = jQuery.grep(contents[contentId].posts[postId].likes, function(value) { return value != userId; });
+	contents[contentId].posts[postId].dislikes = jQuery.grep(contents[contentId].posts[postId].dislikes, function(value) { return value != userId; });
+
+	//Add new vote
+	if (like) {
+		parentChildren[0].className += " active";
+		parentChildren[2].classList.remove("active");	
+		contents[contentId].posts[postId].likes.push(userId);
+	} else {
+		parentChildren[0].classList.remove("active");
+		parentChildren[2].className += " active";	
+		contents[contentId].posts[postId].dislikes.push(userId);
+	}
+
+	//Save in the db
+	saveContents();
+
+	//Update count
+	var likes = contents[contentId].posts[postId].likes.length;
+	var dislikes = contents[contentId].posts[postId].dislikes.length;
+	parentChildren[1].innerHTML = likes - dislikes;
+
+	showSnackbar("Thank you for your feedback!");
 }

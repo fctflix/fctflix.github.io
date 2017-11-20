@@ -49,6 +49,7 @@ function fillCommunityPosts() {
 		var post_main = document.createElement("div")
 		post_main.className = "post"
 		post_main.id = i
+		post_main.value = posts[i].community
 		//the post contents
 		var post_card = document.createElement("div")
 		post_card.className = "card large"
@@ -79,13 +80,24 @@ function fillCommunityPosts() {
 		var post_votes = document.createElement("div")
 		post_votes.className = "post-votes"
 		var num_votes = document.createElement("div")
+		num_votes.value = contents[posts[i].community].posts.indexOf(post)
 		num_votes.className = "center"
-		num_votes.innerHTML = post.likes - post.dislikes
+		num_votes.innerHTML = post.likes.length - post.dislikes.length
 		var post_up = document.createElement("div")
 		post_up.innerHTML = "keyboard_arrow_up"
 		var post_down = document.createElement("div")
 		post_down.innerHTML = "keyboard_arrow_down"
 		post_down.className = post_up.className = "material-icons votes pointnclick"
+
+		if ($.inArray(0, posts[i].likes) != -1) {
+			post_up.className += " active"; // Liked
+		}
+		post_up.onclick = function(){ votePost($(this), true); };
+		if ($.inArray(0, posts[i].dislikes) != -1) {
+			post_down.className += " active"; // Liked
+		}
+		post_down.onclick = function(){ votePost($(this), false); };
+
 		post_votes.appendChild(post_up)
 		post_votes.appendChild(num_votes)
 		post_votes.appendChild(post_down)
@@ -129,4 +141,37 @@ function fillCommunityPosts() {
 			rightHeight += elem.offsetHeight
 		}
 	}
+}
+
+function votePost(context, like){
+	var topChildren = context.parent().parent().parent().parent()
+	var parentChildren = context.parent().children()
+	var commId = topChildren[0].value
+	var postId = parentChildren[1].value
+	var userId = 0;
+
+	//Remove old vote
+	contents[commId].posts[postId].likes = jQuery.grep(contents[commId].posts[postId].likes, function(value) { return value != userId; });
+	contents[commId].posts[postId].dislikes = jQuery.grep(contents[commId].posts[postId].dislikes, function(value) { return value != userId; });
+
+	//Add new vote
+	if (like) {
+		parentChildren[0].className += " active";
+		parentChildren[2].classList.remove("active");	
+		contents[commId].posts[postId].likes.push(userId);
+	} else {
+		parentChildren[0].classList.remove("active");
+		parentChildren[2].className += " active";	
+		contents[commId].posts[postId].dislikes.push(userId);
+	}
+
+	//Save in the db
+	saveContents();
+
+	//Update count
+	var likes = contents[commId].posts[postId].likes.length;
+	var dislikes = contents[commId].posts[postId].dislikes.length;
+	parentChildren[1].innerHTML = likes - dislikes;
+
+	showSnackbar("Thank you for your feedback!");
 }

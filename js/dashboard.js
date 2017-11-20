@@ -37,10 +37,37 @@ function fillLists() {
 
 function fillRecentWatched() {
 	console.log("//TODO: get recently watched stuff")
+	//uhh we should check who is logged in instead of using zero but ok
+	for(hist of users[0].history) {
+		var show = hist.show
+		var season = hist.season
+		var episode = hist.episode
+		var content = document.createElement("div")
+		content.className = "content"
+		content.onclick = function() {
+			alert('this does not work yet :(');
+		}
+		var thumbnail = document.createElement("img")
+		thumbnail.className = "thumbnail"
+		content.appendChild(thumbnail)
+		var gradient = document.createElement("div")
+		gradient.className = "gradient"
+		content.appendChild(gradient)
+		var title = document.createElement("div")
+		title.className = "title"
+		content.appendChild(title)
+		if(season!==undefined) {
+			thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
+			title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
+		} else {
+			thumbnail.src = contents[show].thumbnail
+			title.innerHTML = contents[show].title
+		}
+		$("#recent > .contentList").prepend(content)
+	}
 }
 
 function fillRecommendations() {
-	console.log("//TODO: get recommendations from friends")
 	//uhh we should check who is logged in instead of using zero but ok
 	for(user of users[0].following) {
 		var content = document.createElement("div");
