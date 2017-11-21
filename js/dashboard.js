@@ -8,7 +8,72 @@ $(document).ready(function() {
 });
 
 function fillNextWatches() {
-	console.log("//TODO: get user's next episodes to watch")
+	console.log("Getting user's next episodes to watch")
+	var showsIdx = []
+	var lastEps = []
+	//uhh we should check who is logged in instead of using zero but ok
+	for(var i = 0; i < users[0].history.length; i++) {
+		var hist = users[0].history[i]
+		if(showsIdx.indexOf(hist.show) < 0 ) {
+			showsIdx.push(hist.show)
+			lastEps.push(hist)
+		} else {
+			var currHist = lastEps[showsIdx.indexOf(hist.show)]
+			if(hist.season > currHist.season || (hist.season == currHist.season && hist.episode > currHist.episode)) {
+				lastEps[showsIdx.indexOf(hist.show)] = hist
+			}
+		}
+	}
+
+	var episodes = []
+	for(var i = 0; i < showsIdx.length; i++) {
+		var eachShow = contents[showsIdx[i]]
+		if(eachShow.isShow) {
+			var lastEp = lastEps[i]
+			var show = lastEp.show
+			var season = lastEp.season
+			var episode = lastEp.episode + 1
+			var nextEp = eachShow.seasons[season].episodes[episode]
+			if(nextEp === undefined) {
+				season = season + 1
+				episode = 0
+				nextEp = eachShow.seasons[season]
+				if(nextEp !== undefined) nextEp = nextEp.episodes[episode]
+			}
+			if(nextEp !== undefined) {
+				var content = document.createElement("div")
+				content.className = "content"
+				content.value = show+'&'+"season="+(season+1)+"&episode="+(episode+1);
+				content.onclick = function(){ window.location = './player.html?contentId='+this.value; };
+				var thumbnail = document.createElement("img")
+				thumbnail.className = "thumbnail"
+				content.appendChild(thumbnail)
+				var gradient = document.createElement("div")
+				gradient.className = "gradient"
+				content.appendChild(gradient)
+				var play_cont = document.createElement("div")
+				play_cont.className = "playContainer"
+				var gradient2 = document.createElement("div")
+				gradient2.className = "gradient"
+				play_cont.appendChild(gradient2)
+				var play = document.createElement("div")
+				play.className = "play"
+				play_cont.appendChild(play)
+				content.appendChild(play_cont)
+				var title = document.createElement("div")
+				title.className = "title"
+				content.appendChild(title)
+				if(season!==undefined) {
+					thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
+					title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
+				} else {
+					thumbnail.src = contents[show].thumbnail
+					title.innerHTML = contents[show].title
+				}
+				$("#cont_watch > .contentList").prepend(content)
+			}
+		}
+	}
 }
 
 function fillLists() {
@@ -36,7 +101,7 @@ function fillLists() {
 }
 
 function fillRecentWatched() {
-	console.log("//TODO: get recently watched stuff")
+	console.log("Getting user's history")
 	//uhh we should check who is logged in instead of using zero but ok
 	for(hist of users[0].history) {
 		var show = hist.show
@@ -44,8 +109,9 @@ function fillRecentWatched() {
 		var episode = hist.episode
 		var content = document.createElement("div")
 		content.className = "content"
+		content.value = show;
 		content.onclick = function() {
-			alert('this does not work yet :(');
+			window.location = './show/index.html?id='+this.value;
 		}
 		var thumbnail = document.createElement("img")
 		thumbnail.className = "thumbnail"

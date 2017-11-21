@@ -337,6 +337,7 @@ function populateReviews(sort){
 }
 
 function voteReview(context, like){
+	if(context.hasClass("active")) return
 	var parentChildren = context.parent().children();
 	var reviewId = parentChildren[5].value;
 	var userId = 0;

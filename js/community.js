@@ -213,6 +213,7 @@ function addPost(){
 }
 
 function votePost(context, like){
+	if(context.hasClass("active")) return
 	var parentChildren = context.parent().children()
 	var postId = parentChildren[1].value
 	var userId = 0;

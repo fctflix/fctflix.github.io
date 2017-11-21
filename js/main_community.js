@@ -6,6 +6,7 @@ $(document).ready(function() {
 });
 
 function setupSubscriptions() {
+	console.log("Setting up user's subscription list")
 	//uhh we should check who is logged in instead of using zero but ok
 	for(sub of users[0].subscriptions) {
 		var content = document.createElement("div")
@@ -94,7 +95,7 @@ function fillCommunityPosts() {
 		}
 		post_up.onclick = function(){ votePost($(this), true); };
 		if ($.inArray(0, posts[i].dislikes) != -1) {
-			post_down.className += " active"; // Liked
+			post_down.className += " active"; // disliked
 		}
 		post_down.onclick = function(){ votePost($(this), false); };
 
@@ -114,7 +115,6 @@ function fillCommunityPosts() {
 		post_time.className = "post-timestamp"
 		post_time.innerHTML = calculateTimeDifference(post.date)
 		post_top.appendChild(post_time)
-
 		post_card.appendChild(post_top);
 		//post content
 		var post_content = document.createElement("div")
@@ -144,6 +144,7 @@ function fillCommunityPosts() {
 }
 
 function votePost(context, like){
+	if(context.hasClass("active")) return
 	var topChildren = context.parent().parent().parent().parent()
 	var parentChildren = context.parent().children()
 	var commId = topChildren[0].value

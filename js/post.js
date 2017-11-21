@@ -13,7 +13,7 @@ if (postId == null || isNaN(postId) || postId >= contents[contentId].posts.lengt
 $(document).ready(function() {
 
 	setupCommunity();
-	fillCommunityPosts();
+	fillPostAndComments();
 
 });
 
@@ -74,8 +74,8 @@ function updateSubscription() {
 	}
 }
 
-function fillCommunityPosts() {
-	console.log("Filling the community with posts...");
+function fillPostAndComments() {
+	console.log("Filling in the post page...");
 
 	var post = contents[contentId].posts[postId]
 
@@ -155,6 +155,7 @@ function fillCommunityPosts() {
 	post_main.appendChild(post_card)
 	$(".full-post")[0].append(post_main)
 
+	console.log("Filling post's comments...")
 	for(var i = 0; i < post.comments.length; i++) {
 		var comment = post.comments[i]
 		var comment_main = document.createElement("div")
@@ -257,6 +258,7 @@ function addPost(){
 }
 
 function voteComment(context, like){
+	if(context.hasClass("active")) return
 	var parentChildren = context.parent().children()
 	var commId = parentChildren[1].value
 	var userId = 0;
@@ -288,6 +290,7 @@ function voteComment(context, like){
 }
 
 function votePost(context, like){
+	if(context.hasClass("active")) return
 	var parentChildren = context.parent().children()
 	var userId = 0;
 
