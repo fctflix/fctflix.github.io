@@ -22,24 +22,24 @@ function populateLists() {
 				content.onclick = function() {
 					window.location = './show/index.html?id='+this.value;
 				}
-				var thumbnail = document.createElement("img")
-				thumbnail.className = "thumbnail"
-				thumbnail.src = show.thumbnail;
-				content.appendChild(thumbnail)
-				var gradientTop = document.createElement("div")
-				gradientTop.className = "gradient-top"
-				content.appendChild(gradientTop)
-				var rating = document.createElement("div")
-				rating.className = "rating"
-				rating.innerHTML = show.rating + "<i class=\"material-icons align\">star</i>"
-				content.appendChild(rating)
-				var gradientBtm = document.createElement("div")
-				gradientBtm.className = "gradient"
-				content.appendChild(gradientBtm)
-				var title = document.createElement("div")
-				title.className = "title"
-				title.innerHTML = show.title
-				content.appendChild(title)
+					var thumbnail = document.createElement("img")
+					thumbnail.className = "thumbnail"
+					thumbnail.src = show.thumbnail;
+					content.appendChild(thumbnail)
+					var gradientTop = document.createElement("div")
+					gradientTop.className = "gradient-top"
+					content.appendChild(gradientTop)
+					var rating = document.createElement("div")
+					rating.className = "rating"
+					rating.innerHTML = show.rating + "<i class=\"material-icons align\">star</i>"
+					content.appendChild(rating)
+					var gradientBtm = document.createElement("div")
+					gradientBtm.className = "gradient"
+					content.appendChild(gradientBtm)
+					var title = document.createElement("div")
+					title.className = "title"
+					title.innerHTML = show.title
+					content.appendChild(title)
 				contentList.appendChild(content)
 			}
 		}

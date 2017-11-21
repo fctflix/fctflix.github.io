@@ -45,31 +45,31 @@ function fillNextWatches() {
 				content.className = "content"
 				content.value = show+'&'+"season="+(season+1)+"&episode="+(episode+1);
 				content.onclick = function(){ window.location = './player.html?contentId='+this.value; };
-				var thumbnail = document.createElement("img")
-				thumbnail.className = "thumbnail"
-				content.appendChild(thumbnail)
-				var gradient = document.createElement("div")
-				gradient.className = "gradient"
-				content.appendChild(gradient)
-				var play_cont = document.createElement("div")
-				play_cont.className = "playContainer"
-				var gradient2 = document.createElement("div")
-				gradient2.className = "gradient"
-				play_cont.appendChild(gradient2)
-				var play = document.createElement("div")
-				play.className = "play"
-				play_cont.appendChild(play)
-				content.appendChild(play_cont)
-				var title = document.createElement("div")
-				title.className = "title"
-				content.appendChild(title)
-				if(season!==undefined) {
-					thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
-					title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
-				} else {
-					thumbnail.src = contents[show].thumbnail
-					title.innerHTML = contents[show].title
-				}
+					var thumbnail = document.createElement("img")
+					thumbnail.className = "thumbnail"
+					content.appendChild(thumbnail)
+					var gradient = document.createElement("div")
+					gradient.className = "gradient"
+					content.appendChild(gradient)
+					var play_cont = document.createElement("div")
+					play_cont.className = "playContainer"
+						var gradient2 = document.createElement("div")
+						gradient2.className = "gradient"
+						play_cont.appendChild(gradient2)
+						var play = document.createElement("div")
+						play.className = "play"
+						play_cont.appendChild(play)
+						content.appendChild(play_cont)
+					var title = document.createElement("div")
+					title.className = "title"
+					content.appendChild(title)
+					if(season!==undefined) {
+						thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
+						title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
+					} else {
+						thumbnail.src = contents[show].thumbnail
+						title.innerHTML = contents[show].title
+					}
 				$("#cont_watch > .contentList").prepend(content)
 			}
 		}
@@ -85,17 +85,17 @@ function fillLists() {
 		content.onclick = function() {
 			alert('this does not work yet :(');
 		}
-		var thumbnail = document.createElement("img")
-		thumbnail.className = "thumbnail"
-		thumbnail.src = list.thumbnail
-		content.appendChild(thumbnail)
-		var gradient = document.createElement("div")
-		gradient.className = "gradient"
-		content.appendChild(gradient)
-		var title = document.createElement("div")
-		title.className = "title"
-		title.innerHTML = list.title
-		content.appendChild(title)
+			var thumbnail = document.createElement("img")
+			thumbnail.className = "thumbnail"
+			thumbnail.src = list.thumbnail
+			content.appendChild(thumbnail)
+			var gradient = document.createElement("div")
+			gradient.className = "gradient"
+			content.appendChild(gradient)
+			var title = document.createElement("div")
+			title.className = "title"
+			title.innerHTML = list.title
+			content.appendChild(title)
 		$("#your_lists > .contentList").append(content)
 	}
 }
@@ -113,22 +113,22 @@ function fillRecentWatched() {
 		content.onclick = function() {
 			window.location = './show/index.html?id='+this.value;
 		}
-		var thumbnail = document.createElement("img")
-		thumbnail.className = "thumbnail"
-		content.appendChild(thumbnail)
-		var gradient = document.createElement("div")
-		gradient.className = "gradient"
-		content.appendChild(gradient)
-		var title = document.createElement("div")
-		title.className = "title"
-		content.appendChild(title)
-		if(season!==undefined) {
-			thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
-			title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
-		} else {
-			thumbnail.src = contents[show].thumbnail
-			title.innerHTML = contents[show].title
-		}
+			var thumbnail = document.createElement("img")
+			thumbnail.className = "thumbnail"
+			content.appendChild(thumbnail)
+			var gradient = document.createElement("div")
+			gradient.className = "gradient"
+			content.appendChild(gradient)
+			var title = document.createElement("div")
+			title.className = "title"
+			content.appendChild(title)
+			if(season!==undefined) {
+				thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
+				title.innerHTML = getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title
+			} else {
+				thumbnail.src = contents[show].thumbnail
+				title.innerHTML = contents[show].title
+			}
 		$("#recent > .contentList").prepend(content)
 	}
 }
@@ -136,43 +136,41 @@ function fillRecentWatched() {
 function fillRecommendations() {
 	//uhh we should check who is logged in instead of using zero but ok
 	for(user of users[0].following) {
-		var content = document.createElement("div");
-		content.className = "content";
-		content.value = users[user].recommendedShow;
-		content.onclick = function() {
-			window.location = './show/index.html?id='+this.value;
-		}
-		var thumbnail = document.createElement("img");
-		thumbnail.className = "thumbnail";
-		thumbnail.src = contents[users[user].recommendedShow].thumbnail;
-		content.appendChild(thumbnail);
-		var gradient = document.createElement("div");
-		gradient.className = "gradient";
-		content.appendChild(gradient);
-		var title = document.createElement("div");
-		title.className = "title";
-		title.innerHTML = contents[users[user].recommendedShow].title;
-		content.appendChild(title);
-		var recom_title = document.createElement("div");
-
-		recom_title.className = "recom-title";
-		var avatar = document.createElement("img");
-		avatar.className = "avatar tiny";
-		avatar.src = users[user].avatar;
-		recom_title.appendChild(avatar);
-		var span1 = document.createElement("span");
-		span1.innerHTML = "Recommended by:";
-		var span2 = document.createElement("span");
-		span2.className = "recom-name";
-		span2.innerHTML = users[user].name;
-		span2.title = users[user].name;
-		span1.appendChild(span2);
-		recom_title.appendChild(span1);
-
 		var content_main = document.createElement("div");
 		content_main.className = "contentContainer";
-		content_main.appendChild(content);
-		content_main.appendChild(recom_title);
+			var content = document.createElement("div");
+			content.className = "content";
+			content.value = users[user].recommendedShow;
+			content.onclick = function() {
+				window.location = './show/index.html?id='+this.value;
+			}
+				var thumbnail = document.createElement("img");
+				thumbnail.className = "thumbnail";
+				thumbnail.src = contents[users[user].recommendedShow].thumbnail;
+				content.appendChild(thumbnail);
+				var gradient = document.createElement("div");
+				gradient.className = "gradient";
+				content.appendChild(gradient);
+				var title = document.createElement("div");
+				title.className = "title";
+				title.innerHTML = contents[users[user].recommendedShow].title;
+				content.appendChild(title);
+			content_main.appendChild(content);
+			var recom_title = document.createElement("div");
+			recom_title.className = "recom-title";
+				var avatar = document.createElement("img");
+				avatar.className = "avatar tiny";
+				avatar.src = users[user].avatar;
+				recom_title.appendChild(avatar);
+				var span1 = document.createElement("span");
+				span1.innerHTML = "Recommended by:";
+					var span2 = document.createElement("span");
+					span2.className = "recom-name";
+					span2.innerHTML = users[user].name;
+					span2.title = users[user].name;
+					span1.appendChild(span2);
+				recom_title.appendChild(span1);
+			content_main.appendChild(recom_title);
 		$("#recommend > .contentList").append(content_main);
 	}
 }
