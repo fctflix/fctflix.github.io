@@ -25,14 +25,30 @@
 						</span>
 					</div>
 					<p><textarea class="title" id="postTitle" placeholder="Title" oninput="validatePost(false);"></textarea></p>
-					<p><textarea id="postText" placeholder="Write something here..." oninput="validatePost(false);"></textarea></p>
+					<div class="postContent">
+						<textarea id="postText" placeholder="Write something here..." oninput="validatePost(false);"></textarea>
+						<div class="material-icons add-img" onclick="$('.addImagePopup').show();">link</div>
+					</div>
 					<div class="modalButtons">
 						<button class="small" id="postPost" onclick="addPost();" disabled="1">Post</button>
 						<span class="spacer"></span>
 						<button class="small" id="cancelPost" onclick="$('#overlay').hide();$('#postText').val('');$('#postTitle').val('');document.getElementById('postPost').disabled = true;">Cancel</button>
 					</div>
 				</div>
+				<div class="addImagePopup">
+				    URL of image/video to add:
+				    <textarea class="small" id="img_url"></textarea>
+					<div class="material-icons add-img" onclick="$('.addImagePopup').hide();">clear</div>
+					<div class="material-icons remove-img" onclick="$('#postText').append('\n'+$('#img_url').val()+'\n');$('#img_url').val('');$('.addImagePopup').hide();">add</div>
+				</div>
 			</div>
+
+				<!--
+					    background: url(../images/addimg.png) center;
+					    width: 20px;
+					    height: 20px;
+					    background-size: contain;
+									-->
 		</div>
 		<header>
 			<a href="../dashboard.html" class="header-logo automargins"><img src="../images/logo_large.png" alt="logo" class="logo"></a>
