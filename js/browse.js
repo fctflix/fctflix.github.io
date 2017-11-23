@@ -39,6 +39,7 @@ function populateLists() {
 					var title = document.createElement("div")
 					title.className = "title"
 					title.innerHTML = show.title
+					title.title = show.title;
 					content.appendChild(title)
 				contentList.appendChild(content)
 			}

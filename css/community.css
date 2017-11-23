@@ -26,7 +26,7 @@ hr {
 	margin-bottom:0px;
 }
 /* SHOW INFO */
-#contentTitle {
+#contentTitle, #numSubs {
 	cursor: pointer;
 }
 .infoContainer h4 {
@@ -51,6 +51,10 @@ button.show-comments {
 	height: 2rem;
     padding-bottom: 1em;
     line-height: 1rem;
+	background-color: rgb(97,97,97);
+}
+button.show-comments:hover {
+	background-color: rgb(117,117,117);
 }
 .card.large {
     margin-bottom: 0.5rem;

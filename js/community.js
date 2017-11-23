@@ -18,15 +18,31 @@ function setupCommunity() {
 	var poster = $("#showPoster")[0];
 	poster.children[0].src = contents[contentId].poster;
 	poster.onclick = function(){ window.location = '/show/index.html?id='+contentId; };
+	if (contents[contentId].isShow) {
+		poster.title = "Go to show page";
+	} else {
+		poster.title = "Go to movie page";
+	}
 
 	//Title
 	var title = document.getElementById('contentTitle');
 	title.innerHTML = contents[contentId].title;
 	title.onclick = function(){ window.location = '/show/index.html?id='+contentId; };
-
+	if (contents[contentId].isShow) {
+		title.title = "Go to show page";
+	} else {
+		title.title = "Go to movie page";
+	}
 
 	//Community + num subscribers
-	document.getElementById('numSubs').innerHTML = "Community - " + contents[contentId].subscribers + " subscribers"
+	var numSubs = document.getElementById('numSubs');
+	numSubs.innerHTML = "Community - " + contents[contentId].subscribers + " subscribers"
+	numSubs.onclick = function(){ window.location = '/show/community.html?id='+contentId; };
+	if (contents[contentId].isShow) {
+		numSubs.title = "Go to show community";
+	} else {
+		numSubs.title = "Go to movie community";
+	}
 
 	//Rating
 	document.getElementById('contentRating').innerHTML = getRatingStarString(contents[contentId].rating);
@@ -87,7 +103,7 @@ function fillCommunityPosts() {
 		//show comments button
 		var comm_btn = document.createElement("button")
 		comm_btn.className = "show-comments"
-		comm_btn.innerHTML = "Show "+post.comments.length+" comment"
+		comm_btn.innerHTML = "View "+post.comments.length+" comment"
 		if(post.comments.length != 1) {
 			comm_btn.innerHTML += "s"
 		}
@@ -105,13 +121,14 @@ function fillCommunityPosts() {
 		var avatar_img = document.createElement("img")
 		avatar_img.className = "avatar small"
 		avatar_img.src = users[post.user].avatar
+		avatar_img.title = users[post.user].name
 		post_avatar.appendChild(avatar_img)
 		post_top.appendChild(post_avatar)
 		//post votes amount
 		var post_votes = document.createElement("div")
 		post_votes.className = "post-votes"
 		var num_votes = document.createElement("div")
-		num_votes.value = i
+		num_votes.value = contents[contentId].posts.indexOf(post)
 		num_votes.className = "center"
 		num_votes.innerHTML = post.likes.length - post.dislikes.length
 		var post_up = document.createElement("div")
@@ -125,7 +142,7 @@ function fillCommunityPosts() {
 		}
 		post_up.onclick = function(){ votePost($(this), true); };
 		if ($.inArray(0, post.dislikes) != -1) {
-			post_down.className += " active"; // Liked
+			post_down.className += " active"; // Disliked
 		}
 		post_down.onclick = function(){ votePost($(this), false); };
 
@@ -144,6 +161,7 @@ function fillCommunityPosts() {
 		var post_time = document.createElement("div")
 		post_time.className = "post-timestamp"
 		post_time.innerHTML = calculateTimeDifference(post.date)
+		post_time.title = post.date;
 		post_top.appendChild(post_time)
 
 		post_card.appendChild(post_top);
@@ -195,8 +213,8 @@ function addPost(){
 	newPost.date = getCurrentDateTime();
 	newPost.title = document.getElementById("postTitle").value;
 	newPost.text = document.getElementById("postText").value;
-	newPost.likes = 1;
-	newPost.dislikes = 0;
+	newPost.likes = [0];
+	newPost.dislikes = [];
 
 	if (!validatePost(true)) return
 

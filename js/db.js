@@ -73,7 +73,6 @@ function defaultUsers(){
 			"history": [
 				{"show":3,"season":0,"episode":0},
 				{"show":1},
-				{"show":0,"season":0,"episode":0},
 				{"show":3,"season":0,"episode":1},
 				{"show":2,"season":0,"episode":0}]
 			},
@@ -88,7 +87,7 @@ function defaultUsers(){
 			"subscriptions": [0],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2,
+			"recommendedShow": 0,
 			"history": []
 			},
 			{"name": "SchrondingerFedora",
@@ -130,7 +129,7 @@ function defaultUsers(){
 			"subscriptions": [1],
 			"notifications": [],
 			"following": [],
-			"recommendedShow": 2,
+			"recommendedShow": 3,
 			"history": []
 			},
 			{"name": "where-is-bojack-horseman",
@@ -362,7 +361,7 @@ function defaultContents(){
 				"synopsis": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands.",
 				"seasons": [{
 					"episodes": [{
-						"title": "Simpsons Roasting on an Open Fire",
+						"title": "Roasting on an Open Fire",
 						"thumbnail": "https://fctflix.github.io/images/db/35.jpg"
 					}]
 				}],

@@ -23,6 +23,10 @@
   vertical-align: middle;
   margin: 0 5px 0 5px;
 }
+.recom-title a {
+  vertical-align: middle;
+  margin: 0 5px 0 5px;
+}
 .recom-name {
 	font-weight: bold;
 	text-decoration: underline;

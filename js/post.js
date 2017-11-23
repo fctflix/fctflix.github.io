@@ -24,14 +24,31 @@ function setupCommunity() {
 	var poster = $("#showPoster")[0];
 	poster.children[0].src = contents[contentId].poster;
 	poster.onclick = function(){ window.location = '/show/index.html?id='+contentId; };
+	if (contents[contentId].isShow) {
+		poster.title = "Go to show page";
+	} else {
+		poster.title = "Go to movie page";
+	}
 
 	//Title
 	var title = document.getElementById('contentTitle');
 	title.innerHTML = contents[contentId].title;
 	title.onclick = function(){ window.location = '/show/index.html?id='+contentId; };
+	if (contents[contentId].isShow) {
+		title.title = "Go to show page";
+	} else {
+		title.title = "Go to movie page";
+	}
 
 	//Community + num subscribers
-	document.getElementById('numSubs').innerHTML = "Community - " + contents[contentId].subscribers + " subscribers"
+	var numSubs = document.getElementById('numSubs');
+	numSubs.innerHTML = "Community - " + contents[contentId].subscribers + " subscribers"
+	numSubs.onclick = function(){ window.location = '/show/community.html?id='+contentId; };
+	if (contents[contentId].isShow) {
+		numSubs.title = "Go to show community";
+	} else {
+		numSubs.title = "Go to movie community";
+	}
 
 	//Rating
 	document.getElementById('contentRating').innerHTML = getRatingStarString(contents[contentId].rating);
@@ -96,6 +113,7 @@ function fillPostAndComments() {
 					var avatar_img = document.createElement("img")
 					avatar_img.className = "avatar medium"
 					avatar_img.src = users[post.user].avatar
+					avatar_img.title = users[post.user].name
 					post_avatar.appendChild(avatar_img)
 				post_top.appendChild(post_avatar)
 				//post votes amount
@@ -114,8 +132,9 @@ function fillPostAndComments() {
 						post_up.className += " active"; // Liked
 					}
 					post_up.onclick = function(){ votePost($(this), true); };
+
 					if ($.inArray(0, post.dislikes) != -1) {
-						post_down.className += " active"; // Liked
+						post_down.className += " active"; // Disliked
 					}
 					post_down.onclick = function(){ votePost($(this), false); };
 
@@ -134,6 +153,7 @@ function fillPostAndComments() {
 				var post_time = document.createElement("div")
 				post_time.className = "post-timestamp"
 				post_time.innerHTML = calculateTimeDifference(post.date)
+				post_time.title = post.date;
 				post_top.appendChild(post_time)
 			post_card.appendChild(post_top);
 				//post content
@@ -173,6 +193,7 @@ function fillPostAndComments() {
 						var comment_avatar_img = document.createElement("img")
 						comment_avatar_img.className = "avatar small"
 						comment_avatar_img.src = users[comment.user].avatar
+						comment_avatar_img.title = users[comment.user].name
 						comment_avatar.appendChild(comment_avatar_img)
 					comment_top.appendChild(comment_avatar)
 					//comment votes amount
@@ -212,6 +233,7 @@ function fillPostAndComments() {
 					var comment_time = document.createElement("div")
 					comment_time.className = "post-timestamp"
 					comment_time.innerHTML = calculateTimeDifference(comment.date)
+					comment_time.title = comment.date;
 					comment_top.appendChild(comment_time)
 
 			comment_card.appendChild(comment_top);
@@ -239,8 +261,8 @@ function addPost(){
 	newPost.user = 0;
 	newPost.date = getCurrentDateTime();
 	newPost.text = document.getElementById("postText").value;
-	newPost.likes = 1;
-	newPost.dislikes = 0;
+	newPost.likes = [0];
+	newPost.dislikes = [];
 
 	if (!validatePost(true)) return
 

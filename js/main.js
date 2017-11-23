@@ -96,11 +96,11 @@ function getUserDefs() {
 }
 
 function changeAvatar() {
-	alert("work in progress")
+	premiumAlert();
 }
 
 function logOut() {
-	alert("work in progress")
+	premiumAlert();
 }
 
 function getRatingStarString(rating) {
@@ -202,4 +202,17 @@ function calculateTimeDifference(date) {
 	if(millis < 60*60*24) return Math.floor(millis/60/60)+"h"
 	if(millis < 60*60*24*365) return Math.floor(millis/60/60/24)+"d"
 	return "null" //safety measure
+}
+
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function premiumAlert(){
+	alert("This feature requires FCTFlix Premium. (Only 30€/month)");
+	alert("☝️ The intent ☝️ is to provide 👉👨 users with a sense of 💪 pride 💪 and 🏆accomplishment 🏆 for 🔓 unlocking 🔓 different features");
+	alert("As for 💰 cost 💰 , we selected initial values based upon 📊 data 📊 from the Open Beta and other 🔧 adjustments 🔧 made to milestone 💰 rewards 💰 before 🚀 launch 🚀. Among other things, we're 👀 looking 👀 at ⚖️ average ⚖️ per-user 👨 👩 credit 💸 earn rates 📈 on a daily basis 📅, and we'll be making constant adjustments 🔧 to ensure that users 👨👨 have challenges 😤 that are compelling 😍, rewarding 💰, and of course attainable 🏆 via gameplay 🎮");
+	alert("We appreciate the candid 👀 feedback, and the passion 😡 the community 👨 👨 👨 has put forth around the current topics here on Reddit💻, our forums 🌐 and across 🌐 numerous 🌐 social media outlets 🌐");
+	alert("Our team 👨👨👨👨👨 will continue to make 🔧 changes 🔧 and monitor 👀 community feedback and update everyone as soon 📅 and as 📅 often 📅 as we can. 👍");
+	alert("JK. We just haven't implemented this");
 }

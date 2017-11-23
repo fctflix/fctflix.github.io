@@ -24,6 +24,7 @@ function setupSubscriptions() {
 			content.appendChild(gradient)
 			var title = document.createElement("div")
 			title.className = "title"
+			title.title = 'Visit "'+contents[sub].title+'" community';
 			title.innerHTML = contents[sub].title+"<br>"+contents[sub].subscribers+" subscribers"
 			content.appendChild(title)
 		$("#communityList").append(content)
@@ -46,11 +47,12 @@ function fillCommunityPosts() {
 
 	for(var i = 0; i < posts.length; i++) {
 		var post = posts[i].post
+		var community = posts[i].community
 		//main div
 		var post_main = document.createElement("div")
 		post_main.className = "post"
 		post_main.id = i
-		post_main.value = posts[i].community
+		post_main.value = community
 		//the post contents
 			var post_card = document.createElement("div")
 			post_card.className = "card large"
@@ -64,13 +66,14 @@ function fillCommunityPosts() {
 						var avatar_img = document.createElement("img")
 						avatar_img.className = "avatar small"
 						avatar_img.src = users[post.user].avatar
+						avatar_img.title = users[post.user].name
 						post_avatar.appendChild(avatar_img)
 					post_top.appendChild(post_avatar)
 					//post votes amount
 					var post_votes = document.createElement("div")
 					post_votes.className = "post-votes"
 						var num_votes = document.createElement("div")
-						num_votes.value = contents[posts[i].community].posts.indexOf(post)
+						num_votes.value = contents[community].posts.indexOf(post)
 						num_votes.className = "center"
 						num_votes.innerHTML = post.likes.length - post.dislikes.length
 						var post_up = document.createElement("div")
@@ -79,12 +82,12 @@ function fillCommunityPosts() {
 						post_down.innerHTML = "keyboard_arrow_down"
 						post_down.className = post_up.className = "material-icons votes pointnclick"
 
-						if ($.inArray(0, posts[i].likes) != -1) {
+						if ($.inArray(0, post.likes) != -1) {
 							post_up.className += " active"; // Liked
 						}
 						post_up.onclick = function(){ votePost($(this), true); };
-						if ($.inArray(0, posts[i].dislikes) != -1) {
-							post_down.className += " active"; // disliked
+						if ($.inArray(0, post.dislikes) != -1) {
+							post_down.className += " active"; // Disliked
 						}
 						post_down.onclick = function(){ votePost($(this), false); };
 
@@ -103,6 +106,7 @@ function fillCommunityPosts() {
 					var post_time = document.createElement("div")
 					post_time.className = "post-timestamp"
 					post_time.innerHTML = calculateTimeDifference(post.date)
+					post_time.title = post.date;
 					post_top.appendChild(post_time)
 				post_card.appendChild(post_top);
 				//post content
@@ -113,11 +117,11 @@ function fillCommunityPosts() {
 				//show comments button
 				var comm_btn = document.createElement("button")
 				comm_btn.className = "show-comments"
-				comm_btn.innerHTML = "Show "+post.comments.length+" comment"
+				comm_btn.innerHTML = "View "+post.comments.length+" comment"
 				if(post.comments.length != 1) {
 					comm_btn.innerHTML += "s"
 				}
-				comm_btn.value = posts[i].community+"&postId="+contents[posts[i].community].posts.indexOf(post)
+				comm_btn.value = community+"&postId="+contents[community].posts.indexOf(post)
 				comm_btn.onclick = function() {
 					window.location = "./post.html?community="+this.value
 				}
