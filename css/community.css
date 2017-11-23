@@ -3,7 +3,6 @@
     width: 83%;
     margin: auto;
     margin-bottom: 0.8rem;
-    padding: 1rem;
     max-width: 1200px;
 }
 .postSeparator {
@@ -84,12 +83,9 @@ button.show-comments:hover {
 .newpost .info span:last-child div:last-child {
 	opacity: 0.7;
 }
-.newpost p, .newpost div {
+.newpost p, .newpost .postContent {
 	margin: 0;
 	padding: 10px;
-}
-.newpost .postContent {
-	margin-bottom:10px;
 }
 .modalButtons {
 	display: flex;
@@ -103,37 +99,31 @@ textarea.title {
     margin-bottom: -1rem;
     font-size: large;
 }
-.add-img {
-	float: right;
-    margin-top: -13px !important;
-    margin-left: -50px !important;
+#addUrlPopupToggles i {
+	padding: 5px;
 }
-.addImagePopup {
+.addUrlPopup {
 	display:none;
 	position: absolute;
 	width: 50%;
-	margin: auto;
 	padding: 0.3rem;
-	background-color: rgb(29, 29, 29);
-	top: 80%;
-	left: 96%;
-	transform: translate(-96%, -80%);
+	background-color: rgb(39, 39, 39);
 }
-textarea.small {
-	height: 1rem;
-	width: 50%;
-	resize: none;
-	overflow: hidden;
+.addUrlPopup input {
+	margin: 0;
+	background-color: #b4b4b4;
+	width: calc(100% - 29px);
+	border: none;
+	padding: 5px;
+	vertical-align: middle;
 }
-.addImagePopup .add-img {
-	background:unset;
-	display: inline-block;
-    float: none;
-    margin-left: 2px !important;
-    margin-top: 0px !important;
+.addUrlPopup #url_url, #url_txt {
+	width: calc(50% - 17px);
+	margin: 0;
 }
-.remove-img {
-	width:20px;
-	background-size: contain;
-	display: inline-block;
+.addUrlPopup i {
+	margin: 0;
+	width: 24px;
+	vertical-align: middle;
+	cursor: pointer;
 }

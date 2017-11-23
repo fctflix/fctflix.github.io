@@ -67,11 +67,11 @@ function fillNextWatches() {
 						thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
 						title.style = "height: 50px;";
 						title.innerHTML = contents[show].title+'<br><b>'+getEpisodeSeasonStr(season+1,episode+1)+'</b><span>'+contents[show].seasons[season].episodes[episode].title+'</span>';
-						title.title = 'Watch '+contents[show].title+' - '+getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title;
+						content.title = 'Watch '+contents[show].title+' - '+getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title;
 					} else {
 						thumbnail.src = contents[show].thumbnail
 						title.innerHTML = contents[show].title
-						title.title = contents[show].title
+						content.title = contents[show].title
 					}
 				$("#cont_watch > .contentList").prepend(content)
 			}
@@ -100,7 +100,7 @@ function fillLists() {
 			var title = document.createElement("div")
 			title.className = "title"
 			title.innerHTML = list.title
-			title.title = list.title
+			content.title = list.title
 			content.appendChild(title)
 		$("#your_lists > .contentList").append(content)
 		i++;
@@ -133,11 +133,11 @@ function fillRecentWatched() {
 				thumbnail.src = contents[show].seasons[season].episodes[episode].thumbnail
 				title.style = "height: 50px;";
 				title.innerHTML = contents[show].title+'<br><b>'+getEpisodeSeasonStr(season+1,episode+1)+'</b><span>'+contents[show].seasons[season].episodes[episode].title+'</span>';
-				title.title = contents[show].title+' - '+getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title;
+				content.title = contents[show].title+' - '+getEpisodeSeasonStr(season+1,episode+1)+' - '+contents[show].seasons[season].episodes[episode].title;
 			} else {
 				thumbnail.src = contents[show].thumbnail
 				title.innerHTML = contents[show].title
-				title.title = contents[show].title
+				content.title = contents[show].title
 			}
 		$("#recent > .contentList").prepend(content)
 	}
@@ -164,7 +164,7 @@ function fillRecommendations() {
 				var title = document.createElement("div");
 				title.className = "title";
 				title.innerHTML = contents[users[user].recommendedShow].title;
-				title.title = contents[users[user].recommendedShow].title;
+				content.title = contents[users[user].recommendedShow].title;
 				content.appendChild(title);
 			content_main.appendChild(content);
 			var recom_title = document.createElement("div");
@@ -207,7 +207,7 @@ function fillRecommendations() {
 				var title = document.createElement("div");
 				title.className = "title";
 				title.innerHTML = contents[suggestedId].title;
-				title.title = contents[suggestedId].title;
+				content.title = contents[suggestedId].title;
 				content.appendChild(title);
 			content_main.appendChild(content);
 			var recom_title = document.createElement("div");

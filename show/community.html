@@ -24,22 +24,35 @@
 							<div>now</div>
 						</span>
 					</div>
-					<p><textarea class="title" id="postTitle" placeholder="Title" oninput="validatePost(false);"></textarea></p>
+					<p><textarea class="title" id="postTitle" placeholder="Give your post a title" oninput="validatePost(false);"></textarea></p>
 					<div class="postContent">
 						<textarea id="postText" placeholder="Write something here..." oninput="validatePost(false);"></textarea>
-						<div class="material-icons add-img" onclick="$('.addImagePopup').show();">link</div>
+						<span id="addUrlPopupToggles">
+							<i id="addUrlPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addUrlPopup)').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addUrlPopup').toggle();">link</i>
+							<i id="addImagePopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addImagePopup)').hide();$('#addUrlPopupToggles i:not(#addImagePopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addImagePopup').toggle();">photo_camera</i>
+							<i id="addVideoPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addVideoPopup)').hide();$('#addUrlPopupToggles i:not(#addVideoPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addVideoPopup').toggle();">videocam</i>
+						</span>
+						<div id="addPopups">
+							<div id="addUrlPopup" class="addUrlPopup">
+							    <input type="text" placeholder="URL to add" id="url_url">
+							    <input type="text" placeholder="URL Title" id="url_txt">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '[url='+$('#url_url').val()+']'+$('#url_txt').val()+'[/url]');$('#url_url').val('');$('#url_txt').val('');$('#addUrlPopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							</div>
+							<div id="addImagePopup" class="addUrlPopup">
+							    <input type="text" placeholder="URL of image to add" id="img_url">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[img]'+$('#img_url').val()+'[/img]\n');$('#img_url').val('');$('#addImagePopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							</div>
+							<div id="addVideoPopup" class="addUrlPopup">
+							    <input type="text" placeholder="URL of YouTube video to add" id="vid_url">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[yt]'+$('#vid_url').val()+'[/yt]\n');$('#vid_url').val('');$('#addVideoPopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							</div>
+						</div>
 					</div>
 					<div class="modalButtons">
 						<button class="small" id="postPost" onclick="addPost();" disabled="1">Post</button>
 						<span class="spacer"></span>
 						<button class="small" id="cancelPost" onclick="$('#overlay').hide();$('#postText').val('');$('#postTitle').val('');document.getElementById('postPost').disabled = true;">Cancel</button>
 					</div>
-				</div>
-				<div class="addImagePopup">
-				    URL of image/video to add:
-				    <textarea class="small" id="img_url"></textarea>
-					<div class="material-icons add-img" onclick="$('.addImagePopup').hide();">clear</div>
-					<div class="material-icons remove-img" onclick="$('#postText').append('\n'+$('#img_url').val()+'\n');$('#img_url').val('');$('.addImagePopup').hide();">add</div>
 				</div>
 			</div>
 

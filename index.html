@@ -29,7 +29,7 @@
 		</div>
 		<br><br><br><br><br><br><br><br>
 		<div class="launch">
-			<a href="./login.html">Ir para o FCTFlix</a>
+			<a href="#" onclick="showSnackbar('Logging in...');setTimeout(function(){ window.location = './dashboard.html'; }, 1000);">Ir para o FCTFlix</a>
 		</div>
 		<div class="launch" style="margin-top: 10px;">
 			<a href="#">Download FCTFlix</a>
@@ -234,5 +234,6 @@
 			Made with ❤ in Almada
 		</div>
 	</footer>
+	<div id="snackbar">Uh oh... You shouldn't be able to see this. Hi?</div>
 </body>
 </html>

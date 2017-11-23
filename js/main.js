@@ -24,6 +24,8 @@ function getQueryParameterByName(name, url) {
 };
 
 $(document).ready(function() {
+	setTimeout(console.log.bind(console, "%cHey, what are you doing here? You better not mess around! Otherwise, I'll... I'll... uh... Fine, mess around...", "color: rgb(249, 162, 34); font-size: 32px; font-weight: bold; text-shadow: 1px 1px 5px rgb(249, 162, 34); filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);"), 0);
+	
 	//Smooth scrolling to anchor
 	$('a[href^="#"]').click(function() {
 		var target = $(this.hash);
@@ -40,8 +42,10 @@ $(document).ready(function() {
 	    }
 	});
 
-	getNotifications();
-	getUserDefs();
+	if (window.location.pathname !== "/index.html"){
+		getNotifications();
+		getUserDefs();
+	}
 });
 
 function getNotifications() {
@@ -64,7 +68,7 @@ function getNotifications() {
 				item.appendChild(img)
 				var text = document.createElement("div")
 				text.className = "notif-text"
-				text.innerHTML = "A new episode of <u>"+contents[n.showId].title+"</u> has just come out. You should check it out!"
+				text.innerHTML = 'A new episode of <u><a href="/show/index.html?id='+n.showId+'" style="color: black; font-weight: normal;">'+contents[n.showId].title+'</a></u> has just come out. You should check it out!';
 				item.appendChild(text)
 				$("#notif_popup").append(item)
 			} else if(n.type == "post_reply") {
@@ -76,7 +80,7 @@ function getNotifications() {
 				item.appendChild(img)
 				var text = document.createElement("div")
 				text.className = "notif-text"
-				text.innerHTML = "Someone commented on your post <b>"+contents[n.showId].posts[n.postId].title+"</b> on <u>"+contents[n.showId].title+"</u>'s community."
+				text.innerHTML = 'Someone commented on your post <b><a href="/post.html?community='+n.showId+'&postId='+n.postId+'" style="color: black;">'+contents[n.showId].posts[n.postId].title+'</a></b> on <u><a href="/show/community.html?id='+n.showId+'" style="color: black; font-weight: normal;">'+contents[n.showId].title+'</a></u>\'s community.';
 				item.appendChild(text)
 				$("#notif_popup").append(item)
 			}
@@ -100,7 +104,8 @@ function changeAvatar() {
 }
 
 function logOut() {
-	premiumAlert();
+	showSnackbar("Logging out...");
+	setTimeout(function(){ window.location = "/index.html"; }, 1000);
 }
 
 function getRatingStarString(rating) {
@@ -186,8 +191,15 @@ function search(){
 }
 
 function urlifyPost(text) {
-	text = text.replace(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/, '<div class="videoContainer"><iframe class="video" src="https://www.youtube.com/embed/$2" frameborder="0" allowfullscreen></iframe></div>');
-	return text.replace(/(https?:\/\/[^\s]+(.jpg|.jpeg|.png|.gif|.webp|.bmp|.svg))/g, '<img class="post-image" src="$1"/>');
+	// text = text.replace(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/, '<div class="videoContainer"><iframe class="video" src="https://www.youtube.com/embed/$2" frameborder="0" allowfullscreen></iframe></div>');
+	// return text.replace(/(https?:\/\/[^\s]+(.jpg|.jpeg|.png|.gif|.webp|.bmp|.svg))/g, '<img class="post-image" src="$1"/>');
+
+	//Fuck it, we're going old school with BBCode
+	text = text.replace(/\[yt?\](.*?)(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?\n]*)\[\/yt\]/g, '<div class="videoContainer"><iframe class="video" src="https://www.youtube.com/embed/$3" frameborder="0" allowfullscreen></iframe></div>');
+	text = text.replace(/\[img?\](.*?)\[\/img\]/g, '<img class="post-image" src="$1"/>');
+	text = text.replace(/\[url(=(.*?))?\](.*?)\[\/url\]/g, '<a href=$2>$3</a>');
+
+	return text;
 }
 
 function calculateTimeDifference(date) {

@@ -65,8 +65,8 @@ function defaultUsers(){
 								},
 								{
 									"type":"post_reply",
-									"showId":0,
-									"postId":3
+									"showId":2,
+									"postId":1
 								}],
 			"following": [1,2,3,4],
 			"recommendedShow": 2,
@@ -233,7 +233,7 @@ function defaultContents(){
 						{"user": 3,
 						"title": "WUBBA LUBBA DUB DUB",
 						"date": "2017-08-20 02:57",
-						"text": "And that's the way the news goes!https://fctflix.github.io/images/db/28.jpg",
+						"text": "And that's the way the news goes![img]https://fctflix.github.io/images/db/28.jpg[/img]",
 						"likes": [1],
 						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
 						"comments": [
@@ -281,20 +281,6 @@ function defaultContents(){
 									"date": "2017-11-10 17:45",
 									"text": "please dont repost this shit.",
 									"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36],
-									"dislikes": []
-									}]
-						},
-						{"user": 0,
-						"title": "hey guys",
-						"date": "2017-11-12 10:11",
-						"text": "hey guys im new",
-						"likes": [1, 2],
-						"dislikes": [],
-						"comments": [
-									{"user": 4,
-									"date": "2017-11-12 11:15",
-									"text": "hi new, im dad",
-									"likes": [1],
 									"dislikes": []
 									}]
 						}]
@@ -397,19 +383,33 @@ function defaultContents(){
 							"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
 							"dislikes": [1]
 				}],
-				"posts": [{"user": 0,
+				"posts": [{"user": 3,
 							"title": "conspiracy theory",
 							"date": "2017-11-13 23:41",
 							"text": "what if... the simpsons are actually part of the illuminati?????",
 							"likes": [1, 2, 3, 4, 5],
 							"dislikes": [1, 2, 3],
-							"comments": [{"user": 3,
+							"comments": [{"user": 4,
 										"date": "2017-11-14 00:22",
 										"text": "what the fuck",
 										"likes": [1],
 										"dislikes": []
+										}]
+							},
+							{"user": 0,
+							"title": "hey guys",
+							"date": "2017-11-12 10:11",
+							"text": "hey guys im new",
+							"likes": [1, 2],
+							"dislikes": [],
+							"comments": [
+										{"user": 4,
+										"date": "2017-11-12 11:15",
+										"text": "hi new, im dad",
+										"likes": [1],
+										"dislikes": []
+										}]
 							}]
-				}]
 			},
 			{"title": "Mr. Robot",
 			"isShow": true,
@@ -474,7 +474,7 @@ function defaultContents(){
 						{"user": 3,
 						"title": "DAE notice this?",
 						"date": "2017-08-20 02:57",
-						"text": "Is it just me or does Rami Malek look like a pepe?https://fctflix.github.io/images/db/53.jpg",
+						"text": "Is it just me or does Rami Malek look like a pepe?[img]https://fctflix.github.io/images/db/53.jpg[/img]",
 						"likes": [1],
 						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
 						"comments": [
@@ -494,7 +494,7 @@ function defaultContents(){
 						{"user": 2,
 						"title": "Rami Malek winning Emmy reaction",
 						"date": "2017-11-10 05:31",
-						"text": "https://www.youtube.com/watch?v=-mJMNqNKfMI",
+						"text": "[yt]https://www.youtube.com/watch?v=-mJMNqNKfMI[/yt]",
 						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122],
 						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 						"comments": [
@@ -514,7 +514,7 @@ function defaultContents(){
 						{"user": 4,
 						"title": "Here's a drawing of Elliot I made",
 						"date": "2017-11-20 07:42",
-						"text": "https://fctflix.github.io/images/db/54.jpg",
+						"text": "[img]https://fctflix.github.io/images/db/54.jpg[/img]",
 						"likes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112],
 						"dislikes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
 						"comments": [

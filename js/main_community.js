@@ -12,6 +12,7 @@ function setupSubscriptions() {
 		var content = document.createElement("div")
 		content.className = "content"
 		content.value = sub;
+		content.title = 'Visit "'+contents[sub].title+'" community';
 		content.onclick = function() {
 			window.location = './show/community.html?id='+this.value;
 		}
@@ -24,7 +25,6 @@ function setupSubscriptions() {
 			content.appendChild(gradient)
 			var title = document.createElement("div")
 			title.className = "title"
-			title.title = 'Visit "'+contents[sub].title+'" community';
 			title.innerHTML = contents[sub].title+"<br>"+contents[sub].subscribers+" subscribers"
 			content.appendChild(title)
 		$("#communityList").append(content)
@@ -56,6 +56,13 @@ function fillCommunityPosts() {
 		//the post contents
 			var post_card = document.createElement("div")
 			post_card.className = "card large"
+				//Top of the top
+				var post_top_top = document.createElement("div");
+				post_top_top.className = "post-top-top";
+					var community_title = document.createElement("span");
+					community_title.innerHTML = 'Posted in <a href="./show/community.html?id='+community+'" title=\'Go to "'+contents[community].title+'" community\'>'+contents[community].title+'</a>';
+					post_top_top.appendChild(community_title);
+				post_card.appendChild(post_top_top);
 				//Container for the top elements of the post
 				var post_top = document.createElement("div");
 				post_top.className = "post-top";
