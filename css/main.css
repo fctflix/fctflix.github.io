@@ -253,7 +253,7 @@ a.toplinks {
   margin-bottom: 1rem;
 }
 /* INPUTS */
-button, select {
+button, button:focus, button:active, select {
   display: inline-block;
   height: 2.8em;
   font-size: medium;
@@ -266,7 +266,7 @@ button, select {
 button{ 
   text-align: center;
 }
-button:hover, button:focus, button:active, select:hover, select:focus {
+button:hover, select:hover, select:focus {
   cursor: pointer;
   border: 0;
   background-color: rgb(86,127,209);
@@ -352,6 +352,8 @@ textarea {
   background-color: #b4b4b4;
   width: 100%;
   height: 120px;
+  border: none;
+  padding: 5px;
 }
 /* NEW CHECKBOXES */
 .container {

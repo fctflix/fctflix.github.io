@@ -29,19 +29,36 @@ hr {
 	cursor: pointer;
 }
 .infoContainer h4 {
-	margin:0;
+	width: fit-content;
+	margin: 0;
 }
-button.subscribed {
-	background-color: rgb(83,149,0)
+button#subscribe span {
+	vertical-align: middle;
+	line-height: 24px;
 }
-button.subscribed:hover {
-	background-color: rgb(196,27,27);
+button#subscribe .material-icons {
+	vertical-align: middle;
+	float: right;
+	cursor: pointer;
+}
+button#subscribe .normal {
+	display: inline-block;
+}
+button#subscribe:hover .normal {
+	display: none;
+}
+button#subscribe .hover {
+	display: none;
+}
+button#subscribe:hover .hover {
+	display: inline-block;
 }
 button.subscribed:hover:before {
-	content:"Unsubscribe"
+	content: "Unsubscribe";
+	line-height: 24px;
 }
 button.subscribed:hover span {
-	display:none;
+	display: none;
 }
 button.show-comments {
     width: 100%;

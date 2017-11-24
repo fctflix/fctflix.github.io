@@ -84,10 +84,14 @@ function updateSubscription() {
 	//uhh we should check who is logged in instead of using zero but ok
 	if(users[0].subscriptions.includes(contentId)) {
 		$("#subscribe").addClass("subscribed")
-		$("#subscribe > span").html("Subscribed!")
+		$("#subscribe > span").html("Subscribed!");
+		$("#subscribe > .normal").html("check");
+		$("#subscribe > .hover").html("remove");
 	} else {
 		$("#subscribe").removeClass("subscribed")
 		$("#subscribe > span").html("Subscribe")
+		$("#subscribe > .normal").html("add");
+		$("#subscribe > .hover").html("add");
 	}
 }
 

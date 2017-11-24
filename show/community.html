@@ -28,23 +28,23 @@
 					<div class="postContent">
 						<textarea id="postText" placeholder="Write something here..." oninput="validatePost(false);"></textarea>
 						<span id="addUrlPopupToggles">
-							<i id="addUrlPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addUrlPopup)').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addUrlPopup').toggle();">link</i>
-							<i id="addImagePopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addImagePopup)').hide();$('#addUrlPopupToggles i:not(#addImagePopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addImagePopup').toggle();">photo_camera</i>
-							<i id="addVideoPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addVideoPopup)').hide();$('#addUrlPopupToggles i:not(#addVideoPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addVideoPopup').toggle();">videocam</i>
+							<i id="addUrlPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addUrlPopup)').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addUrlPopup').toggle();" title="Insert Link">link</i>
+							<i id="addImagePopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addImagePopup)').hide();$('#addUrlPopupToggles i:not(#addImagePopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addImagePopup').toggle();" title="Insert Image">photo_camera</i>
+							<i id="addVideoPopupToggle" class="material-icons" onclick="$('#addPopups .addUrlPopup:not(#addVideoPopup)').hide();$('#addUrlPopupToggles i:not(#addVideoPopupToggle)').removeClass('active');$(this).toggleClass('active');$('#addVideoPopup').toggle();" title="Insert YouTube Video">videocam</i>
 						</span>
 						<div id="addPopups">
 							<div id="addUrlPopup" class="addUrlPopup">
-							    <input type="text" placeholder="URL to add" id="url_url">
-							    <input type="text" placeholder="URL Title" id="url_txt">
-							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '[url='+$('#url_url').val()+']'+$('#url_txt').val()+'[/url]');$('#url_url').val('');$('#url_txt').val('');$('#addUrlPopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							    <input type="text" placeholder="Link URL" id="url_url">
+							    <input type="text" placeholder="Link title" id="url_txt">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '[url='+$('#url_url').val()+']'+$('#url_txt').val()+'[/url]');$('#url_url').val('');$('#url_txt').val('');$('#addUrlPopup').hide();$('#addUrlPopupToggles i').removeClass('active');">add</i>
 							</div>
 							<div id="addImagePopup" class="addUrlPopup">
-							    <input type="text" placeholder="URL of image to add" id="img_url">
-							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[img]'+$('#img_url').val()+'[/img]\n');$('#img_url').val('');$('#addImagePopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							    <input type="text" placeholder="Image URL" id="img_url">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[img]'+$('#img_url').val()+'[/img]\n');$('#img_url').val('');$('#addImagePopup').hide();$('#addUrlPopupToggles i').removeClass('active');">add</i>
 							</div>
 							<div id="addVideoPopup" class="addUrlPopup">
-							    <input type="text" placeholder="URL of YouTube video to add" id="vid_url">
-							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[yt]'+$('#vid_url').val()+'[/yt]\n');$('#vid_url').val('');$('#addVideoPopup').hide();$('#addUrlPopupToggles i:not(#addUrlPopupToggle)').removeClass('active');">add</i>
+							    <input type="text" placeholder="YouTube Video URL" id="vid_url">
+							    <i class="material-icons" onclick="$('#postText').val($('#postText').val() + '\n[yt]'+$('#vid_url').val()+'[/yt]\n');$('#vid_url').val('');$('#addVideoPopup').hide();$('#addUrlPopupToggles i').removeClass('active');">add</i>
 							</div>
 						</div>
 					</div>
@@ -113,7 +113,7 @@
 					</div>
 					<span class="spacer"></span>
 					<div class="center">
-						<button id="subscribe" class="large" onclick="toggleSubscription()"><span>Subscribe</span></button>
+						<button id="subscribe" class="large" onclick="toggleSubscription()"><span>Subscribe</span><i class="material-icons normal">add</i><i class="material-icons hover">add</i></button>
 					</div>
 				</div>
 			</div>
