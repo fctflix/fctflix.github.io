@@ -74,7 +74,8 @@ function defaultUsers(){
 				{"show":3,"season":0,"episode":0},
 				{"show":1},
 				{"show":3,"season":0,"episode":1},
-				{"show":2,"season":0,"episode":0}]
+				{"show":2,"season":0,"episode":0},
+				{"show":3,"season":1,"episode":0}]
 			},
 			{"name": "JamesDoe",
 			"avatar": "https://fctflix.github.io/images/db/6.jpg",

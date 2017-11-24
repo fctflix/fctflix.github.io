@@ -12,7 +12,9 @@ function populateLists() {
 	for(cat of $(".shows")) {
 		var genre = cat.id
 		var contentList = cat.getElementsByClassName("contentList")[0]
+		$('#noContent'+genre).hide();
 		contentList.innerHTML = ""
+		var countContents = 0;
 		for(var i = 0; i < contents.length; i++) {
 			var show = contents[i]
 			if(show.genres.includes(genre) && ((show.isShow && showTV) || (!show.isShow && showMovies))) {
@@ -42,7 +44,11 @@ function populateLists() {
 					content.title = show.title;
 					content.appendChild(title)
 				contentList.appendChild(content)
+				countContents++;
 			}
+		}
+		if (countContents == 0) {
+			$('#noContent'+genre).show();
 		}
 	}
 }
