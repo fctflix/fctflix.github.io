@@ -287,7 +287,11 @@ function fillShows(showsList, isSuggestions) {
 			show.appendChild(ratingGradient);
 			var ratingDiv = document.createElement("div");
 			ratingDiv.className = "rating";
-			ratingDiv.innerHTML = '<span>'+contents[showsList[entry]].rating+'</span><i class="material-icons">star</i>';
+			if (isSuggestions) {
+				ratingDiv.innerHTML = '<span class="suggested"><i class="material-icons">info</i> Suggested</span><span>'+contents[showsList[entry]].rating+'</span><i class="material-icons">star</i>';
+			} else {
+				ratingDiv.innerHTML = '<span>'+contents[showsList[entry]].rating+'</span><i class="material-icons">star</i>';
+			}
 			show.appendChild(ratingDiv);
 			var thumbGradient = document.createElement("div");
 			thumbGradient.className = "gradient";
@@ -325,7 +329,11 @@ function fillMovies(moviesList, isSuggestions) {
 			movie.appendChild(ratingGradient);
 			var ratingDiv = document.createElement("div");
 			ratingDiv.className = "rating";
-			ratingDiv.innerHTML = '<span>'+contents[moviesList[entry]].rating+'</span><i class="material-icons">star</i>';
+			if (isSuggestions) {
+				ratingDiv.innerHTML = '<span class="suggested"><i class="material-icons">info</i> Suggested</span><span>'+contents[moviesList[entry]].rating+'</span><i class="material-icons">star</i>';
+			} else {
+				ratingDiv.innerHTML = '<span>'+contents[moviesList[entry]].rating+'</span><i class="material-icons">star</i>';
+			}
 			movie.appendChild(ratingDiv);
 			var thumbGradient = document.createElement("div");
 			thumbGradient.className = "gradient";

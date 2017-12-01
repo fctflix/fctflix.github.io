@@ -26,3 +26,37 @@
   height: 2em;
   padding: 1px 6px;
 }
+#suggestTV .material-icons, #suggestMovie .material-icons {
+  vertical-align: middle;
+  margin-right: 10px;
+  color: gold;
+}
+#noTVResults .material-icons, #noMovieResults .material-icons, #noListResults .material-icons, #noUserResults .material-icons {
+  vertical-align: middle;
+  margin-right: 10px;
+  color: #dc0909;
+}
+#suggestTV span, #suggestMovie span, #noTVResults span, #noMovieResults span, #noListResults span, #noUserResults span {
+  vertical-align: middle;.
+  font-weight: bold;
+  font-size: larger;
+}
+.content .suggested {
+  float: left;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+  vertical-align: middle;
+}
+.content .suggested .material-icons {
+  font-weight: normal;
+  color: lightgrey;
+  vertical-align: middle;
+}
+#filterRating:after {
+  vertical-align: middle;
+  line-height: 24px;
+}
+#filterRating .material-icons {
+  line-height: 24px;
+}

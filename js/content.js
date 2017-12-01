@@ -29,6 +29,15 @@ function populateInfo(){
 
 	//Info
 	var infoDetails = document.getElementById('infoDetails');
+	var community_link = document.createElement("a");
+	community_link.innerHTML = "Go to Community";
+	community_link.title = "Go to FCTFlix Community page for \""+contents[contentId].title+"\"";
+	community_link.style = "cursor: pointer;";
+	community_link.onclick = goToCommunity;
+	infoDetails.appendChild(community_link);
+	var spacer = document.createElement("span");
+	spacer.className = "spacer";
+	infoDetails.appendChild(spacer);
 	if (contents[contentId].isShow){
 		var airs_bold = document.createElement("b");
 		airs_bold.innerHTML = "Airs: ";
@@ -69,7 +78,6 @@ function populateInfo(){
 	var spacer = document.createElement("span");
 	spacer.className = "spacer";
 	infoDetails.appendChild(spacer);
-
 	var genres_bold = document.createElement("b");
 	genres_bold.innerHTML = "Genres: ";
 	infoDetails.appendChild(genres_bold);
@@ -129,6 +137,11 @@ function populateInfo(){
 	}
 	document.getElementById("addToListCount").value = count;
 	updateAddToListButton(count);
+	
+	//Recommend
+	if (users[0].recommendedShow == contentId) {
+		document.getElementById("recommend").innerHTML = "Recommended!";
+	}
 
 	//Synopsis
 	document.getElementById('synopsis').innerHTML = contents[contentId].synopsis;
@@ -238,6 +251,8 @@ function populateReviews(sort){
 
 	if (contents[contentId].reviews.length == 0){
 		//No reviews :(
+		reviewsList.innerHTML = "";
+		
 		var review = document.createElement("div");
 		review.className = "review";
 			var info = document.createElement("div");
@@ -404,6 +419,23 @@ function sortReviews(reviews, sort){
 
 function goToCommunity(){
 	window.location = './community.html?id='+contentId;
+}
+
+function recommend(){
+	//Update recommendation
+	users[0].recommendedShow = contentId;
+	
+	//Save changes
+	console.log('Saving to localStorage...');
+	saveUsers();
+	
+	//User feedback
+	document.getElementById("recommend").innerHTML = "Recommended!";
+	if (contents[contentId].isShow){
+		showSnackbar('Show recommended!');
+	} else {
+		showSnackbar('Movie recommended!');
+	}
 }
 
 function rate(newRating){

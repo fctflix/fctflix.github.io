@@ -103,6 +103,10 @@ header .logo {
   width:90%;
   padding:10px;
   font-size:medium;
+  border: 2px solid rgb(66,107,189);
+}
+.search:hover .searchbar{
+  border: 2px solid rgb(86,127,209);
 }
 .search {
   width:45%;
@@ -113,6 +117,7 @@ header .logo {
 }
 .search button i.material-icons {
   cursor: pointer;
+  color: white;
 }
 .avatar-out {
   width:3%;
@@ -305,6 +310,10 @@ button:disabled, button:disabled:hover {
     position: relative;
     display: inline-block;
     margin-bottom: 0!important;
+}
+.dropdown button:after {
+  content: '▼';
+  float: right;
 }
 .dropdownContent {
     display: none;
@@ -724,6 +733,7 @@ a:hover {
 }
 .current {
   text-decoration: underline;
+  color: white;
 }
 .gradient-top {
     height: 75px;

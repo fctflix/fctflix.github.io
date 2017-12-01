@@ -50,7 +50,7 @@
 				</button>
 			</div>
 			<div class="perc30 automargins noselect">
-				<a class="perc10 toplinks automargins" href="/browse.html">Browse</a>
+				<a class="perc10 toplinks automargins" href="/browse.html">Explore</a>
 				<a class="perc10 toplinks automargins" href="/community.html" style="margin-right: 50%;">Community</a>
 			</div>
 			<div class="perc5 automargins noselect" onclick="showNotifs()">
@@ -97,7 +97,7 @@
 								
 							</div>
 						</div>
-						<button class="large" id="gotoCommunity" onclick="goToCommunity();">Go to Community page</button>
+						<button class="large" id="recommend" onclick="recommend();">Recommend to followers</button>
 					</div>
 					<div><b>Synopsis: </b><span id="synopsis">Loading...</span></div>
 				</div>
@@ -123,8 +123,8 @@
 				<span style="float: right;">
 					<b>Sort: </b>
 					<div class="dropdown">
-						<button id="sortReviewsBtn" class="small align-left">Best</button>
-						<div class="dropdownContent noselect small">
+						<button id="sortReviewsBtn" class="align-left" style="width: 9em;">Best</button>
+						<div class="dropdownContent noselect" style="width: 9em;">
 							<div class="dropdownEntry" onclick="$('#sortReviewsBtn')[0].innerHTML = 'Best';populateReviews('best');"><span>Best</span></div>
 							<div class="dropdownEntry" onclick="$('#sortReviewsBtn')[0].innerHTML = 'Recent';populateReviews('recent');"><span>Recent</span></div>
 							<div class="dropdownEntry" onclick="$('#sortReviewsBtn')[0].innerHTML = 'Highest Rating';populateReviews('highest');"><span>Highest Rating</span></div>

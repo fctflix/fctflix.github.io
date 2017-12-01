@@ -31,6 +31,9 @@
 #showInfo .infoContainer #infoMain, #showInfo .infoContainer #infoDetails, #showInfo .infoContainer #infoButtons {
 	margin-bottom: 0.8rem;
 }
+#infoDetails {
+	text-align: left;
+}
 #infoButtons {
 	display: flex;
 	justify-content: space-around;
